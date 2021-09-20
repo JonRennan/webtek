@@ -1,0 +1,19 @@
+body {
+    background: rgba(164, 206, 255, 0.66);
+    font-family: Georgia, Verdana, sans-serif;
+}
+header{
+    text-align: center;
+}
+
+section {
+    width: 780px;
+    margin: 0 auto;
+    min-height: 40px;
+    background: #f9f9f9;
+    padding: 10px;
+}
+
+p {
+
+}
