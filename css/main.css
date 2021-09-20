@@ -2,16 +2,25 @@ body {
     background: rgba(164, 206, 255, 0.66);
     font-family: Georgia, Verdana, sans-serif;
 }
-header{
+
+header {
+    width: 780px;
+    margin: 0 auto;
     text-align: center;
+    position: relative;
+}
+
+header time{
+    position: absolute;
+    right: 0;
+    bottom: 0;
 }
 
 section {
     width: 780px;
-    margin: 0 auto;
-    min-height: 40px;
+    margin: 1em auto;
     background: #f9f9f9;
-    padding: 10px;
+    padding: .75em 2em;
 }
 
 p {
