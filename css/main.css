@@ -1,6 +1,7 @@
 body {
     background: rgba(164, 206, 255, 0.66);
     font-family: Georgia, Verdana, sans-serif;
+    line-height: 1.5em;
 }
 
 header {
