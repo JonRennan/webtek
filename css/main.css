@@ -24,8 +24,8 @@ section {
     padding: .75em 2em;
 }
 
-p {
-
+li p {
+ margin-top: 0;
 }
 
 ul li {
