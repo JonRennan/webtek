@@ -24,7 +24,11 @@ li p {
 }
 
 ul li {
-    margin-bottom: .5em;
+    margin-bottom: .25em;
+}
+
+ul ul li {
+    margin-bottom: 0;
 }
 
 img {
