@@ -33,6 +33,7 @@ ul ul li {
 
 img {
     width: 500px;
+    max-width: 95%;
     height: auto;
     display: block;
     margin: auto;
