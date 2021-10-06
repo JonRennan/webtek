@@ -60,7 +60,21 @@
 
 <section>
     <h2>Content</h2>
-
+    <div>
+        <h3>Home</h3>
+        <p>
+            The home page presents the food truck with the most relevant information. It will give a short introduction
+            to the user, describe the location and the opening hours of the food truck. Beneath this a map showing the
+            location will be displayed. When the user clicks on the map it will open a new tab and take them to the
+            Google Maps page with the location selected for navigation. This will make it easy for the user to get an
+            instant location and a route to navigate to the food truck.
+            <br><br>
+            To the right of all this will be a dynamic display showing if the food truck is currently open or not. This
+            will change given the time of day, comparing the current time to the opening hours. Finally, a highlight
+            from the menu will be displayed with a small picture and its description. Clicking this section will take the
+            user over to the menu page.
+        </p>
+    </div>
     <div>
         <h3>Menu</h3>
         <p>
@@ -87,18 +101,44 @@
         </p>
         <img src="../images/Order%20confirmation.png" alt="Menu page"/>
     </div>
+    <div>
+        <h3>About Us</h3>
+        <p>
+            The about page will contain information about the Food Truck of UKA-21. This information will be displayed in a
+            reader friendly manner, with multiple paragraphs and padding on the sides. Questions to the side of the
+            paragraphs will indicate what information is given. Pictures displaying the food truck and its employees will be
+            displayed side by side in a small format as seen on the figure below. When the user clicks on the images the image
+            will become larger and take up most of the screen, dimming the rest of the page in the background.
+        </p>
+    </div>
+    <div>
+        <h3>Contact us</h3>
+        <p>
+            The contact us page will contain two distinct parts. The first one is a form for giving feedback to the food truck.
+            Here, users will fill in their information and write what the feedback is about and finally their message. We will
+            check that all the fields are filled out before the user then can submit the form.
+            <br><br>
+            The second part is a map displaying the location of the food truck at a given scale. When the user clicks on the
+            map it will open a new tab and take them to the Google Maps page with the location selected for navigation. This will
+            make it easy for the user to get an instant location and a route to navigate to the food truck.
+        </p>
+    </div>
 </section>
 
 <section>
     <h2>Minimum Requirements</h2>
     <ul>
-        <li>Auto navbar/footer</li>
-        <li>Check if FoodTruck is open</li>
-        <li>Language function</li>
-        <li>Increase decrease menu item selection</li>
-        <li>Send order to confirm order page</li>
-        <li>Read order on confirm order page</li>
-        <li>Contact Us</li>
+        <li>Auto navbar/footer<ul><li>This will fill in the navbar and footer on every HTML page</li></ul></li>
+        <li>Check if FoodTruck is open<ul><li>This will display different images on the homepage by comparing the current to the
+            opening hours of the foodtruck</li></ul></li>
+        <li>Language function<ul><li>Will switch the language on the page between English and Norwegian</li></ul></li>
+        <li>Increase decrease menu item selection<ul><li>A simple counter to select the desired amount of a menu item</li></ul></li>
+        <li>Send order to confirm order page<ul><li>Here we will store the order in text code and include that in the url for the
+            confirm order page</li></ul></li>
+        <li>Read order on confirm order page<ul><li>Exstracts the text code from the url and displays the items that were selected</li></ul></li>
+        <li>Contact Us<ul><li>This function will check if the user has filled out all of the text fields, then display a confirmation
+            message and clear the fields.
+        </li></ul></li>
     </ul>
 </section>
 
