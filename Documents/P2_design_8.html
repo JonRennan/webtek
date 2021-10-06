@@ -47,11 +47,11 @@
         menu site as it is a site to confirm your order.
     </p>
     <p>
-        This structure makes sense for our website because we have chosen to focus on an easy navigation. 
+        This structure makes sense for our website because we have chosen to focus on an easy navigation.
         We think the ability to reach every page with one click fits our users because they, as mention before, might be
-        a bit intoxicated, and some might click on the wrong buttons. 
+        a bit intoxicated, and some might click on the wrong buttons.
     </p>
-    <img src="../images/Navigation structure.png" alt="Navigation structure" />
+    <img src="../images/Navigation structure.png" alt="Navigation structure"/>
 </section>
 
 <section>
@@ -71,74 +71,128 @@
             <br><br>
             To the right of all this will be a dynamic display showing if the food truck is currently open or not. This
             will change given the time of day, comparing the current time to the opening hours. Finally, a highlight
-            from the menu will be displayed with a small picture and its description. Clicking this section will take the
-            user over to the menu page.
+            from the menu will be displayed with a small picture and its description. Clicking this section will take
+            the user over to the menu page.
         </p>
+        <img src="../images/Home.png" alt="Home page"/>
     </div>
     <div>
         <h3>Menu</h3>
         <p>
             This page will contain a list of all the items on the menu, what they are, what they look like, what they
             contain and what they cost. The page will also contain buttons for each item to add or remove them from your
-            order. This page fulfills the goal of allowing users to place orders through the website.
+            order and show how many you have selected. This page fulfills the goal of allowing users to place orders
+            through the website.
             <br><br>
             The unique design decisions for this page are going to be in regard to how we present the menu items. As
             shown on the image below, we plan on having a small image for each item, with the name, price, a short
-            description and a hypertext to click for a modal with more details about the product to the side of the
-            image. On lager devices the option to add and remove items from the order will be on the right-hand side of
-            the item details, while on smaller devices this will be below.
+            description and a list of allergy risks for this item to the side of the image. On lager devices the option
+            to add and remove items from the order will be on the right-hand side of the item details, while on smaller
+            devices this will be below.
         </p>
         <img src="../images/Menu.png" alt="Menu page"/>
     </div>
     <div>
         <h3>Order confirmation</h3>
         <p>
-            This page will contain a simplified list of the selected items, the amount and price. The page will also
-            contain buttons for each item to add or remove them from your order as well as a field to add a comment to
-            the order.
+            This page will contain a simplified list of the selected items, with the selected amount and price. The page
+            will also contain buttons for each item to increase or decrease the amount of them for your order as well as
+            a field to insert your name and potentially add a comment to the order.
             <br><br>
-
+            As shown on the image the simplified list will contain a smaller image, the name of the item, allergies and
+            price. For a cohesive design we will use the same buttons to increase or decrease the amount of each item.
+            The two textfields will be fairly basic, with a short description for the input we want in each field and
+            the field for the name being smaller than for the comment.
         </p>
-        <img src="../images/Order%20confirmation.png" alt="Menu page"/>
+        <img src="../images/Order%20confirmation.png" alt="Order confirmation"/>
+    </div>
+    <div>
+        <h3>Receipt</h3>
+        <p>
+            This page will contain the same simplified list of the selected items, however the buttons to increase or
+            decrease the amount of each item will of course not be present as this page shows the order that was
+            completed. The comment sent on the order confirmation page will also be shown.
+        </p>
+        <img src="../images/Receipt.png" alt="Receipt"/>
     </div>
     <div>
         <h3>About Us</h3>
         <p>
-            The about page will contain information about the Food Truck of UKA-21. This information will be displayed in a
+            The about page will contain information about the Food Truck of UKA-21. This information will be displayed
+            in a
             reader friendly manner, with multiple paragraphs and padding on the sides. Questions to the side of the
-            paragraphs will indicate what information is given. Pictures displaying the food truck and its employees will be
-            displayed side by side in a small format as seen on the figure below. When the user clicks on the images the image
+            paragraphs will indicate what information is given. Pictures displaying the food truck and its employees
+            will be
+            displayed side by side in a small format as seen on the figure below. When the user clicks on the images the
+            image
             will become larger and take up most of the screen, dimming the rest of the page in the background.
         </p>
+        <img src="../images/About%20us.png" alt="About us page"/>
     </div>
     <div>
         <h3>Contact us</h3>
         <p>
-            The contact us page will contain two distinct parts. The first one is a form for giving feedback to the food truck.
-            Here, users will fill in their information and write what the feedback is about and finally their message. We will
+            The contact us page will contain two distinct parts. The first one is a form for giving feedback to the food
+            truck.
+            Here, users will fill in their information and write what the feedback is about and finally their message.
+            We will
             check that all the fields are filled out before the user then can submit the form.
             <br><br>
-            The second part is a map displaying the location of the food truck at a given scale. When the user clicks on the
-            map it will open a new tab and take them to the Google Maps page with the location selected for navigation. This will
+            The second part is a map displaying the location of the food truck at a given scale. When the user clicks on
+            the
+            map it will open a new tab and take them to the Google Maps page with the location selected for navigation.
+            This will
             make it easy for the user to get an instant location and a route to navigate to the food truck.
         </p>
+        <img src="../images/Contact%20us.png" alt="Contact us page"/>
     </div>
 </section>
 
 <section>
     <h2>Minimum Requirements</h2>
     <ul>
-        <li>Auto navbar/footer<ul><li>This will fill in the navbar and footer on every HTML page</li></ul></li>
-        <li>Check if FoodTruck is open<ul><li>This will display different images on the homepage by comparing the current to the
-            opening hours of the foodtruck</li></ul></li>
-        <li>Language function<ul><li>Will switch the language on the page between English and Norwegian</li></ul></li>
-        <li>Increase decrease menu item selection<ul><li>A simple counter to select the desired amount of a menu item</li></ul></li>
-        <li>Send order to confirm order page<ul><li>Here we will store the order in text code and include that in the url for the
-            confirm order page</li></ul></li>
-        <li>Read order on confirm order page<ul><li>Exstracts the text code from the url and displays the items that were selected</li></ul></li>
-        <li>Contact Us<ul><li>This function will check if the user has filled out all of the text fields, then display a confirmation
-            message and clear the fields.
-        </li></ul></li>
+        <li>Auto navbar/footer
+            <ul>
+                <li>This will fill in the navbar and footer on every HTML page</li>
+            </ul>
+        </li>
+        <li>Check if FoodTruck is open
+            <ul>
+                <li>This will display different images on the homepage by comparing the current to the
+                    opening hours of the foodtruck
+                </li>
+            </ul>
+        </li>
+        <li>Language function
+            <ul>
+                <li>Will switch the language on the page between English and Norwegian</li>
+            </ul>
+        </li>
+        <li>Increase decrease menu item selection
+            <ul>
+                <li>A simple counter to select the desired amount of a menu item</li>
+            </ul>
+        </li>
+        <li>Send order to confirm order page
+            <ul>
+                <li>Here we will store the order in text code and include that in the url for the
+                    confirm order page
+                </li>
+            </ul>
+        </li>
+        <li>Read order on confirm order page
+            <ul>
+                <li>Exstracts the text code from the url and displays the items that were selected</li>
+            </ul>
+        </li>
+        <li>Contact Us
+            <ul>
+                <li>This function will check if the user has filled out all of the text fields, then display a
+                    confirmation
+                    message and clear the fields.
+                </li>
+            </ul>
+        </li>
     </ul>
 </section>
 
@@ -149,6 +203,7 @@
         <li>homepage.html</li>
         <li>menu.html</li>
         <li>order.html</li>
+        <li>receipt.html</li>
         <li>about.html</li>
         <li>contact_us.html</li>
         <li>images/</li>
@@ -175,7 +230,7 @@
 
     <table>
         <tr>
-            <th> Filename/ function </th>
+            <th> Filename/ function</th>
             <th> Description</th>
             <th> In charge</th>
             <th> Deadline</th>
@@ -194,45 +249,52 @@
         </tr>
         <tr>
             <td> order.html</td>
-            <td> See description under content, order. </td>
+            <td> See description under content, order.</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td> receipt.html</td>
+            <td> See description under content, receipt.</td>
             <td></td>
             <td></td>
         </tr>
         <tr>
             <td> about.html</td>
-            <td> See description under content, about. </td>
+            <td> See description under content, about.</td>
             <td></td>
             <td></td>
         </tr>
         <tr>
             <td> contact_us.html</td>
-            <td> See description under content, contact us. </td>
+            <td> See description under content, contact us.</td>
             <td></td>
             <td></td>
         </tr>
         <tr>
-            <td> main.js </td>
-            <td> Auto navbar and footer, 
-            check if the food truck is open (homepage),
-            contact us form (contact us page)</td>
+            <td> main.js</td>
+            <td> Auto navbar and footer,
+                check if the food truck is open (homepage),
+                contact us form (contact us page)
+            </td>
             <td></td>
             <td></td>
         </tr>
         <tr>
-            <td> Ingrease/ decrease menu item section </td>
+            <td> Ingrease/ decrease menu item section</td>
             <td></td>
             <td></td>
             <td></td>
         </tr>
         <tr>
-            <td> Send order to confirm order page </td>
-            <td> Save information about order (type of food, amount). </td>
+            <td> Send order to confirm order page</td>
+            <td> Save information about order (type of food, amount).</td>
             <td></td>
             <td></td>
         </tr>
         <tr>
-            <td> Read order to confirm order page </td>
-            <td> Get information about order. </td>
+            <td> Read order to confirm order page</td>
+            <td> Get information about order.</td>
             <td></td>
             <td></td>
         </tr>
