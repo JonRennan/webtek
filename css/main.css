@@ -27,7 +27,7 @@ ul li {
     margin-bottom: .25em;
 }
 
-ul ul li {
+li ul {
     margin-bottom: 0;
 }
 
