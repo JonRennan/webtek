@@ -1,0 +1,44 @@
+body {
+    background: rgba(164, 206, 255, 0.66);
+    font-family: Georgia, Verdana, sans-serif;
+    line-height: 1.5em;
+}
+
+header {
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    position: relative;
+}
+
+section {
+    width: 80%;
+    max-width: 780px;
+    margin: 1em auto;
+    background: #f9f9f9;
+    padding: .75em 2em;
+}
+
+li p {
+ margin-top: 0;
+}
+
+ul li {
+    margin-bottom: .25em;
+}
+
+li ul {
+    margin-bottom: 0;
+}
+
+img {
+    width: 500px;
+    max-width: 95%;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
