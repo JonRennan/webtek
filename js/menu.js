@@ -82,18 +82,18 @@ function getPrice(id) {
 
 
 const itemImages = [
-    "Dirty Fries.png",
-    "Sweet Potato Fries.png",
-    "Fries.png",
-    "Chicken Burger.png",
-    "Cheese Burger.png",
+    "placeholder.png",
+    "placeholder.png",
+    "placeholder.png",
+    "placeholder.png",
+    "placeholder.png",
 ];
 
 function getImage(id, type) {
     let itemImage = document.createElement("img");
     itemImage.id = `item-image-${id}`;
     itemImage.className = `itemImage${type}`;
-    itemImage.src = itemImages[id];
+    itemImage.src = "images/" + itemImages[id];
     itemImage.alt = itemNames[id];
     return itemImage
 }
