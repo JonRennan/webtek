@@ -4,7 +4,7 @@ body {
 }
 
 .navbar {
-    position: fixed;
+    position: relative;
     height: 15vh;
     width: 90%;
     margin-left: 30px;
@@ -57,14 +57,15 @@ hr {
 }
 
 .hompageText {
-    position: absolute;
-    top: 18vh;
+    position: relative;
+    top: 16vh;
     height: 82vh;
     margin-left: 30px;
-    width: 370px
+    width: 370px;
 }
 
 #map {
     width: 370px;
     height: auto;
+    margin-bottom: 20px;
 }
