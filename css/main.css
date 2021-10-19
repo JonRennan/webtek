@@ -161,3 +161,21 @@ input:-webkit-autofill:active{
     margin-top: 0;
     font-size: 30px;
 }
+
+/* About us */
+.aboutPicture {
+    display: inline-block
+}
+
+.aboutSection h2, .aboutSection p {
+    width: 40%;
+    display: inline-block;
+}
+
+.aboutSection h2 {
+    margin-left: 9%;
+    float: inline-start;
+}
+.pictureSection {
+    margin: 3% auto 5% 9%;
+}
