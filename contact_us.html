@@ -12,41 +12,45 @@
 <!-- navbar -->
 <div id="placeNavbar"></div>
 
-<div class="col1">
-    <div class="contact">
-        <h1>Something wrong? Contact us!</h1>
-        <form id="contact_form" action="contact_us.html" method="post">
-            <label for="firstname"></label>
-            <input id="firstname" class="half" type="text" name="firstname" pattern="[A-Z a-z æøåÆØÅ]{1,}"
-                   placeholder="First Name" required>
-            <label for="lastname"></label>
-            <input id="lastname" class="half" type="text" name="lastname" pattern="[A-Z a-z æøåÆØÅ]{1,}"
-                   placeholder="Last Name" required>
-            <br><br>
-            <label for="email"></label>
-            <input id="email" class="full" type="email" name="email" placeholder="Email" required>
-            <br><br>
-            <label for="about"></label>
-            <input id="about" class="full" type="text" name="about" pattern="[A-Z a-z æøåÆØÅ]{1,}"
-                   placeholder="What’s it about?" required>
-            <br><br>
-            <label for="message"></label>
-            <textarea id="message" class="full" name="message" rows="6"
-                      placeholder="Type your message here..." required></textarea>
-            <br><br>
-            <button id="submitButton" type="submit">Send</button>
-        </form>
+<div id="alignContent">
+<div class="row">
+    <div class="col">
+        <div class="contact">
+            <h1 id="contact_header">Something wrong? Contact us!</h1>
+            <form id="contact_form" action="contact_us.html" method="post">
+                <label for="firstname"></label>
+                <input id="firstname" class="half" type="text" name="firstname" pattern="[A-Z a-z æøåÆØÅ]{1,}"
+                    placeholder="First Name" required>
+                <label for="lastname"></label>
+                <input id="lastname" class="half" type="text" name="lastname" pattern="[A-Z a-z æøåÆØÅ]{1,}"
+                    placeholder="Last Name" required>
+                <br><br>
+                <label for="email"></label>
+                <input id="email" class="full" type="email" name="email" placeholder="Email" required>
+                <br><br>
+                <label for="about"></label>
+                <input id="about" class="full" type="text" name="about" pattern="[A-Z a-z æøåÆØÅ]{1,}"
+                    placeholder="What’s it about?" required>
+                <br><br>
+                <label for="message"></label>
+                <textarea id="message" class="full" name="message" rows="6"
+                        placeholder="Type your message here..." required></textarea>
+                <br><br>
+                <button id="submitButton" type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+    <div class="col vl">
+        <div class="location">
+            <h1>Can’t find us? We’re here!</h1>
+            <img id="map" src="images/map.png" alt="map">
+            <p>
+                The foodtruck is located on the <br>
+                backside of Studentersamfundet.
+            </p>
+        </div>
     </div>
 </div>
-<div class="col2 vl">
-    <div class="location">
-        <h1>Can’t find us? We’re here!</h1>
-        <img id="map" src="images/map.png" alt="map">
-        <p>
-            The foodtruck is located on the <br>
-            backside of Studentersamfundet.
-        </p>
-    </div>
 </div>
 
 <script src="js/main.js"></script>

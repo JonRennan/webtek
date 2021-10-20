@@ -3,16 +3,19 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
-.navbar {
+#placeNavbar {
     position: sticky;
-    top: 0;
-    width: 90vw;
-    margin-left: 5vw;
-    margin-right: 5vw;
-    padding-top: 10px;
+    top: 0vh;
     background-color: #f2f2f2;
-    z-index: 10;
+    padding-top: 10px;
     margin-bottom: 20px;
+    z-index: 10;
+}
+
+.navbar {
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
     height: 13vh;
 }
 
@@ -25,22 +28,9 @@ body {
     color: #C91532;
 }
 
-.half {
-    width: 45%;
-}
-
-.full {
-    width: 91%;
-}
-
 hr {
     border: 0.5px solid #333333;
     background-color: #333333;
-}
-
-.vl {
-    border-left: 3px solid #333333;
-    height: 100%
 }
 
 .logo {
@@ -74,25 +64,31 @@ hr {
     color: #C91532;
 }
 
-.col1 {
-    float: left;
-    display: flex;
-    flex-direction: column;
-    margin-left: 10vw;
-    width: 39vw;
+.paragraph {
+    font-size: 30px;
 }
 
-.col2 {
-    float: right;
-    display: flex;
-    flex-direction: column;
-    margin-right: 10vw;
-    width: 39vw;
+#alignContent {
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.hompageText {
-    width: 370px;
+.col {
     float: left;
+    width: fit-content;
+    max-width: 43vw;
+    padding: 10px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media only screen and (max-width: 980px){
+    
 }
 
 #map {
@@ -103,8 +99,10 @@ hr {
 
 .isOpen {
     margin-top: 50px;
-    width: 180px;
-    transform: rotate(-15deg);
+    width: 200px;
+    transform: rotate(-10deg);
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .foodSuggestion {
@@ -117,6 +115,7 @@ hr {
 
 #foodDescription {
     margin-right: 5px;
+    float: right;
 }
 
 input {
@@ -150,6 +149,36 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 }
 
 /* Contact Us */
+.vl {
+    border-left: 3px solid #333333;
+    height: 100%
+}
+
+form {
+    display: inline-block;
+}
+
+.half {
+    width: 30%;
+}
+
+.full {
+    width: 61%;
+}
+
+#contact_header {
+    width: fit-content;
+    margin-left: 0;
+    margin-right: 0 !important;
+}
+
+#contact_form {
+    width: fit-content;
+}
+
+.contact {
+    width: fit-content;
+}
 
 .location {
     margin-left: 1vw;
@@ -188,4 +217,22 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 .aboutImg:hover {
     margin: auto;
     transform: scale(2.5);
+}
+
+
+/*  */
+.col1 {
+    float: left;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10vw;
+    width: 39vw;
+}
+
+.col2 {
+    float: right;
+    display: flex;
+    flex-direction: column;
+    margin-right: 10vw;
+    width: 39vw;
 }

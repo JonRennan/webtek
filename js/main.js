@@ -9,10 +9,8 @@ function isOpen() {
     if((hour < 02 && hour >= 0) || (hour >= 19)){
         closedSign.style.display = "none";
         openSign.style.display = "block";
-        console.log(hour);
     }
     else {
-        console.log(hour);
         openSign.style.display = "none";
         closedSign.style.display = "block";
     }
