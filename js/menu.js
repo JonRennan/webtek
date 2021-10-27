@@ -253,6 +253,7 @@ function addToOrder(id) {
     addButton.style.color = "#C91532";
     addButton.style.backgroundColor = "#f2f2f2";
     addButton.style.fontWeight = "bold";
+    addButton.onclick = "";
     getCountBox(id);
     getCountButtons(id);
     increaseOrder(id);
