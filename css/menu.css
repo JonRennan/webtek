@@ -1,19 +1,22 @@
 /* Menu classes */
 .menu{
-
 }
 
 .menuItem{
-
+    display: flex;
+    clear: both;
+    margin-bottom: 20px;
 }
 
 
 .itemInfo{
-
+    margin-left: 30px;
+    width: 45vw;
 }
 
 .itemName{
-
+    line-height: 0;
+    margin-top: 15px;
 }
 
 .itemDescription {
@@ -21,41 +24,91 @@
 }
 
 .itemPrice {
+    color:#C91532;
+}
 
+.alignPriceAndAllergies {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    line-height: 0;
 }
 
 
 .itemAllergies {
-
+    display: flex;
+    list-style: none;
+    float: right;
 }
 
-.itemAllergyE {
+.itemAllergies li::before {
+    content: '\2022';
+    margin-right: 5px;
+    margin-left: 10px;
+    font-size: 60px;
+    vertical-align:middle;
+}
 
+
+.itemAllergyE {
+    
+}
+
+.itemAllergyE::before {
+    color:#d64e65;
 }
 
 .itemAllergyG {
 
 }
 
+.itemAllergyG::before{
+    color:rgb(106, 230, 230);
+}
+
 .itemAllergyW {
 
+}
+
+.itemAllergyW::before {
+    color:rgb(94, 201, 94);
 }
 
 .itemAllergyM {
 
 }
 
-.itemAllergyC {
+.itemAllergyM::before{
+    color:rgb(231, 231, 100);
+}
 
+.itemAllergyC {
+    
+}
+
+.itemAllergyC::before {
+    color:rgb(224, 153, 87);
 }
 
 .itemAllergyB {
 
 }
 
+.itemAllergyB::before{
+    color:rgb(116, 25, 158);
+}
+
+.li span {
+    color: #333333;
+    font-size: 18px;
+}
+
 
 .itemImageFull {
-
+    width: 15vw;
+    height: 15vw;
+    border: 3px solid #C91532;
+    border-radius: 15px;
 }
 
 .itemImageOrder {
@@ -66,33 +119,85 @@
 
 }
 
+.row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin-bottom: 15px;
+}
 
-.itemButtons {
-
+.countCol {
+    float: left;
+    width: fit-content;
+    padding: 5px;
 }
 
 .itemAdd {
-
+    border: 3px solid #C91532;
+    border-radius: 15px;
+    background-color: #C91532;
+    color: #f2f2f2;
+    text-align: center;
+    width: 70px;
+    height: 40px;
+    padding: 10px 5px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
 }
 
-.itemAdded {
+.itemCount {
 
 }
 
 .itemCountText {
-
+    width: fit-content;
+    white-space: nowrap;
+    text-align: center;
 }
 
 .itemCountBox {
+    border: 3px solid #C91532;
+    border-radius: 15px;
+    background-color: #C91532;
+    color: #f2f2f2;
+    text-align: center;
+    width: 70px;
+    height: 40px;
+    padding: 10px 5px;
+    display: flex;
+    font-size: 30px;
+    align-items: center;
+    justify-content: center;
+}
 
+.countCol3 {
+    float: left;
+    width: fit-content;
+    padding: 5px;
 }
 
 .itemCountUp {
-
+    width: 30px;
+    padding: 2px;
+    display: block;
+    border: 3px solid #C91532;
+    border-radius: 15px;
+    background-color: #C91532;
+    color: #f2f2f2;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 .itemCountDown {
-
+    width: 30px;
+    padding: 2px;
+    display: block;
+    border: 3px solid #C91532;
+    border-radius: 15px;
+    background-color: #C91532;
+    color: #f2f2f2;
+    text-align: center;
 }
 
 body {
@@ -100,12 +205,8 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
-img {
-    width: 250px;
-    float: left;
-}
-
-#menu {
-    margin-left: 10vw;
-    margin-right: 10vw;
+#Menu {
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
 }

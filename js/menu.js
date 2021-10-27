@@ -1,6 +1,6 @@
 const typeFull = "Full";
 const typeOrder = "Order";
-const typeReceipt = "Receipt"
+const typeReceipt = "Receipt";
 
 const itemNames = [
     "Dirty Fries",
@@ -12,10 +12,11 @@ const itemNames = [
 
 function getName(id) {
     let itemName = document.createElement("h2");
-    itemName.id = `item-name-${id}`;
+    //itemName.id = `item-name-${id}`;
+    itemName.id = `itemName${id}`;
     itemName.className = "itemName";
     itemName.innerText = itemNames[id];
-    return itemName
+    return itemName;
 }
 
 
@@ -29,10 +30,11 @@ const itemDescriptions = [
 
 function getDescription(id) {
     let itemDescription = document.createElement("p");
-    itemDescription.id = `item-description-${id}`;
+    //itemDescription.id = `item-description-${id}`;
+    itemDescription.id = `itemDescription${id}`;
     itemDescription.className = "itemDescription";
     itemDescription.innerText = itemDescriptions[id];
-    return itemDescription
+    return itemDescription;
 }
 
 
@@ -46,21 +48,22 @@ const itemAllergies = [
 
 function getAllergies(id) {
     let itemAllergiesList = document.createElement("ul");
-    itemAllergiesList.id = `item-allergies-${id}`;
+    //itemAllergiesList.id = `item-allergies-${id}`;
+    itemAllergiesList.id = `itemAllergies${id}`;
     itemAllergiesList.className = "itemAllergies";
     let allergies = itemAllergies[id];
 
     for (let i = 0; i < allergies.length; i++) {
         let itemAllergy = document.createElement("li");
         let allergy = allergies[i];
-        itemAllergy.id = `item-allergies-${id}-${allergy}`;
+        //itemAllergy.id = `item-allergies-${id}-${allergy}`;
+        itemAllergy.id = `itemAllergies${id}-${allergy}`;
         itemAllergy.className = `itemAllergy${allergy}`;
         itemAllergy.innerText = allergy;
-
         itemAllergiesList.appendChild(itemAllergy);
     }
 
-    return itemAllergiesList
+    return itemAllergiesList;
 }
 
 
@@ -73,11 +76,12 @@ const itemPrices = [
 ];
 
 function getPrice(id) {
-    let itemPrice = document.createElement("h3");
-    itemPrice.id = `item-price-${id}`;
+    let itemPrice = document.createElement("h2");
+    //itemPrice.id = `item-price-${id}`;
+    itemPrice.id = `itemPrice${id}`;
     itemPrice.className = "itemPrice";
     itemPrice.innerText = itemPrices[id] + ",-";
-    return itemPrice
+    return itemPrice;
 }
 
 
@@ -91,61 +95,90 @@ const itemImages = [
 
 function getImage(id, type) {
     let itemImage = document.createElement("img");
-    itemImage.id = `item-image-${id}`;
+    //itemImage.id = `item-image-${id}`;
+    itemImage.id = `itemImage${id}`;
     itemImage.className = `itemImage${type}`;
     itemImage.src = "images/" + itemImages[id];
     itemImage.alt = itemNames[id];
-    return itemImage
+    return itemImage;
 }
 
-function getCountBox(id, display) {
+function getCountBox(id /*,display*/) {
     let itemCountText = document.createElement("p");
-    itemCountText.id = `item-count-text-${id}`;
+    //itemCountText.id = `item-count-text-${id}`;
+    itemCountText.id = `itemCountText${id}`;
     itemCountText.className = "itemCountText";
     itemCountText.innerText = "How many?";
-    itemCountText.style.display = display;
+    //itemCountText.style.display = display;
 
     let itemCountBox = document.createElement("div");
-    itemCountBox.id = `item-count-box-${id}`;
+    //itemCountBox.id = `item-count-box-${id}`;
+    itemCountBox.id = `itemCountBox${id}`;
     itemCountBox.className = "itemCountBox";
     itemCountBox.innerText = "0";
-    itemCountBox.style.display = display;
 
-    return [itemCountText, itemCountBox]
+    let col2 = document.createElement("div");
+    col2.className = "countCol";
+    col2.appendChild(itemCountText);
+    col2.appendChild(itemCountBox);
+
+    let itemButtons = document.getElementById(`itemButtons${id}`);
+    itemButtons.appendChild(col2);
+
+
+    //itemCountBox.style.display = display;
+
+    //return [itemCountText, itemCountBox];
 }
 
-function getCountButtons(id, display) {
+function getCountButtons(id /*, display*/) {
     let itemCountUp = document.createElement("div");
-    itemCountUp.id = `item-count-up-${id}`;
+    //itemCountUp.id = `item-count-up-${id}`;
+    itemCountUp.id = `itemCountUp${id}`;
     itemCountUp.className = "itemCountUp";
     itemCountUp.innerText = "+";
-    itemCountUp.style.display = display;
-    itemCountUp.onclick = increaseOrder(id);
+    //itemCountUp.style.display = display;
+    itemCountUp.onclick = function() {increaseOrder(id)};
 
     let itemCountDown = document.createElement("div");
-    itemCountDown.id = `item-count-down-${id}`;
+    //itemCountDown.id = `item-count-down-${id}`;
+    itemCountDown.id = `itemCountDown${id}`;
     itemCountDown.className = "itemCountDown";
     itemCountDown.innerText = "-";
-    itemCountDown.style.display = display;
-    itemCountDown.onclick = decreaseOrder(id);
+    //itemCountDown.style.display = display;
+    itemCountDown.onclick = function() {decreaseOrder(id)};
 
-    return [itemCountUp, itemCountDown]
+    let col3 = document.createElement("div");
+    col3.className = "countCol3";
+    col3.appendChild(itemCountUp);
+    col3.appendChild(itemCountDown);
+
+    //return [itemCountUp, itemCountDown];
+    let itemButtons = document.getElementById(`itemButtons${id}`);
+    itemButtons.appendChild(col3);
 }
 
 function getItem(id, type) {
     let itemDiv = document.createElement("div");
-    itemDiv.id = `menu-item-${id}`;
+    //itemDiv.id = `menu-item-${id}`;
+    itemDiv.id = `menuItem${id}`;
     itemDiv.className = "menuItem";
 
     itemDiv.appendChild(getImage(id, type));
 
     let itemInfo = document.createElement("div");
-    itemInfo.id = `item-info-${id}`;
+    //itemInfo.id = `item-info-${id}`;
+    itemInfo.id = `itemInfo${id}`;
     itemInfo.className = "itemInfo";
 
     itemInfo.appendChild(getName(id));
-    itemInfo.appendChild(getPrice(id));
-    itemInfo.appendChild(getAllergies(id));
+    let priceAndAllergies = document.createElement("div");
+    priceAndAllergies.className = "alignPriceAndAllergies";
+    priceAndAllergies.appendChild(getPrice(id));
+    priceAndAllergies.appendChild(getAllergies(id));
+    itemInfo.appendChild(priceAndAllergies);
+    //itemInfo.appendChild(getPrice(id));
+    //itemInfo.appendChild(getAllergies(id));
     if (type === typeFull) {
         itemInfo.appendChild(getDescription(id));
     }
@@ -153,46 +186,55 @@ function getItem(id, type) {
     itemDiv.appendChild(itemInfo);
 
     let itemButtons = document.createElement("div");
-    itemButtons.id = `item-buttons-${id}`;
-    itemButtons.className = "itemButtons";
+    //itemButtons.id = `item-buttons-${id}`;
+    itemButtons.id = `itemButtons${id}`;
+    itemButtons.className = "row";
 
     if (type === typeFull) {
-        let addButton = document.createElement("div");
-        addButton.id = `item-add-button-${id}`;
+        let col1 = document.createElement("div");
+        col1.className = "countCol";
+        let addButton = document.createElement("a");
+        //addButton.id = `item-add-button-${id}`;
+        addButton.id = `itemAddButton${id}`;
         addButton.className = "itemAdd";
         addButton.innerText = "Add to order";
-        addButton.onclick = addToOrder(id);
-        itemButtons.appendChild(addButton);
+        addButton.onclick = function () {addToOrder(id)};
+        col1.appendChild(addButton)
+        itemButtons.appendChild(col1);
 
+        /*
         let addedButton = document.createElement("div");
-        addedButton.id = `item-added-button-${id}`;
+        //addedButton.id = `item-added-button-${id}`;
+        addedButton.id = `itemAddedButton${id}`;
         addedButton.className = "itemAdded";
         addedButton.innerText = "Added to order";
         addedButton.style.display = "none";
         itemButtons.appendChild(addedButton);
+        */
 
-        let countTextBox = getCountBox(id, "none");
-        itemButtons.appendChild(countTextBox[0]);
-        itemButtons.appendChild(countTextBox[1]);
+        //let countTextBox = getCountBox(id/*, "none"*/);
+        //itemButtons.appendChild(countTextBox[0]);
+        //itemButtons.appendChild(countTextBox[1]);
 
-        let upDown = getCountButtons(id, "none");
-        itemButtons.appendChild(upDown[0]);
-        itemButtons.appendChild(upDown[1]);
-    } else {
-        let countTextBox = getCountBox(id, "block");
-        itemButtons.appendChild(countTextBox[0]);
-        itemButtons.appendChild(countTextBox[1]);
+        //let upDown = getCountButtons(id/*, "none"*/);
+        //itemButtons.appendChild(upDown[0]);
+        //itemButtons.appendChild(upDown[1]);
+    } 
+    else {
+        //let countTextBox = getCountBox(id/*, "block"*/);
+        //itemButtons.appendChild(countTextBox[0]);
+        //itemButtons.appendChild(countTextBox[1]);
 
         if (type === typeOrder) {
-            let upDown = getCountButtons(id, "block");
-            itemButtons.appendChild(upDown[0]);
-            itemButtons.appendChild(upDown[1]);
+            //let upDown = getCountButtons(id/*, "block"*/);
+            //itemButtons.appendChild(upDown[0]);
+            //itemButtons.appendChild(upDown[1]);
         }
     }
 
     itemDiv.appendChild(itemButtons);
 
-    return itemDiv
+    return itemDiv;
 }
 
 function getFullMenu() {
@@ -202,18 +244,28 @@ function getFullMenu() {
         menu.appendChild(getItem(i, typeFull));
     }
 
-    return menu
+    return menu;
 }
 
-
 function addToOrder(id) {
-
+    let addButton = document.getElementById(`itemAddButton${id}`);
+    addButton.innerHTML = "Added to order";
+    addButton.style.color = "#C91532";
+    addButton.style.backgroundColor = "#f2f2f2";
+    addButton.style.fontWeight = "bold";
+    getCountBox(id);
+    getCountButtons(id);
+    increaseOrder(id);
 }
 
 function increaseOrder(id) {
-
+    let itemCountText = document.getElementById(`itemCountBox${id}`);
+    itemCountText.innerHTML = parseInt(itemCountText.innerText) + 1;
 }
 
 function decreaseOrder(id) {
-
+    let itemCountText = document.getElementById(`itemCountBox${id}`);
+    if(parseInt(itemCountText.innerHTML) > 0){
+        itemCountText.innerHTML = parseInt(itemCountText.innerHTML) - 1;
+    }
 }
