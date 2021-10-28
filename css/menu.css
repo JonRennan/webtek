@@ -144,6 +144,7 @@
     display: flex;
     align-items: center;
     flex-direction: row;
+    cursor: pointer;
 }
 
 .itemCount {
@@ -187,6 +188,7 @@
     color: #f2f2f2;
     text-align: center;
     margin-bottom: 10px;
+    cursor: pointer;
 }
 
 .itemCountDown {
@@ -198,6 +200,7 @@
     background-color: #C91532;
     color: #f2f2f2;
     text-align: center;
+    cursor: pointer;
 }
 
 body {
