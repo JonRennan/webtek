@@ -7,10 +7,10 @@
 </head>
 <body>
 
-<div class="navbar" id="navbar"> 
-    <a class="navbarText" href=""> EN </a> 
-    <span id="span"> - </span> 
-    <a class="navbarText" href=""> NO </a>
+<div class="navbar" id="navbar" method="POST"> 
+    <a class="navbarText" onclick={changeLanguage('en')} id="en"> EN </a> 
+    <span> - </span> 
+    <a class="navbarText" onclick={changeLanguage('no')} id="no"> NO </a>
     <hr>
     <div>
         <a class="logo" href="homepage.html"> 

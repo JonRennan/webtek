@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <title>Homepage</title>
@@ -9,22 +9,35 @@
 <body>
 
 <!-- navbar -->
-<div id="placeNavbar"></div>
+<div id="placeNavbar" href="navbar.html"></div>
+
+
+<div id="language"> 
 
 <div id="alignContent">
 <div class="row">
 <div class="col">
-    <h1> hungry? </h1>
-    <p class="paragraph"> Hello, and welcome to UKA's foodtruck! Get our
-        delicious, hot food, either if you're going to or from
-        the festival, or if you're just looking for a midnight
-        snack.
+    <h1 lang="en"> Hungry? </h1>
+    <h1 lang="no"> Sulten? </h1>
+    <p lang="en" class="paragraph"> 
+        Hello, welcome to UKA's foodtruck! Get our delicious, hot food, either if you're going to or from
+        the festival, or if you're just looking for a midnight snack.
     </p>
-    <p class="paragraph">
+    <p lang="no" class="paragraph"> 
+        Hei, velkommen til UKAs foodtruck! Kom og prøv vår smaksfulle og varme retter enten du er på vei til eller
+        fra festivalen, eller om du bare er ute etter nattmat.
+    </p>
+    <p lang="en" class="paragraph">
         We're located just behind the Studentersamfundet.
     </p>
-    <p class="paragraph">
+    <p lang="no" class="paragraph">
+        Du finner oss like bak Studentersamfundet.
+    </p>
+    <p lang="en" class="paragraph">
         Open: mon-sun | 19 - 02
+    </p>
+    <p lang="no" class="paragraph">
+        Åpen: man-søn | 19 - 02
     </p>
     <img id="map" src="images/map.png" alt="map">
 </div>
@@ -34,15 +47,22 @@
     <img class="isOpen" id="closed" src="images/closed.jpg" alt="closed">
 
     <div class="foodSuggestion">
-        <p class="paragraph"> On the fly? Grab one of these </p>
-        <img src="images/placeholder.png" alt="image of food" style="width:100px">
-        <p class="paragraph" id="foodDescription"> Some text describing the food </p>
-        <p class="paragraph"> Or try one of many other tasty alternatives >>> </p>
+        <p lang="en" class="paragraph"> On the fly? Grab one of these </p>
+        <p lang="no" class="paragraph"> På farten? Prøv en av disse </p>
+        <div id="alignTextImage">
+        <img src="images/placeholder.png" alt="image of food" id="foodImage">
+        <p lang="en" class="paragraph" id="foodDescription"> Some text describing the food </p>
+        <p lang="no" class="paragraph" id="foodDescription"> Tekst som beskriver maten </p>
+        </div>
+        <p lang="en" class="paragraph"> Or try one of many other tasty alternatives >>> </p>
+        <p lang="no" class="paragraph"> Eller prøv en av mange andre smakfulle retter >>> </p>
     </div>
 
 </div>
 
 </div>
+</div>
+
 </div>
 
 <script src="js/main.js"></script>

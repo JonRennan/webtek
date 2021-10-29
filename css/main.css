@@ -3,6 +3,8 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
+/* navbar */
+
 #placeNavbar {
     position: sticky;
     top: 0vh;
@@ -22,6 +24,7 @@ body {
 .navbarText {
     color: #333333;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .navbarText:active {
@@ -63,6 +66,16 @@ hr {
 .navbarItem:active {
     color: #C91532;
 }
+
+.en :lang(no){
+    display: none;
+}
+
+.no :lang(en) {
+    display: none;
+}
+
+/* homepage */
 
 .paragraph {
     font-size: 30px;
@@ -115,7 +128,16 @@ hr {
 
 #foodDescription {
     margin-right: 5px;
-    float: right;
+}
+
+#foodImage {
+    width: 100px;
+    margin: 5px;
+}
+
+#alignTextImage {
+    display: flex;
+    flex-direction: row;
 }
 
 input {
