@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <title>Navbar</title>
@@ -8,21 +8,30 @@
 <body>
 
 <div class="navbar" id="navbar" method="POST"> 
-    <a class="navbarText" onclick={changeLanguage('en')} id="en"> EN </a> 
+    <a lang="en" class="navbarText" onclick={changeLanguage('en')} id="en"> EN </a> 
     <span> - </span> 
-    <a class="navbarText" onclick={changeLanguage('no')} id="no"> NO </a>
+    <a lang="en" class="navbarText" onclick={changeLanguage('no')} id="no"> NO </a>
     <hr>
     <div>
         <a class="logo" href="homepage.html"> 
             <img style="width:35px; float: left" src="images/foodtruck.png" alt="foodtruck logo">
-            <p class="logoName"> UKA </p>
-            <p class="logoName" style="font-weight: bold"> FOODTRUCK </p> 
+            <p lang="en" class="logoName"> UKA </p>
+            <p lang="en" class="logoName" style="font-weight: bold"> FOODTRUCK </p> 
         </a>
    </div>
     <ul class="navbarList">
-    <li class="navbarItem"><a class="navbarText" href="menu.html" id="menu.html"> MENU </a></li>
-    <li class="navbarItem"><a class="navbarText" href="about_us.html" id="about_us.html"> ABOUT US  </a></li>
-    <li class="navbarItem"><a class="navbarText" href="contact_us.html" id="contact_us.html"> CONTACT US </a></li>
+    <li class="navbarItem">
+    <a lang="en" class="navbarText" href="menu.html" id="menu.html"> MENU </a>
+    <a lang="no" class="navbarText" href="menu.html" id="menu.html"> MENY </a>
+    </li>
+    <li class="navbarItem">
+    <a lang="en" class="navbarText" href="about_us.html" id="about_us.html"> ABOUT US </a>
+    <a lang="no" class="navbarText" href="about_us.html" id="about_us.html"> OM OSS </a>
+    </li>
+    <li class="navbarItem">
+    <a lang="en" class="navbarText" href="contact_us.html" id="contact_us.html"> CONTACT US </a>
+    <a lang="no" class="navbarText" href="contact_us.html" id="contact_us.html"> KONTAKT OSS </a>
+    </li>
     </ul>
 </div>
 

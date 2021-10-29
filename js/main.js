@@ -13,9 +13,7 @@ for(let i = 0; i < navbarLinks.length; i++){
 }
 
 // set language and color it in the navbar
-
-document.getElementById("language").className = "en";
-document.getElementById("en").style.color = '#C91532';
+changeLanguage("en");
 if(localStorage.getItem("language") == "no"){
     changeLanguage("no");
 }
@@ -26,12 +24,19 @@ function changeLanguage(id){
         document.getElementById("en").style.color = '#C91532';
         document.getElementById("no").style.color = '';
         localStorage.setItem("language", "en");
+        document.getElementById("menu.html").innerHTML = "MENU";
+        document.getElementById("about_us.html").innerHTML = "ABOUT US";
+        document.getElementById("contact_us.html").innerHTML = "CONTACT US";
     }
     else {
         document.getElementById("language").className = "no";
         document.getElementById("no").style.color = '#C91532';
         document.getElementById("en").style.color = '';
         localStorage.setItem("language", "no");
+        // change text in navbar
+        document.getElementById("menu.html").innerHTML = "MENY";
+        document.getElementById("about_us.html").innerHTML = "OM OSS";
+        document.getElementById("contact_us.html").innerHTML = "KONTAKT OSS";
     }
 }
 
