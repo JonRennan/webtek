@@ -18,7 +18,7 @@ body {
     width: 90vw;
     margin-left: auto;
     margin-right: auto;
-    height: 13vh;
+    height: 100px;
 }
 
 .navbarText {
@@ -76,6 +76,11 @@ hr {
 }
 
 /* homepage */
+@media only screen and (max-width: 999px){
+    .paragraph {
+        font-size: 20px !important;
+    }
+}
 
 .paragraph {
     font-size: 30px;
@@ -90,7 +95,7 @@ hr {
 .col {
     float: left;
     width: fit-content;
-    max-width: 43vw;
+    max-width: 42vw;
     padding: 10px;
 }
 
@@ -98,10 +103,6 @@ hr {
     content: "";
     display: table;
     clear: both;
-}
-
-@media only screen and (max-width: 980px){
-    
 }
 
 #map {

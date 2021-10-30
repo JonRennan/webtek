@@ -2,6 +2,8 @@ const typeFull = "Full";
 const typeOrder = "Order";
 const typeReceipt = "Receipt";
 
+let language = localStorage.getItem("language");
+
 const itemNames = [
     "Dirty Fries",
     "Sweet Potato Fries",
@@ -108,7 +110,12 @@ function getCountBox(id /*,display*/) {
     //itemCountText.id = `item-count-text-${id}`;
     itemCountText.id = `itemCountText${id}`;
     itemCountText.className = "itemCountText";
-    itemCountText.innerText = "How many?";
+    if(language == "no"){
+        itemCountText.innerText = "Hvor mange?";
+    }
+    if(language == "en"){
+        itemCountText.innerText = "How many?";
+    }
     //itemCountText.style.display = display;
 
     let itemCountBox = document.createElement("div");
@@ -197,9 +204,14 @@ function getItem(id, type) {
         //addButton.id = `item-add-button-${id}`;
         addButton.id = `itemAddButton${id}`;
         addButton.className = "itemAdd";
-        addButton.innerText = "Add to order";
+        if(language == "no"){
+            addButton.innerText = "Legg til";
+        }
+        if(language == "en"){
+            addButton.innerText = "Add to order";
+        }
         addButton.onclick = function () {addToOrder(id)};
-        col1.appendChild(addButton)
+        col1.appendChild(addButton);
         itemButtons.appendChild(col1);
 
         /*
@@ -249,7 +261,12 @@ function getFullMenu() {
 
 function addToOrder(id) {
     let addButton = document.getElementById(`itemAddButton${id}`);
-    addButton.innerHTML = "Added to order";
+    if(language == "no"){
+        addButton.innerText = "Lagt til";
+    }
+    if(language == "en"){
+        addButton.innerText = "Added to order";
+    }
     addButton.style.color = "#C91532";
     addButton.style.backgroundColor = "#f2f2f2";
     addButton.style.fontWeight = "bold";

@@ -12,15 +12,82 @@ for(let i = 0; i < navbarLinks.length; i++){
     }
 }
 
+// homepage in different languages
+    //english
+    const homepage_en = {
+        title: "Hungry?",
+        welcomeText: "Hello, welcome to UKA's foodtruck! Get our delicious, hot food, either if you're going to or from the festival, or if you're just looking for a midnight snack.",
+        location: "We're located just behind the Studentersamfundet.",
+        open: "Open: mon-sun | 19 - 02",
+        suggestion: "On the fly? Grab one of these",
+        foodText: "Some text describing the food",
+        other: "Or try one of many other tasty alternatives >>>",
+    }
+
+    //norwegian
+    const homepage_no = {
+        title:"Sulten?",
+        welcomeText: "Hei, velkommen til UKAs foodtruck! Kom og prøv vår smaksfulle og varme retter enten du er på vei til eller fra festivalen, eller om du bare er ute etter nattmat.",
+        location: "Du finner oss like bak Studentersamfundet.",
+        open: "Åpen: man-søn | 19 - 02",
+        suggestion: "På farten? Prøv en av disse",
+        foodText: "Tekst som beskriver maten ",
+        other: "Eller prøv en av mange andre smakfulle retter >>>",
+    }
+
+    function changeHomePageLanguage(id) {
+        if(id == "en"){
+            document.getElementById("homePageTitle").innerHTML = homepage_en.title;
+            document.getElementById("welcomeText").innerHTML = homepage_en.welcomeText;
+            document.getElementById("homepageLocation").innerHTML = homepage_en.location;
+            document.getElementById("homePageOpen").innerHTML = homepage_en.open;
+            document.getElementById("suggestion").innerHTML = homepage_en.suggestion;
+            document.getElementById("foodDescription").innerHTML = homepage_en.foodText;
+            document.getElementById("homePageOther").innerHTML = homepage_en.other;
+        }
+        if(id == "no"){
+            document.getElementById("homePageTitle").innerHTML = homepage_no.title;
+            document.getElementById("welcomeText").innerHTML = homepage_no.welcomeText;
+            document.getElementById("homepageLocation").innerHTML = homepage_no.location;
+            document.getElementById("homePageOpen").innerHTML = homepage_no.open;
+            document.getElementById("suggestion").innerHTML = homepage_no.suggestion;
+            document.getElementById("foodDescription").innerHTML = homepage_no.foodText;
+            document.getElementById("homePageOther").innerHTML = homepage_no.other;
+        }
+    }
+
+// menu in different languages
+    //english
+    const menu_en = {
+        addButton: "Add to order",
+        addedButton: "Added to order",
+    }
+
+    //norwegian
+    const menu_no = {
+        addButton: "Legg til",
+        addedButton: "Lagt til",
+    }
+
+    function changeMenuLanguage(id){
+        if(id == "en"){
+
+        }
+        if(id == "no"){
+
+        }
+    }
+
 // set language and color it in the navbar
-changeLanguage("en");
 if(localStorage.getItem("language") == "no"){
     changeLanguage("no");
+}
+else {
+    changeLanguage("en");
 }
 
 function changeLanguage(id){
     if(id == "en"){
-        document.getElementById("language").className = "en";
         document.getElementById("en").style.color = '#C91532';
         document.getElementById("no").style.color = '';
         localStorage.setItem("language", "en");
@@ -29,7 +96,6 @@ function changeLanguage(id){
         document.getElementById("contact_us.html").innerHTML = "CONTACT US";
     }
     else {
-        document.getElementById("language").className = "no";
         document.getElementById("no").style.color = '#C91532';
         document.getElementById("en").style.color = '';
         localStorage.setItem("language", "no");
@@ -37,6 +103,12 @@ function changeLanguage(id){
         document.getElementById("menu.html").innerHTML = "MENY";
         document.getElementById("about_us.html").innerHTML = "OM OSS";
         document.getElementById("contact_us.html").innerHTML = "KONTAKT OSS";
+    }
+    if(currentUrl == "homepage.html"){
+        changeHomePageLanguage(id);
+    }
+    if(currentUrl == "menu.html"){
+        changeMenuLanguage(id);
     }
 }
 
