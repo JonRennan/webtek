@@ -319,8 +319,10 @@ function decreaseOrder(id) {
 
 function sendOrder() {
     let order = "";
+    let empty_order = "";
 
     for (let i = 0; i < itemNames.length; i++) {
+        empty_order += "0";
         let itemCount = document.getElementById(`itemCountBox${i}`);
         if(itemCount){
             order += itemCount.innerHTML;
@@ -328,7 +330,7 @@ function sendOrder() {
             order += "0";
         }
     }
-    if (order === "00000") {
+    if (order === empty_order) {
         // TODO: Respons du må legge noe til i bestillingen
     } else {
         localStorage.setItem("order", order);
