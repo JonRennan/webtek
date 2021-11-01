@@ -11,3 +11,4 @@
 - style meny siden til mindre skjermer
 - bytte ut boksen på fremsiden med random forslag fra menyen
 - fullføre de siste sidene
+- legge til en boks på menysiden med betydningen av allergener
