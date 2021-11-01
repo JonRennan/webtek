@@ -110,6 +110,7 @@ hr {
     width: 370px;
     height: auto;
     margin-bottom: 20px;
+    cursor: pointer;
 }
 
 .isOpen {

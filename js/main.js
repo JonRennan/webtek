@@ -84,21 +84,33 @@ function changeHomePageLanguage(id) {
 //english
 const menu_en = {
     addButton: "Add to order",
-    addedButton: "Added to order",
+    countButton: "How many?",
 }
 
 //norwegian
 const menu_no = {
     addButton: "Legg til",
-    addedButton: "Lagt til",
+    countButton: "Hvor mange?",
 }
 
 function changeMenuLanguage(id) {
+    let addButtons = document.getElementsByClassName("itemAdd");
+    let countButtons = document.getElementsByClassName("itemCountText"); 
     if (id == "en") {
-
+        [].slice.call(addButtons).forEach(function (button) {
+            button.innerHTML = menu_en.addButton;
+        });
+        [].slice.call(countButtons).forEach(function (button) {
+            button.innerHTML = menu_en.countButton;
+        });
     }
     if (id == "no") {
-
+        [].slice.call(addButtons).forEach(function (button) {
+            button.innerHTML = menu_no.addButton;
+        });
+        [].slice.call(countButtons).forEach(function (button) {
+            button.innerHTML = menu_no.countButton;
+        });
     }
 }
 
