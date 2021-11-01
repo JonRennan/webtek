@@ -13,3 +13,4 @@
 - fullføre de siste sidene
 - legge til link på kartet
 - legge til link til menyen fra fremsiden (boksen)
+- legge til en boks på menysiden med betydningen av allergener

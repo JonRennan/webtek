@@ -8,8 +8,9 @@ const itemNames = [
     "Dirty Fries",
     "Sweet Potato Fries",
     "Fries",
-    "Chicken Burger",
-    "Cheese Burger",
+    "Veggi Taco",
+    "Chicken Taco",
+    "Beef Taco",
 ];
 
 function getName(id) {
@@ -25,16 +26,18 @@ const itemDescriptionsEN = [
     "Dirty dirty fries",
     "Sweet sweet potato fries",
     "Normal, just normal fries",
-    "Burger but made with chicken",
-    "Cheese cheese burger",
+    "Taco with beans and other good stuff",
+    "Taco with chicken and other good stuff",
+    "Taco with beef and other good stuff",
 ];
 
 const itemDescriptionsNO = [
-    "Dirty dirty fries",
-    "Sweet sweet potato fries",
-    "Normal, just normal fries",
-    "Burger but made with chicken",
-    "Cheese cheese burger",
+    "Fries med stash på",
+    "Søtpotet fries",
+    "Helt vanlig fries",
+    "Taco med bønner og andre godsaker",
+    "Taco med kylling og andre godsaker",
+    "Taco med kjøtt og andre godsaker",
 ];
 
 function getDescription(id) {
@@ -54,19 +57,21 @@ function getDescription(id) {
 
 
 const itemAllergiesEN = [
-    ["E", "G", "W", "M", "B"],
-    ["E", "G", "W", "C", "B"],
-    ["E", "G", "W"],
-    ["E", "G", "W"],
-    ["E", "G", "W"],
+    ["E", "M", "W", "S"],
+    [],
+    [],
+    ["E", "M", "W", "S"],
+    ["E", "M", "W"],
+    ["E", "M", "W"],
 ];
 
 const itemAllergiesNO = [
-    ["E", "G", "W", "M", "B"],
-    ["E", "G", "W", "C", "B"],
-    ["E", "G", "W"],
-    ["E", "G", "W"],
-    ["E", "G", "W"],
+    ["E", "M", "H", "S"],
+    [],
+    [],
+    ["E", "M", "H", "S"],
+    ["E", "M", "H"],
+    ["E", "M", "H"],
 ];
 
 function getAllergies(id) {
@@ -98,11 +103,12 @@ function getAllergies(id) {
 
 
 const itemPrices = [
-    79,
-    69,
+    59,
+    59,
     49,
-    129,
-    129,
+    49,
+    49,
+    49,
 ];
 
 function getPrice(id) {
@@ -115,6 +121,7 @@ function getPrice(id) {
 }
 
 const itemImages = [
+    "placeholder.png",
     "placeholder.png",
     "placeholder.png",
     "placeholder.png",
@@ -345,5 +352,18 @@ function sendOrder() {
     } else {
         localStorage.setItem("order", order);
         window.location.href = "order.html";
+    }
+}
+
+function getOrder() {
+    let order = localStorage.getItem("order");
+    let orderDiv = document.getElementById("order");
+
+
+    for (let i = 0; i < order.length; i++) {
+        let amount = parseInt(order.charAt(i));
+        if (amount > 0) {
+            orderDiv.appendChild(getItem(i, typeOrder));
+        }
     }
 }

@@ -61,43 +61,27 @@
     color:#d64e65;
 }
 
-.itemAllergyG {
-
-}
-
-.itemAllergyG::before{
-    color:rgb(106, 230, 230);
-}
-
-.itemAllergyW {
-
-}
-
-.itemAllergyW::before {
-    color:rgb(94, 201, 94);
-}
-
 .itemAllergyM {
 
 }
 
 .itemAllergyM::before{
-    color:rgb(231, 231, 100);
+    color:rgb(106, 230, 230);
 }
 
-.itemAllergyC {
-    
+.itemAllergyW, .itemAllergyH {
+
 }
 
-.itemAllergyC::before {
+.itemAllergyW::before, .itemAllergyH::before {
     color:rgb(224, 153, 87);
 }
 
-.itemAllergyB {
+.itemAllergyS {
 
 }
 
-.itemAllergyB::before{
+.itemAllergyS::before{
     color:rgb(116, 25, 158);
 }
 
