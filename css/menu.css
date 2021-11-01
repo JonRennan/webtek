@@ -6,12 +6,13 @@
     display: flex;
     clear: both;
     margin-bottom: 20px;
+    width: 100%;
 }
 
 
 .itemInfo{
     margin-left: 30px;
-    width: 45vw;
+    width: 55%;
 }
 
 .itemName{
@@ -39,6 +40,8 @@
     display: flex;
     list-style: none;
     float: right;
+    margin-inline-start: 0 !important;
+    padding-inline-start: 5% !important;
 }
 
 .itemAllergies li::before {
@@ -103,10 +106,9 @@
     font-size: 18px;
 }
 
-
 .itemImageFull {
-    width: 15vw;
-    height: 15vw;
+    width: 20%;
+    height: auto;
     border: 3px solid #C91532;
     border-radius: 15px;
 }
@@ -122,14 +124,12 @@
 .row {
     display: flex;
     align-items: flex-end;
-    justify-content: center;
     margin-bottom: 15px;
+    width: 25%;
 }
 
 .countCol {
     float: left;
-    width: fit-content;
-    padding: 5px;
 }
 
 .itemAdd {
@@ -138,13 +138,13 @@
     background-color: #C91532;
     color: #f2f2f2;
     text-align: center;
-    width: 70px;
-    height: 40px;
-    padding: 10px 5px;
+    width: 80px;
+    height: 55px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    font-size: 18px;
 }
 
 .itemCount {
@@ -163,39 +163,38 @@
     background-color: #C91532;
     color: #f2f2f2;
     text-align: center;
-    width: 70px;
-    height: 40px;
-    padding: 10px 5px;
+    width: 80px;
+    height: 55px;
     display: flex;
-    font-size: 30px;
+    font-size: 20px;
     align-items: center;
     justify-content: center;
 }
 
-.countCol3 {
+.countCol2 {
     float: left;
-    width: fit-content;
-    padding: 5px;
 }
 
 .itemCountUp {
     width: 30px;
     padding: 2px;
+    font-size: 20px;
     display: block;
-    border: 3px solid #C91532;
+    border: 1px solid #C91532;
     border-radius: 15px;
     background-color: #C91532;
     color: #f2f2f2;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     cursor: pointer;
 }
 
 .itemCountDown {
     width: 30px;
     padding: 2px;
+    font-size: 20px;
     display: block;
-    border: 3px solid #C91532;
+    border: 1px solid #C91532;
     border-radius: 15px;
     background-color: #C91532;
     color: #f2f2f2;
@@ -208,7 +207,7 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
-#Menu {
+#menu {
     width: 90vw;
     margin-left: auto;
     margin-right: auto;

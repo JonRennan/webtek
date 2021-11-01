@@ -21,7 +21,6 @@ function getName(id) {
     return itemName;
 }
 
-
 const itemDescriptionsEN = [
     "Dirty dirty fries",
     "Sweet sweet potato fries",
@@ -115,7 +114,6 @@ function getPrice(id) {
     return itemPrice;
 }
 
-
 const itemImages = [
     "placeholder.png",
     "placeholder.png",
@@ -134,7 +132,7 @@ function getImage(id, type) {
     return itemImage;
 }
 
-function getCountBox(id /*,display*/) {
+function getCountBox(id) {
     let itemCountText = document.createElement("p");
     //itemCountText.id = `item-count-text-${id}`;
     itemCountText.id = `itemCountText${id}`;
@@ -145,24 +143,19 @@ function getCountBox(id /*,display*/) {
     if(language == "en"){
         itemCountText.innerText = "How many?";
     }
-    //itemCountText.style.display = display;
-
     let itemCountBox = document.createElement("div");
     //itemCountBox.id = `item-count-box-${id}`;
     itemCountBox.id = `itemCountBox${id}`;
     itemCountBox.className = "itemCountBox";
     itemCountBox.innerText = "0";
 
-    let col2 = document.createElement("div");
-    col2.className = "countCol";
-    col2.appendChild(itemCountText);
-    col2.appendChild(itemCountBox);
+    let col1 = document.createElement("div");
+    col1.className = "countCol";
+    col1.appendChild(itemCountText);
+    col1.appendChild(itemCountBox);
 
     let itemButtons = document.getElementById(`itemButtons${id}`);
-    itemButtons.appendChild(col2);
-
-
-    //itemCountBox.style.display = display;
+    itemButtons.appendChild(col1);
 
     //return [itemCountText, itemCountBox];
 }
@@ -184,14 +177,14 @@ function getCountButtons(id /*, display*/) {
     //itemCountDown.style.display = display;
     itemCountDown.onclick = function() {decreaseOrder(id)};
 
-    let col3 = document.createElement("div");
-    col3.className = "countCol3";
-    col3.appendChild(itemCountUp);
-    col3.appendChild(itemCountDown);
+    let col2 = document.createElement("div");
+    col2.className = "countCol2";
+    col2.appendChild(itemCountUp);
+    col2.appendChild(itemCountDown);
 
     //return [itemCountUp, itemCountDown];
     let itemButtons = document.getElementById(`itemButtons${id}`);
-    itemButtons.appendChild(col3);
+    itemButtons.appendChild(col2);
 }
 
 function getItem(id, type) {
@@ -229,6 +222,7 @@ function getItem(id, type) {
     if (type === typeFull) {
         let col1 = document.createElement("div");
         col1.className = "countCol";
+        col1.id = "countCol1"
         let addButton = document.createElement("a");
         //addButton.id = `item-add-button-${id}`;
         addButton.id = `itemAddButton${id}`;
@@ -279,7 +273,7 @@ function getItem(id, type) {
 }
 
 function getFullMenu() {
-    let menu = document.getElementById("Menu");
+    let menu = document.getElementById("menu");
 
     for (let i = 0; i < itemNames.length; i++) {
         menu.appendChild(getItem(i, typeFull));
@@ -289,31 +283,47 @@ function getFullMenu() {
 }
 
 function addToOrder(id) {
+    let countbox = document.getElementById(`itemCountBox${id}`);
+    let countTitle = document.getElementById(`itemCountText${id}`);
+    let upButton = document.getElementById(`itemCountUp${id}`);
+    let downButton = document.getElementById(`itemCountDown${id}`);
+    if(countbox && countTitle && upButton && downButton){
+        countbox.style.display = "flex";
+        countTitle.style.display = "flex";
+        upButton.style.display = "block";
+        downButton.style.display = "block";
+        increaseOrder(id);
+    }
+    else {
+        getCountBox(id);
+        getCountButtons(id);
+        increaseOrder(id);
+    }
     let addButton = document.getElementById(`itemAddButton${id}`);
-    if(language == "no"){
-        addButton.innerText = "Lagt til";
-    }
-    if(language == "en"){
-        addButton.innerText = "Added to order";
-    }
-    addButton.style.color = "#C91532";
-    addButton.style.backgroundColor = "#f2f2f2";
-    addButton.style.fontWeight = "bold";
-    addButton.onclick = "";
-    getCountBox(id);
-    getCountButtons(id);
-    increaseOrder(id);
+    addButton.style.display = "none";
 }
 
 function increaseOrder(id) {
     let itemCountText = document.getElementById(`itemCountBox${id}`);
-    itemCountText.innerHTML = parseInt(itemCountText.innerText) + 1;
+    itemCountText.innerText = parseInt(itemCountText.innerText) + 1;
 }
 
 function decreaseOrder(id) {
     let itemCountText = document.getElementById(`itemCountBox${id}`);
-    if(parseInt(itemCountText.innerHTML) > 0){
-        itemCountText.innerHTML = parseInt(itemCountText.innerHTML) - 1;
+    if(parseInt(itemCountText.innerText) > 0){
+        itemCountText.innerText = parseInt(itemCountText.innerText) - 1;
+    }
+    if(parseInt(itemCountText.innerText) == 0){
+        let addButton = document.getElementById(`itemAddButton${id}`);
+        addButton.style.display = "flex";
+        let countbox = document.getElementById(`itemCountBox${id}`);
+        let countTitle = document.getElementById(`itemCountText${id}`);
+        let upButton = document.getElementById(`itemCountUp${id}`);
+        let downButton = document.getElementById(`itemCountDown${id}`);
+        countbox.style.display = "none";
+        countTitle.style.display = "none";
+        upButton.style.display = "none";
+        downButton.style.display = "none";
     }
 }
 

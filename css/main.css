@@ -19,6 +19,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     height: 100px;
+    font-size: 18px;
 }
 
 .navbarText {
@@ -78,12 +79,12 @@ hr {
 /* homepage */
 @media only screen and (max-width: 999px){
     .paragraph {
-        font-size: 20px !important;
+        
     }
 }
 
 .paragraph {
-    font-size: 30px;
+    font-size: 20px;
 }
 
 #alignContent {
@@ -143,24 +144,29 @@ hr {
 
 input {
     background: #C4C4C4;
-    font-size: 30px;
+    font-size: 20px;
     border: 0;
 }
 
 textarea {
     background: #C4C4C4;
-    font-size: 30px;
+    font-size: 20px;
     border: 0;
     resize: none;
 }
 
 button {
-    width: 336px;
-    height: 83px;
-    border-radius: 30px;
-    font-size: 30px;
+    width: 100px;
+    height: 60px;
+    border-radius: 15px;
+    font-size: 20px;
     color: #f2f2f2;
     background: #C91532;
+    text-align: center;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
 }
 
 ::placeholder {
@@ -182,11 +188,11 @@ form {
 }
 
 .half {
-    width: 30%;
+    width: 45%;
 }
 
 .full {
-    width: 61%;
+    width: 92%;
 }
 
 #contact_header {
@@ -209,7 +215,7 @@ form {
 
 .location p {
     margin-top: 0;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 /* About us */
