@@ -344,3 +344,16 @@ function sendOrder() {
         window.location.href = "order.html";
     }
 }
+
+function getOrder() {
+    let order = localStorage.getItem("order");
+    let orderDiv = document.getElementById("order");
+
+
+    for (let i = 0; i < order.length; i++) {
+        let amount = parseInt(order.charAt(i));
+        if (amount > 0) {
+            orderDiv.appendChild(getItem(i, typeOrder));
+        }
+    }
+}
