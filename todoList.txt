@@ -10,3 +10,4 @@
 - endre slik at all tekst har samme størrelse
 - style meny siden til mindre skjermer
 - bytte ut boksen på fremsiden med random forslag fra menyen
+- fullføre de siste sidene
