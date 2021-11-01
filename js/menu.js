@@ -22,7 +22,15 @@ function getName(id) {
 }
 
 
-const itemDescriptions = [
+const itemDescriptionsEN = [
+    "Dirty dirty fries",
+    "Sweet sweet potato fries",
+    "Normal, just normal fries",
+    "Burger but made with chicken",
+    "Cheese cheese burger",
+];
+
+const itemDescriptionsNO = [
     "Dirty dirty fries",
     "Sweet sweet potato fries",
     "Normal, just normal fries",
@@ -35,12 +43,26 @@ function getDescription(id) {
     //itemDescription.id = `item-description-${id}`;
     itemDescription.id = `itemDescription${id}`;
     itemDescription.className = "itemDescription";
-    itemDescription.innerText = itemDescriptions[id];
+
+    if(language == "no"){
+        itemDescription.innerText = itemDescriptionsNO[id];
+    }
+    if(language == "en"){
+        itemDescription.innerText = itemDescriptionsEN[id];
+    }
     return itemDescription;
 }
 
 
-const itemAllergies = [
+const itemAllergiesEN = [
+    ["E", "G", "W", "M", "B"],
+    ["E", "G", "W", "C", "B"],
+    ["E", "G", "W"],
+    ["E", "G", "W"],
+    ["E", "G", "W"],
+];
+
+const itemAllergiesNO = [
     ["E", "G", "W", "M", "B"],
     ["E", "G", "W", "C", "B"],
     ["E", "G", "W"],
@@ -53,7 +75,14 @@ function getAllergies(id) {
     //itemAllergiesList.id = `item-allergies-${id}`;
     itemAllergiesList.id = `itemAllergies${id}`;
     itemAllergiesList.className = "itemAllergies";
-    let allergies = itemAllergies[id];
+    let allergies = itemAllergiesEN[id];
+
+    if(language == "no"){
+        allergies = itemAllergiesNO[id];
+    }
+    if(language == "en"){
+        allergies = itemAllergiesEN[id];
+    }
 
     for (let i = 0; i < allergies.length; i++) {
         let itemAllergy = document.createElement("li");
@@ -285,5 +314,24 @@ function decreaseOrder(id) {
     let itemCountText = document.getElementById(`itemCountBox${id}`);
     if(parseInt(itemCountText.innerHTML) > 0){
         itemCountText.innerHTML = parseInt(itemCountText.innerHTML) - 1;
+    }
+}
+
+function sendOrder() {
+    let order = "";
+
+    for (let i = 0; i < itemNames.length; i++) {
+        let itemCount = document.getElementById(`itemCountBox${i}`);
+        if(itemCount){
+            order += itemCount.innerHTML;
+        } else {
+            order += "0";
+        }
+    }
+    if (order === "00000") {
+        // TODO: Respons du må legge noe til i bestillingen
+    } else {
+        localStorage.setItem("order", order);
+        window.location.href = "order.html";
     }
 }
