@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en no">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" content="width=device-width, initial-sclae=1">
     <title> Homepage </title>
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="icon" type="image/png" href="images/foodtruck.png">
@@ -12,38 +12,46 @@
 <div id="placeNavbar" href="navbar.html"></div>
 
 <div id="alignContent">
-<div class="row">
-<div class="col">
-    <h1 id="homePageTitle"> Hungry? </h1>
-    <p id="welcomeText" class="paragraph"> 
-        Hello, welcome to UKA's foodtruck! Get our delicious, hot food, either if you're going to or from
-        the festival, or if you're just looking for a midnight snack.
-    </p>
-    <p id="homepageLocation" class="paragraph">
-        We're located just behind the Studentersamfundet.
-    </p>
-    <p id="homePageOpen" class="paragraph">
-        Open: mon-sun | 19 - 02
-    </p>
-    <img id="map" src="images/map.png" alt="map" onclick="window.open('https://www.google.no/maps/place/@63.422449,10.396011,19z/data=!3m1!4b1!4m5!3m4!1s0x466d31914fa1a913:0xe3b097230cb12070!8m2!3d63.422449!4d10.396011')">
-</div>
 
-<div class="col">
-    <img class="isOpen" id="open" src="images/open.jpg" alt="open">
-    <img class="isOpen" id="closed" src="images/closed.jpg" alt="closed">
-
-    <div class="foodSuggestion">
-        <p id="suggestion" class="paragraph"> On the fly? Grab one of these </p>
-        <div id="alignTextImage">
-        <img src="images/placeholder.png" alt="image of food" id="foodImage">
-        <p class="paragraph" id="foodDescription"> Some text describing the food </p>
+    <div class="row">
+        <div class="col" id="leftCol">
+            <div id="homepageText">
+                <h1 id="homePageTitle"> Hungry? </h1>
+                <p id="welcomeText" class="paragraph"> 
+                    Hello, welcome to UKA's foodtruck! Get our delicious, hot food, either if you're going to or from
+                    the festival, or if you're just looking for a midnight snack.
+                </p>
+                <p id="homepageLocation" class="paragraph">
+                    We're located just behind the Studentersamfundet.
+                </p>
+                <p id="homePageOpen" class="paragraph">
+                    Open: mon-sun | 19 - 02
+                </p>
+            </div>
         </div>
-        <p id="homePageOther" class="paragraph"> Or try one of many other tasty alternatives >>> </p>
+        <div class="col" id="openCol">
+            <img class="isOpen" id="open" src="images/open.jpg" alt="open">
+            <img class="isOpen" id="closed" src="images/closed.jpg" alt="closed">
+        </div>
     </div>
 
-</div>
+    <div class="row">
+        <div class="col" id="leftCol">
+            <img id="map" src="images/map.png" alt="map" onclick="window.open('https://www.google.no/maps/place/@63.422449,10.396011,19z/data=!3m1!4b1!4m5!3m4!1s0x466d31914fa1a913:0xe3b097230cb12070!8m2!3d63.422449!4d10.396011')">
+        </div>
 
-</div>
+        <div class="col">
+            <div class="foodSuggestion">
+                <p id="suggestion" class="paragraph"> On the fly? Grab one of these </p>
+                <div id="alignTextImage">
+                <img src="images/placeholder.png" alt="image of food" id="foodImage">
+                <p class="paragraph" id="foodDescription"> Some text describing the food </p>
+                </div>
+                <p id="homePageOther" class="paragraph"> Or try one of many other tasty alternatives >>> </p>
+            </div>
+        </div>
+    </div>
+
 </div>
 
 <script src="js/main.js"></script>

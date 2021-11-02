@@ -9,15 +9,15 @@
     width: 100%;
 }
 
-
 .itemInfo{
-    margin-left: 30px;
+    margin-left: 2%;
     width: 55%;
 }
 
 .itemName{
     line-height: 0;
     margin-top: 15px;
+    white-space: nowrap;
 }
 
 .itemDescription {
@@ -92,7 +92,7 @@
 
 .itemImageFull {
     width: 20%;
-    height: auto;
+    height: fit-content;
     border: 3px solid #C91532;
     border-radius: 15px;
 }
@@ -114,6 +114,10 @@
 
 .countCol {
     float: left;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 50%;
 }
 
 .itemAdd {
@@ -153,6 +157,8 @@
     font-size: 20px;
     align-items: center;
     justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .countCol2 {
@@ -160,30 +166,37 @@
 }
 
 .itemCountUp {
-    width: 30px;
+    width: 23%;
+    margin-left: 5px;
+    height: 55px;
     padding: 2px;
     font-size: 20px;
-    display: block;
     border: 1px solid #C91532;
     border-radius: 15px;
     background-color: #C91532;
     color: #f2f2f2;
     text-align: center;
-    margin-bottom: 5px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .itemCountDown {
-    width: 30px;
+    width: 23%;
+    margin-right: 5px;
+    height: 55px;
     padding: 2px;
     font-size: 20px;
-    display: block;
     border: 1px solid #C91532;
     border-radius: 15px;
     background-color: #C91532;
     color: #f2f2f2;
     text-align: center;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 body {
@@ -195,4 +208,65 @@ body {
     width: 90vw;
     margin-left: auto;
     margin-right: auto;
+}
+
+@media only screen and (max-width: 570px){ 
+    .itemName {
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+    .itemInfo {
+        width: 70%;
+    }
+    .itemAdd {
+        width: 65px !important;
+        height: 30px !important;
+        margin-top: 10px;
+    }
+    .itemCountBox {
+        width: 65px !important;
+        height: 35px !important;
+        margin-top: 5px;
+    }
+    .itemCountText {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .itemCountUp {
+        height: 35px;
+        width: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .itemCountDown {
+        height: 35px;
+        width: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .row {
+        width: 60%;
+        margin-bottom: 5px;
+        margin-left: 22%;
+    }
+    .itemPrice {
+        font-size: 20px;
+    }
+    .itemDescription {
+        margin:0;
+    }
+    .menuItem {
+        flex-wrap: wrap;
+        border: 1.5px solid #C91532;
+        border-radius: 15px;
+    }
+    .itemImageFull {
+        border: none !important;
+        border-radius: 15px;
+    }
+    .itemAllergies li::before {
+        margin-left: 5px;
+    }
 }

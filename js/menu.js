@@ -158,13 +158,15 @@ function getCountBox(id) {
 
     let col1 = document.createElement("div");
     col1.className = "countCol";
+    col1.id = `itemCount${id}`;
     col1.appendChild(itemCountText);
     col1.appendChild(itemCountBox);
 
-    let itemButtons = document.getElementById(`itemButtons${id}`);
-    itemButtons.appendChild(col1);
+    //let itemButtons = document.getElementById(`itemButtons${id}`);
+    //itemButtons.appendChild(col1);
 
     //return [itemCountText, itemCountBox];
+    return col1;
 }
 
 function getCountButtons(id /*, display*/) {
@@ -184,14 +186,17 @@ function getCountButtons(id /*, display*/) {
     //itemCountDown.style.display = display;
     itemCountDown.onclick = function() {decreaseOrder(id)};
 
+    /*
     let col2 = document.createElement("div");
     col2.className = "countCol2";
     col2.appendChild(itemCountUp);
     col2.appendChild(itemCountDown);
 
-    //return [itemCountUp, itemCountDown];
+    return [itemCountUp, itemCountDown];
     let itemButtons = document.getElementById(`itemButtons${id}`);
     itemButtons.appendChild(col2);
+    */
+   return [itemCountUp, itemCountDown];
 }
 
 function getItem(id, type) {
@@ -229,20 +234,33 @@ function getItem(id, type) {
     if (type === typeFull) {
         let col1 = document.createElement("div");
         col1.className = "countCol";
-        col1.id = "countCol1"
+        col1.id = `countCol1${id}`;
         let addButton = document.createElement("a");
         //addButton.id = `item-add-button-${id}`;
         addButton.id = `itemAddButton${id}`;
         addButton.className = "itemAdd";
+        
         if(language == "no"){
             addButton.innerText = "Legg til";
         }
         if(language == "en"){
             addButton.innerText = "Add to order";
         }
+        
         addButton.onclick = function () {addToOrder(id)};
         col1.appendChild(addButton);
+
+
+        //add buttons to itemButtons
+        let [countUp, countDown] = getCountButtons(id);
+        let countBox = getCountBox(id);
+        itemButtons.appendChild(countDown);
         itemButtons.appendChild(col1);
+        itemButtons.appendChild(countBox);
+        itemButtons.appendChild(countUp);
+        countUp.style.display = "none";
+        countDown.style.display = "none";
+        countBox.style.display = "none";
 
         /*
         let addedButton = document.createElement("div");
@@ -290,23 +308,15 @@ function getFullMenu() {
 }
 
 function addToOrder(id) {
-    let countbox = document.getElementById(`itemCountBox${id}`);
-    let countTitle = document.getElementById(`itemCountText${id}`);
+    let countBox = document.getElementById(`itemCount${id}`);
     let upButton = document.getElementById(`itemCountUp${id}`);
     let downButton = document.getElementById(`itemCountDown${id}`);
-    if(countbox && countTitle && upButton && downButton){
-        countbox.style.display = "flex";
-        countTitle.style.display = "flex";
-        upButton.style.display = "block";
-        downButton.style.display = "block";
-        increaseOrder(id);
-    }
-    else {
-        getCountBox(id);
-        getCountButtons(id);
-        increaseOrder(id);
-    }
-    let addButton = document.getElementById(`itemAddButton${id}`);
+    countBox.style.display = "flex";
+    upButton.style.display = "flex";
+    downButton.style.display = "flex";
+    increaseOrder(id);
+
+    let addButton = document.getElementById(`countCol1${id}`);
     addButton.style.display = "none";
 }
 
@@ -321,14 +331,12 @@ function decreaseOrder(id) {
         itemCountText.innerText = parseInt(itemCountText.innerText) - 1;
     }
     if(parseInt(itemCountText.innerText) == 0){
-        let addButton = document.getElementById(`itemAddButton${id}`);
-        addButton.style.display = "flex";
-        let countbox = document.getElementById(`itemCountBox${id}`);
-        let countTitle = document.getElementById(`itemCountText${id}`);
+        let addButton = document.getElementById(`countCol1${id}`);
+        addButton.style.display = "block";
+        let countBox = document.getElementById(`itemCount${id}`);
         let upButton = document.getElementById(`itemCountUp${id}`);
         let downButton = document.getElementById(`itemCountDown${id}`);
-        countbox.style.display = "none";
-        countTitle.style.display = "none";
+        countBox.style.display = "none";
         upButton.style.display = "none";
         downButton.style.display = "none";
     }

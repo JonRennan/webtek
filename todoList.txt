@@ -2,12 +2,8 @@
 - norsk tekst på "om oss"
 - style kontakt oss til mindre skjermer
 - style om oss til mindre skjermer
-- endre kolonne-stylingen på startsiden til rutenett
-- style startsiden til mindre skjermer
 - hover på knappene
 - endre slik at all tekst har samme størrelse
-- style meny siden til mindre skjermer
-- bytte ut boksen på fremsiden med random forslag fra menyen
+- bytte ut boksen på fremsiden med random forslag fra menyen og link til menyen
 - fullføre de siste sidene
-- legge til link til menyen fra fremsiden (boksen)
 - legge til en boks på menysiden med betydningen av allergener

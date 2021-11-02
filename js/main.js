@@ -26,6 +26,16 @@ let navbar = '' +
     '</div>';
 document.getElementById("placeNavbar").innerHTML = navbar;
 
+console.log(window.innerWidth);
+
+
+// remove "UKA foodtruck" to save space in navbar on small devices
+if(window.innerWidth <= 400){
+    let logoName = document.getElementsByClassName("logoName");
+    [].slice.call(logoName).forEach(function (name) {
+        name.innerHTML = "";
+    });
+}
 
 // set color to current page in the navbar
 let currentUrl = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
@@ -33,6 +43,34 @@ let navbarLinks = document.getElementsByClassName("navbarText");
 for (let i = 0; i < navbarLinks.length; i++) {
     if (navbarLinks[i].id == currentUrl) {
         document.getElementById(currentUrl).style.color = '#C91532';
+    }
+}
+// set language and color it in the navbar
+const navbar_en = {
+    menu: "MENU",
+    about_us: "ABOUT US",
+    contact_us: "CONTACT US",
+}
+
+const navbar_no = {
+    menu: "MENY",
+    about_us: "OM OSS",
+    contact_us: "KONTAKT OSS",   
+}
+
+// Homepage
+
+// check if the food truck open
+function isOpen() {
+    let hour = new Date().getHours();
+    let openSign = document.getElementById("open");
+    let closedSign = document.getElementById("closed");
+    if ((hour < 02 && hour >= 0) || (hour >= 19)) {
+        closedSign.style.display = "none";
+        openSign.style.display = "block";
+    } else {
+        openSign.style.display = "none";
+        closedSign.style.display = "block";
     }
 }
 
@@ -80,6 +118,9 @@ function changeHomePageLanguage(id) {
     }
 }
 
+
+//menu-page
+
 // menu in different languages
 //english
 const menu_en = {
@@ -114,7 +155,8 @@ function changeMenuLanguage(id) {
     }
 }
 
-// set language and color it in the navbar
+
+// change language
 if (localStorage.getItem("language") == "no") {
     changeLanguage("no");
 } else {
@@ -122,40 +164,28 @@ if (localStorage.getItem("language") == "no") {
 }
 
 function changeLanguage(id) {
+    let menu = document.getElementById("menu.html");
+    let about_us = document.getElementById("about_us.html");
+    let contact_us = document.getElementById("contact_us.html");
     if (id == "en") {
         document.getElementById("en").style.color = '#C91532';
         document.getElementById("no").style.color = '';
         localStorage.setItem("language", "en");
-        document.getElementById("menu.html").innerHTML = "MENU";
-        document.getElementById("about_us.html").innerHTML = "ABOUT US";
-        document.getElementById("contact_us.html").innerHTML = "CONTACT US";
+        menu.innerHTML = navbar_en.menu;
+        about_us.innerHTML = navbar_en.about_us;
+        contact_us.innerHTML = navbar_en.contact_us;
     } else {
         document.getElementById("no").style.color = '#C91532';
         document.getElementById("en").style.color = '';
         localStorage.setItem("language", "no");
-        // change text in navbar
-        document.getElementById("menu.html").innerHTML = "MENY";
-        document.getElementById("about_us.html").innerHTML = "OM OSS";
-        document.getElementById("contact_us.html").innerHTML = "KONTAKT OSS";
+        menu.innerHTML = navbar_no.menu;
+        about_us.innerHTML = navbar_no.about_us;
+        contact_us.innerHTML = navbar_no.contact_us;
     }
     if (currentUrl == "homepage.html") {
         changeHomePageLanguage(id);
     }
     if (currentUrl == "menu.html") {
         changeMenuLanguage(id);
-    }
-}
-
-// check if the food truck open
-function isOpen() {
-    let hour = new Date().getHours();
-    let openSign = document.getElementById("open");
-    let closedSign = document.getElementById("closed");
-    if ((hour < 02 && hour >= 0) || (hour >= 19)) {
-        closedSign.style.display = "none";
-        openSign.style.display = "block";
-    } else {
-        openSign.style.display = "none";
-        closedSign.style.display = "block";
     }
 }
