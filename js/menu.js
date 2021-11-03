@@ -296,7 +296,7 @@ function decreaseOrder(id) {
     }
     if(parseInt(itemCountText.innerText) === 0){
         let addButton = document.getElementById(`countCol1${id}`);
-        addButton.style.display = "block";
+        addButton.style.display = "flex";
         let countBox = document.getElementById(`itemCount${id}`);
         let upButton = document.getElementById(`itemCountUp${id}`);
         let downButton = document.getElementById(`itemCountDown${id}`);

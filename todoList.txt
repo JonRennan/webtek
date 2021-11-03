@@ -13,7 +13,6 @@
 Bugs:
 - Noen ting, f.eks i navbaren, flyttes på når du hovrer over
 - Legg til knappene blir mindre på hover, og +/- blir større
-- Trykker man på "-" så "Legg til" knappen kommer tilbake, så er ikke den på samme sted som den var
 - Teksten "Hvor mange?" faller ned mellom "-" knappen og antallet på større skjermer
 - Beskrivelsen til maten på fremsiden forsvinner når man bytter språk
 - Hvis man legger til 10 eller flere av en ting i meny-en så ødelegger det bestillingen
