@@ -135,6 +135,10 @@
     font-size: 18px;
 }
 
+.itemAdd:hover {
+    border: 2px solid #333333;
+}
+
 .itemCount {
 
 }
@@ -182,6 +186,10 @@
     justify-content: center;
 }
 
+.itemCountUp:hover {
+    border: 2px solid #333333;
+}
+
 .itemCountDown {
     width: 23%;
     margin-right: 5px;
@@ -197,6 +205,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.itemCountDown:hover {
+    border: 2px solid #333333;
 }
 
 body {

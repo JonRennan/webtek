@@ -26,8 +26,6 @@ let navbar = '' +
     '</div>';
 document.getElementById("placeNavbar").innerHTML = navbar;
 
-console.log(window.innerWidth);
-
 
 // remove "UKA foodtruck" to save space in navbar on small devices
 if(window.innerWidth <= 400){
@@ -74,6 +72,7 @@ function isOpen() {
     }
 }
 
+
 // homepage in different languages
 //english
 const homepage_en = {
@@ -82,7 +81,7 @@ const homepage_en = {
     location: "We're located just behind the Studentersamfundet.",
     open: "Open: mon-sun | 19 - 02",
     suggestion: "On the fly? Grab one of these",
-    foodText: "Some text describing the food",
+    foodText: "",
     other: "Or try one of many other tasty alternatives >>>",
 }
 
@@ -93,7 +92,7 @@ const homepage_no = {
     location: "Du finner oss like bak Studentersamfundet.",
     open: "Åpen: man-søn | 19 - 02",
     suggestion: "På farten? Prøv en av disse",
-    foodText: "Tekst som beskriver maten ",
+    foodText: "",
     other: "Eller prøv en av mange andre smakfulle retter >>>",
 }
 

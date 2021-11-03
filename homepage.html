@@ -41,20 +41,37 @@
         </div>
 
         <div class="col">
-            <div class="foodSuggestion">
+            <a class="foodSuggestion" href="menu.html">
                 <p id="suggestion" class="paragraph"> On the fly? Grab one of these </p>
-                <div id="alignTextImage">
-                <img src="images/placeholder.png" alt="image of food" id="foodImage">
-                <p class="paragraph" id="foodDescription"> Some text describing the food </p>
+                <!-- random item from the menu -->
+                <div class="row">
+                    <div id="foodItem">
+                        <img src="" alt="image of food" id="foodImage">
+                    </div>
+                    <div id="foodItem">
+                        <h3 id="foodName"></h3>
+                        <p class="paragraph" id="foodDescription"></p>
+                    </div>
                 </div>
                 <p id="homePageOther" class="paragraph"> Or try one of many other tasty alternatives >>> </p>
-            </div>
+            </a>
         </div>
     </div>
 
 </div>
 
+<script src="js/menu.js"></script>
 <script src="js/main.js"></script>
 <script> isOpen() </script>
+<script> 
+    // random foodSuggestion
+    let index = Math.floor(Math.random() * 6);
+    let image = getImage(index, "full").src;
+    let name = getName(index).innerHTML;
+    let description = getDescription(index).innerHTML;
+    document.getElementById("foodName").innerHTML = name;
+    document.getElementById("foodDescription").innerHTML = description;
+    document.getElementById("foodImage").src = image;
+</script>
 </body>
 </html>

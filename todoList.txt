@@ -4,6 +4,5 @@
 - style om oss til mindre skjermer
 - hover på knappene
 - endre slik at all tekst har samme størrelse
-- bytte ut boksen på fremsiden med random forslag fra menyen og link til menyen
 - fullføre de siste sidene
 - legge til en boks på menysiden med betydningen av allergener

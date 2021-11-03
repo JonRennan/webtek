@@ -209,20 +209,44 @@ hr {
     border-radius: 10px;
     float: right;
     padding: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    color:#333333;
+}
+
+.foodSuggestion:hover {
+    border-color: #C91532;
+}
+
+#foodItem {
+    float: left;
+    width: fit-content;
+    max-width: 50%;
+    height: 110px;
+    display: flex; 
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 #foodDescription {
-    margin-right: 5px;
+    margin-top: 0px;
+    margin-left: 2px;
+    line-height: 1em;
+    max-height: 3em;  
+    overflow: hidden;
 }
 
 #foodImage {
     width: 100px;
     margin: 5px;
+    border-radius: 15px;
+    border: 1px solid #C91532;
 }
 
-#alignTextImage {
-    display: flex;
-    flex-direction: row;
+#foodName {
+    margin-bottom: 0px;
+    margin-top: 5px;
+    margin-left: 2px;
 }
 
 input {
