@@ -15,7 +15,6 @@ const itemNames = [
 
 function getName(id) {
     let itemName = document.createElement("h2");
-    //itemName.id = `item-name-${id}`;
     itemName.id = `itemName${id}`;
     itemName.className = "itemName";
     itemName.innerText = itemNames[id];
@@ -25,7 +24,6 @@ function getName(id) {
 
 function getDescription(id) {
     let itemDescription = document.createElement("p");
-    //itemDescription.id = `item-description-${id}`;
     itemDescription.id = `itemDescription${id}`;
     itemDescription.className = "itemDescription";
 
@@ -40,7 +38,6 @@ function getDescription(id) {
 
 function getAllergies(id) {
     let itemAllergiesList = document.createElement("ul");
-    //itemAllergiesList.id = `item-allergies-${id}`;
     itemAllergiesList.id = `itemAllergies${id}`;
     itemAllergiesList.className = "itemAllergies";
     let allergies = itemAllergiesEN[id];
@@ -55,7 +52,6 @@ function getAllergies(id) {
     for (let i = 0; i < allergies.length; i++) {
         let itemAllergy = document.createElement("li");
         let allergy = allergies[i];
-        //itemAllergy.id = `item-allergies-${id}-${allergy}`;
         itemAllergy.id = `itemAllergies${id}-${allergy}`;
         itemAllergy.className = `itemAllergy${allergy}`;
         itemAllergy.innerText = allergy;
@@ -77,7 +73,6 @@ const itemPrices = [
 
 function getPrice(id) {
     let itemPrice = document.createElement("h2");
-    //itemPrice.id = `item-price-${id}`;
     itemPrice.id = `itemPrice${id}`;
     itemPrice.className = "itemPrice";
     itemPrice.innerText = itemPrices[id] + ",-";
@@ -95,7 +90,6 @@ const itemImages = [
 
 function getImage(id, type) {
     let itemImage = document.createElement("img");
-    //itemImage.id = `item-image-${id}`;
     itemImage.id = `itemImage${id}`;
     itemImage.className = `itemImage${type}`;
     itemImage.src = "images/" + itemImages[id];
@@ -105,7 +99,6 @@ function getImage(id, type) {
 
 function getCountBox(id) {
     let itemCountText = document.createElement("p");
-    //itemCountText.id = `item-count-text-${id}`;
     itemCountText.id = `itemCountText${id}`;
     itemCountText.className = "itemCountText";
     if(language === no){
@@ -115,7 +108,6 @@ function getCountBox(id) {
         itemCountText.innerText = "How many?";
     }
     let itemCountBox = document.createElement("div");
-    //itemCountBox.id = `item-count-box-${id}`;
     itemCountBox.id = `itemCountBox${id}`;
     itemCountBox.className = "itemCountBox";
     itemCountBox.innerText = "0";
@@ -135,7 +127,6 @@ function getCountBox(id) {
 
 function getCountButtons(id /*, display*/) {
     let itemCountUp = document.createElement("div");
-    //itemCountUp.id = `item-count-up-${id}`;
     itemCountUp.id = `itemCountUp${id}`;
     itemCountUp.className = "itemCount up";
     itemCountUp.innerText = "+";
@@ -143,36 +134,23 @@ function getCountButtons(id /*, display*/) {
     itemCountUp.onclick = function() {increaseOrder(id)};
 
     let itemCountDown = document.createElement("div");
-    //itemCountDown.id = `item-count-down-${id}`;
     itemCountDown.id = `itemCountDown${id}`;
     itemCountDown.className = "itemCount down";
     itemCountDown.innerText = "-";
     //itemCountDown.style.display = display;
     itemCountDown.onclick = function() {decreaseOrder(id)};
 
-    /*
-    let col2 = document.createElement("div");
-    col2.className = "countCol2";
-    col2.appendChild(itemCountUp);
-    col2.appendChild(itemCountDown);
-
     return [itemCountUp, itemCountDown];
-    let itemButtons = document.getElementById(`itemButtons${id}`);
-    itemButtons.appendChild(col2);
-    */
-   return [itemCountUp, itemCountDown];
 }
 
 function getItem(id, type) {
     let itemDiv = document.createElement("div");
-    //itemDiv.id = `menu-item-${id}`;
     itemDiv.id = `menuItem${id}`;
     itemDiv.className = "menuItem";
 
     itemDiv.appendChild(getImage(id, type));
 
     let itemInfo = document.createElement("div");
-    //itemInfo.id = `item-info-${id}`;
     itemInfo.id = `itemInfo${id}`;
     itemInfo.className = "itemInfo";
 
@@ -191,7 +169,6 @@ function getItem(id, type) {
     itemDiv.appendChild(itemInfo);
 
     let itemButtons = document.createElement("div");
-    //itemButtons.id = `item-buttons-${id}`;
     itemButtons.id = `itemButtons${id}`;
     itemButtons.className = "row";
 
@@ -201,7 +178,6 @@ function getItem(id, type) {
         countCol.id = `countCol1${id}`;
 
         let addButton = document.createElement("a");
-        //addButton.id = `item-add-button-${id}`;
         addButton.id = `itemAddButton${id}`;
         addButton.className = "itemAdd";
         
@@ -225,16 +201,6 @@ function getItem(id, type) {
         countUp.style.display = "none";
         countDown.style.display = "none";
         countBox.style.display = "none";
-
-        /*
-        let addedButton = document.createElement("div");
-        //addedButton.id = `item-added-button-${id}`;
-        addedButton.id = `itemAddedButton${id}`;
-        addedButton.className = "itemAdded";
-        addedButton.innerText = "Added to order";
-        addedButton.style.display = "none";
-        itemButtons.appendChild(addedButton);
-        */
 
         //let countTextBox = getCountBox(id/*, "none"*/);
         //itemButtons.appendChild(countTextBox[0]);

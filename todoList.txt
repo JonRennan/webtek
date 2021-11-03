@@ -2,7 +2,6 @@
 - norsk tekst på "om oss"
 - style kontakt oss til mindre skjermer
 - style om oss til mindre skjermer
-- hover på knappene
 - endre slik at all tekst har samme størrelse
 - fullføre de siste sidene
 - legge til en boks på menysiden med betydningen av allergener
