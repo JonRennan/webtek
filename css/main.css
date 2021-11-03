@@ -7,7 +7,7 @@ body {
 
 #placeNavbar {
     position: sticky;
-    top: 0vh;
+    top: 0;
     background-color: #f2f2f2;
     padding-top: 10px;
     margin-bottom: 20px;
@@ -37,7 +37,7 @@ body {
 }
 
 hr {
-    border: 0.5px solid #333333;
+    border: 1px solid #333333;
     background-color: #333333;
 }
 
@@ -141,9 +141,8 @@ hr {
         position: absolute;
         top: 115px;
         right: 10%;
-        margin-left: 15% !important;
         width: fit-content!important;
-        margin: 0 !important;
+        margin: 0 0 0 15% !important;
     }
     #homepageText {
         margin-top: 70px;
@@ -181,7 +180,7 @@ hr {
     clear: both;
 }
 
-#leftCol {
+.leftCol {
     margin-right: 5vw;
 }
 
@@ -218,7 +217,7 @@ hr {
     border-color: #C91532;
 }
 
-#foodItem {
+.foodItem {
     float: left;
     width: fit-content;
     max-width: 50%;
@@ -229,7 +228,7 @@ hr {
 }
 
 #foodDescription {
-    margin-top: 0px;
+    margin-top: 0;
     margin-left: 2px;
     line-height: 1em;
     max-height: 3em;  
@@ -244,7 +243,7 @@ hr {
 }
 
 #foodName {
-    margin-bottom: 0px;
+    margin-bottom: 0;
     margin-top: 5px;
     margin-left: 2px;
 }

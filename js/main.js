@@ -1,34 +1,37 @@
 // load navbar on all pages
+let no = "no"
+let en = "en"
+
 let navbar = '' +
     '<div class="navbar" id="navbar">' +
-        '<a class="navbarText" onclick={changeLanguage("en")} id="en"> EN </a>' +
-        '<span id="span"> - </span>' +
-        '<a class="navbarText" onclick={changeLanguage("no")} id="no"> NO </a>' +
-        '<hr>' +
-        '<div>' +
-            '<a class="logo" href="homepage.html">' +
-                '<img style="width:35px; float: left" src="images/foodtruck.png" alt="foodtruck logo">' +
-                '<p class="logoName"> UKA </p>' +
-                '<p class="logoName" style="font-weight: bold"> FOODTRUCK </p>' +
-            '</a>' +
-        '</div>' +
-        '<ul class="navbarList">' +
-            '<li class="navbarItem">' +
-                '<a class="navbarText" href="menu.html" id="menu.html"> MENU </a>' +
-            '</li>' +
-            '<li class="navbarItem">' +
-                '<a class="navbarText" href="about_us.html" id="about_us.html"> ABOUT US  </a>' +
-            '</li>' +
-            '<li class="navbarItem">' +
-                '<a class="navbarText" href="contact_us.html" id="contact_us.html"> CONTACT US </a>' +
-            '</li>' +
-        '</ul>' +
+    '<a class="navbarText" onclick="changeLanguage(en)" id="en"> EN </a>' +
+    '<span id="span"> - </span>' +
+    '<a class="navbarText" onclick="changeLanguage(no)" id="no"> NO </a>' +
+    '<hr>' +
+    '<div>' +
+    '<a class="logo" href="homepage.html">' +
+    '<img style="width:35px; float: left" src="images/foodtruck.png" alt="foodtruck logo">' +
+    '<p class="logoName"> UKA </p>' +
+    '<p class="logoName" style="font-weight: bold"> FOODTRUCK </p>' +
+    '</a>' +
+    '</div>' +
+    '<ul class="navbarList">' +
+    '<li class="navbarItem">' +
+    '<a class="navbarText" href="menu.html" id="menu.html"> MENU </a>' +
+    '</li>' +
+    '<li class="navbarItem">' +
+    '<a class="navbarText" href="about_us.html" id="about_us.html"> ABOUT US  </a>' +
+    '</li>' +
+    '<li class="navbarItem">' +
+    '<a class="navbarText" href="contact_us.html" id="contact_us.html"> CONTACT US </a>' +
+    '</li>' +
+    '</ul>' +
     '</div>';
 document.getElementById("placeNavbar").innerHTML = navbar;
 
 
 // remove "UKA foodtruck" to save space in navbar on small devices
-if(window.innerWidth <= 400){
+if (window.innerWidth <= 400) {
     let logoName = document.getElementsByClassName("logoName");
     [].slice.call(logoName).forEach(function (name) {
         name.innerHTML = "";
@@ -39,7 +42,7 @@ if(window.innerWidth <= 400){
 let currentUrl = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
 let navbarLinks = document.getElementsByClassName("navbarText");
 for (let i = 0; i < navbarLinks.length; i++) {
-    if (navbarLinks[i].id == currentUrl) {
+    if (navbarLinks[i].id === currentUrl) {
         document.getElementById(currentUrl).style.color = '#C91532';
     }
 }
@@ -53,7 +56,7 @@ const navbar_en = {
 const navbar_no = {
     menu: "MENY",
     about_us: "OM OSS",
-    contact_us: "KONTAKT OSS",   
+    contact_us: "KONTAKT OSS",
 }
 
 // Homepage
@@ -63,7 +66,7 @@ function isOpen() {
     let hour = new Date().getHours();
     let openSign = document.getElementById("open");
     let closedSign = document.getElementById("closed");
-    if ((hour < 02 && hour >= 0) || (hour >= 19)) {
+    if ((hour < 2 && hour >= 0) || (hour >= 19)) {
         closedSign.style.display = "none";
         openSign.style.display = "block";
     } else {
@@ -96,25 +99,22 @@ const homepage_no = {
     other: "Eller prøv en av mange andre smakfulle retter >>>",
 }
 
-function changeHomePageLanguage(id) {
-    if (id == "en") {
-        document.getElementById("homePageTitle").innerHTML = homepage_en.title;
-        document.getElementById("welcomeText").innerHTML = homepage_en.welcomeText;
-        document.getElementById("homepageLocation").innerHTML = homepage_en.location;
-        document.getElementById("homePageOpen").innerHTML = homepage_en.open;
-        document.getElementById("suggestion").innerHTML = homepage_en.suggestion;
-        document.getElementById("foodDescription").innerHTML = homepage_en.foodText;
-        document.getElementById("homePageOther").innerHTML = homepage_en.other;
+function changeHomePageLanguage(lang) {
+    let homepage = {};
+    if (lang === en) {
+        homepage = homepage_en;
+    } else if (lang === no) {
+        homepage = homepage_no;
+    } else {
+        return;
     }
-    if (id == "no") {
-        document.getElementById("homePageTitle").innerHTML = homepage_no.title;
-        document.getElementById("welcomeText").innerHTML = homepage_no.welcomeText;
-        document.getElementById("homepageLocation").innerHTML = homepage_no.location;
-        document.getElementById("homePageOpen").innerHTML = homepage_no.open;
-        document.getElementById("suggestion").innerHTML = homepage_no.suggestion;
-        document.getElementById("foodDescription").innerHTML = homepage_no.foodText;
-        document.getElementById("homePageOther").innerHTML = homepage_no.other;
-    }
+    document.getElementById("homePageTitle").innerHTML = homepage.title;
+    document.getElementById("welcomeText").innerHTML = homepage.welcomeText;
+    document.getElementById("homepageLocation").innerHTML = homepage.location;
+    document.getElementById("homePageOpen").innerHTML = homepage.open;
+    document.getElementById("suggestion").innerHTML = homepage.suggestion;
+    document.getElementById("foodDescription").innerHTML = homepage.foodText;
+    document.getElementById("homePageOther").innerHTML = homepage.other;
 }
 
 
@@ -133,58 +133,129 @@ const menu_no = {
     countButton: "Hvor mange?",
 }
 
-function changeMenuLanguage(id) {
+const itemAllergiesEN = [
+    ["E", "M", "W", "S"],
+    [],
+    [],
+    ["E", "M", "W", "S"],
+    ["E", "M", "W"],
+    ["E", "M", "W"],
+];
+
+const itemAllergiesNO = [
+    ["E", "M", "H", "S"],
+    [],
+    [],
+    ["E", "M", "H", "S"],
+    ["E", "M", "H"],
+    ["E", "M", "H"],
+];
+
+const itemDescriptionsEN = [
+    "Dirty dirty fries",
+    "Sweet sweet potato fries",
+    "Normal, just normal fries",
+    "Taco with beans and other good stuff",
+    "Taco with chicken and other good stuff",
+    "Taco with beef and other good stuff",
+];
+
+const itemDescriptionsNO = [
+    "Fries med stash på",
+    "Søtpotet fries",
+    "Helt vanlig fries",
+    "Taco med bønner og andre godsaker",
+    "Taco med kylling og andre godsaker",
+    "Taco med kjøtt og andre godsaker",
+];
+
+
+function changeMenuLanguage(lang) {
     let addButtons = document.getElementsByClassName("itemAdd");
-    let countButtons = document.getElementsByClassName("itemCountText"); 
-    if (id == "en") {
-        [].slice.call(addButtons).forEach(function (button) {
-            button.innerHTML = menu_en.addButton;
-        });
-        [].slice.call(countButtons).forEach(function (button) {
-            button.innerHTML = menu_en.countButton;
-        });
+    let countButtons = document.getElementsByClassName("itemCountText");
+    let itemDescriptions = document.getElementsByClassName("itemDescription");
+    let addButton = "";
+    let countButton = "";
+    let descriptions = [];
+    let allergiesCurrent = [];
+    let allergiesOther = [];
+
+    if (lang === en) {
+        addButton = menu_en.addButton;
+        countButton = menu_en.countButton;
+        descriptions = itemDescriptionsEN;
+        allergiesCurrent = itemAllergiesEN;
+        allergiesOther = itemAllergiesNO;
+    } else if (lang === no) {
+        addButton = menu_no.addButton;
+        countButton = menu_no.countButton;
+        descriptions = itemDescriptionsNO;
+        allergiesCurrent = itemAllergiesNO;
+        allergiesOther = itemAllergiesEN;
+    } else {
+        return;
     }
-    if (id == "no") {
-        [].slice.call(addButtons).forEach(function (button) {
-            button.innerHTML = menu_no.addButton;
-        });
-        [].slice.call(countButtons).forEach(function (button) {
-            button.innerHTML = menu_no.countButton;
-        });
+
+    for (let id = 0; id < allergiesCurrent.length; id++) {
+        for (let j = 0; j < allergiesCurrent.length; j++) {
+            let allergyC = allergiesCurrent[j];
+            let allergyO = allergiesOther[j];
+            if (allergyC !== allergyO) {
+                let itemAllergyC = document.getElementById(`itemAllergies${id}-${allergyC}`);
+                let itemAllergyO = document.getElementById(`itemAllergies${id}-${allergyO}`);
+                if (itemAllergyC) {
+                    itemAllergyC.innerHTML = allergyC
+                } else if (itemAllergyO) {
+                    itemAllergyO.innerHTML = allergyC
+                }
+            }
+        }
     }
+    [].slice.call(addButtons).forEach(function (button) {
+        button.innerHTML = addButton;
+    });
+    [].slice.call(countButtons).forEach(function (button) {
+        button.innerHTML = countButton;
+    });
+    let x = 0;
+    [].slice.call(itemDescriptions).forEach(function (description) {
+        description.innerHTML = descriptions[x];
+        x += 1;
+    });
 }
 
 
 // change language
-if (localStorage.getItem("language") == "no") {
-    changeLanguage("no");
+if (localStorage.getItem("language") === no) {
+    changeLanguage(no);
 } else {
-    changeLanguage("en");
+    changeLanguage(en);
 }
 
-function changeLanguage(id) {
+function changeLanguage(lang) {
     let menu = document.getElementById("menu.html");
     let about_us = document.getElementById("about_us.html");
     let contact_us = document.getElementById("contact_us.html");
-    if (id == "en") {
+    console.log(currentUrl)
+    if (lang === en) {
         document.getElementById("en").style.color = '#C91532';
         document.getElementById("no").style.color = '';
-        localStorage.setItem("language", "en");
+        localStorage.setItem("language", en);
         menu.innerHTML = navbar_en.menu;
         about_us.innerHTML = navbar_en.about_us;
         contact_us.innerHTML = navbar_en.contact_us;
-    } else {
+    } else if (lang === no) {
         document.getElementById("no").style.color = '#C91532';
         document.getElementById("en").style.color = '';
-        localStorage.setItem("language", "no");
+        localStorage.setItem("language", no);
         menu.innerHTML = navbar_no.menu;
         about_us.innerHTML = navbar_no.about_us;
         contact_us.innerHTML = navbar_no.contact_us;
     }
-    if (currentUrl == "homepage.html") {
-        changeHomePageLanguage(id);
+    if (currentUrl === "homepage.html") {
+        changeHomePageLanguage(lang);
     }
-    if (currentUrl == "menu.html") {
-        changeMenuLanguage(id);
+    if (currentUrl === "menu.html") {
+        changeMenuLanguage(lang);
     }
 }

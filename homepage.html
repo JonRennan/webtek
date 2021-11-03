@@ -9,12 +9,12 @@
 <body>
 
 <!-- navbar -->
-<div id="placeNavbar" href="navbar.html"></div>
+<div id="placeNavbar"></div>
 
 <div id="alignContent">
 
     <div class="row">
-        <div class="col" id="leftCol">
+        <div class="col leftCol">
             <div id="homepageText">
                 <h1 id="homePageTitle"> Hungry? </h1>
                 <p id="welcomeText" class="paragraph"> 
@@ -36,7 +36,7 @@
     </div>
 
     <div class="row">
-        <div class="col" id="leftCol">
+        <div class="col leftCol">
             <img id="map" src="images/map.png" alt="map" onclick="window.open('https://www.google.no/maps/place/@63.422449,10.396011,19z/data=!3m1!4b1!4m5!3m4!1s0x466d31914fa1a913:0xe3b097230cb12070!8m2!3d63.422449!4d10.396011')">
         </div>
 
@@ -45,10 +45,10 @@
                 <p id="suggestion" class="paragraph"> On the fly? Grab one of these </p>
                 <!-- random item from the menu -->
                 <div class="row">
-                    <div id="foodItem">
+                    <div id="foodImageDiv" class="foodItem">
                         <img src="" alt="image of food" id="foodImage">
                     </div>
-                    <div id="foodItem">
+                    <div id="foodDescriptionDiv" class="foodItem">
                         <h3 id="foodName"></h3>
                         <p class="paragraph" id="foodDescription"></p>
                     </div>
@@ -62,11 +62,13 @@
 
 <script src="js/menu.js"></script>
 <script src="js/main.js"></script>
-<script> isOpen() </script>
+<script>
+    isOpen()
+</script>
 <script> 
     // random foodSuggestion
     let index = Math.floor(Math.random() * 6);
-    let image = getImage(index, "full").src;
+    let image = getImage(index, "Full").src;
     let name = getName(index).innerHTML;
     let description = getDescription(index).innerHTML;
     document.getElementById("foodName").innerHTML = name;

@@ -1,6 +1,6 @@
 const typeFull = "Full";
 const typeOrder = "Order";
-const typeReceipt = "Receipt";
+// const typeReceipt = "Receipt";
 
 let language = localStorage.getItem("language");
 
@@ -8,7 +8,7 @@ const itemNames = [
     "Dirty Fries",
     "Sweet Potato Fries",
     "Fries",
-    "Veggi Taco",
+    "Veggie Taco",
     "Chicken Taco",
     "Beef Taco",
 ];
@@ -22,23 +22,6 @@ function getName(id) {
     return itemName;
 }
 
-const itemDescriptionsEN = [
-    "Dirty dirty fries",
-    "Sweet sweet potato fries",
-    "Normal, just normal fries",
-    "Taco with beans and other good stuff",
-    "Taco with chicken and other good stuff",
-    "Taco with beef and other good stuff",
-];
-
-const itemDescriptionsNO = [
-    "Fries med stash på",
-    "Søtpotet fries",
-    "Helt vanlig fries",
-    "Taco med bønner og andre godsaker",
-    "Taco med kylling og andre godsaker",
-    "Taco med kjøtt og andre godsaker",
-];
 
 function getDescription(id) {
     let itemDescription = document.createElement("p");
@@ -46,33 +29,14 @@ function getDescription(id) {
     itemDescription.id = `itemDescription${id}`;
     itemDescription.className = "itemDescription";
 
-    if(language == "no"){
+    if(language === no){
         itemDescription.innerText = itemDescriptionsNO[id];
     }
-    if(language == "en"){
+    if(language === en){
         itemDescription.innerText = itemDescriptionsEN[id];
     }
     return itemDescription;
 }
-
-
-const itemAllergiesEN = [
-    ["E", "M", "W", "S"],
-    [],
-    [],
-    ["E", "M", "W", "S"],
-    ["E", "M", "W"],
-    ["E", "M", "W"],
-];
-
-const itemAllergiesNO = [
-    ["E", "M", "H", "S"],
-    [],
-    [],
-    ["E", "M", "H", "S"],
-    ["E", "M", "H"],
-    ["E", "M", "H"],
-];
 
 function getAllergies(id) {
     let itemAllergiesList = document.createElement("ul");
@@ -81,10 +45,10 @@ function getAllergies(id) {
     itemAllergiesList.className = "itemAllergies";
     let allergies = itemAllergiesEN[id];
 
-    if(language == "no"){
+    if(language === no){
         allergies = itemAllergiesNO[id];
     }
-    if(language == "en"){
+    if(language === en){
         allergies = itemAllergiesEN[id];
     }
 
@@ -144,10 +108,10 @@ function getCountBox(id) {
     //itemCountText.id = `item-count-text-${id}`;
     itemCountText.id = `itemCountText${id}`;
     itemCountText.className = "itemCountText";
-    if(language == "no"){
+    if(language === no){
         itemCountText.innerText = "Hvor mange?";
     }
-    if(language == "en"){
+    if(language === en){
         itemCountText.innerText = "How many?";
     }
     let itemCountBox = document.createElement("div");
@@ -240,10 +204,10 @@ function getItem(id, type) {
         addButton.id = `itemAddButton${id}`;
         addButton.className = "itemAdd";
         
-        if(language == "no"){
+        if(language === no){
             addButton.innerText = "Legg til";
         }
-        if(language == "en"){
+        if(language === en){
             addButton.innerText = "Add to order";
         }
         
@@ -330,7 +294,7 @@ function decreaseOrder(id) {
     if(parseInt(itemCountText.innerText) > 0){
         itemCountText.innerText = parseInt(itemCountText.innerText) - 1;
     }
-    if(parseInt(itemCountText.innerText) == 0){
+    if(parseInt(itemCountText.innerText) === 0){
         let addButton = document.getElementById(`countCol1${id}`);
         addButton.style.display = "block";
         let countBox = document.getElementById(`itemCount${id}`);
