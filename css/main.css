@@ -275,6 +275,10 @@ button {
     cursor: pointer;
 }
 
+button:hover {
+    border: 2px solid #333333;
+}
+
 ::placeholder {
     color: #333333;
 }

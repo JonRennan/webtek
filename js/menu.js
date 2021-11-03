@@ -120,24 +120,24 @@ function getCountBox(id) {
     itemCountBox.className = "itemCountBox";
     itemCountBox.innerText = "0";
 
-    let col1 = document.createElement("div");
-    col1.className = "countCol";
-    col1.id = `itemCount${id}`;
-    col1.appendChild(itemCountText);
-    col1.appendChild(itemCountBox);
+    let countCol = document.createElement("div");
+    countCol.className = "countCol";
+    countCol.id = `itemCount${id}`;
+    countCol.appendChild(itemCountText);
+    countCol.appendChild(itemCountBox);
 
     //let itemButtons = document.getElementById(`itemButtons${id}`);
     //itemButtons.appendChild(col1);
 
     //return [itemCountText, itemCountBox];
-    return col1;
+    return countCol;
 }
 
 function getCountButtons(id /*, display*/) {
     let itemCountUp = document.createElement("div");
     //itemCountUp.id = `item-count-up-${id}`;
     itemCountUp.id = `itemCountUp${id}`;
-    itemCountUp.className = "itemCountUp";
+    itemCountUp.className = "itemCount up";
     itemCountUp.innerText = "+";
     //itemCountUp.style.display = display;
     itemCountUp.onclick = function() {increaseOrder(id)};
@@ -145,7 +145,7 @@ function getCountButtons(id /*, display*/) {
     let itemCountDown = document.createElement("div");
     //itemCountDown.id = `item-count-down-${id}`;
     itemCountDown.id = `itemCountDown${id}`;
-    itemCountDown.className = "itemCountDown";
+    itemCountDown.className = "itemCount down";
     itemCountDown.innerText = "-";
     //itemCountDown.style.display = display;
     itemCountDown.onclick = function() {decreaseOrder(id)};
@@ -196,9 +196,10 @@ function getItem(id, type) {
     itemButtons.className = "row";
 
     if (type === typeFull) {
-        let col1 = document.createElement("div");
-        col1.className = "countCol";
-        col1.id = `countCol1${id}`;
+        let countCol = document.createElement("div");
+        countCol.className = "countCol";
+        countCol.id = `countCol1${id}`;
+
         let addButton = document.createElement("a");
         //addButton.id = `item-add-button-${id}`;
         addButton.id = `itemAddButton${id}`;
@@ -212,14 +213,13 @@ function getItem(id, type) {
         }
         
         addButton.onclick = function () {addToOrder(id)};
-        col1.appendChild(addButton);
-
+        countCol.appendChild(addButton);
 
         //add buttons to itemButtons
         let [countUp, countDown] = getCountButtons(id);
         let countBox = getCountBox(id);
         itemButtons.appendChild(countDown);
-        itemButtons.appendChild(col1);
+        itemButtons.appendChild(countCol);
         itemButtons.appendChild(countBox);
         itemButtons.appendChild(countUp);
         countUp.style.display = "none";

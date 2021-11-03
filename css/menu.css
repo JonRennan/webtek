@@ -118,10 +118,11 @@
     flex-wrap: wrap;
     justify-content: center;
     width: 50%;
+    max-width: 180px;
 }
 
 .itemAdd {
-    border: 3px solid #C91532;
+    border: 2px solid #C91532;
     border-radius: 15px;
     background-color: #C91532;
     color: #f2f2f2;
@@ -169,46 +170,34 @@
     float: left;
 }
 
-.itemCountUp {
+.itemCount {
     width: 23%;
+    max-width: 86px;
+    height: 55px;
+    padding: 2px;
+    font-size: 20px;
+    border: 1px solid #C91532;
+    border-radius: 15px;
+    background-color: #C91532;
+    color: #f2f2f2;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.itemCount:hover {
+    border: 2px solid #333333;
+    padding: 1px;
+}
+
+.up {
     margin-left: 5px;
-    height: 55px;
-    padding: 2px;
-    font-size: 20px;
-    border: 1px solid #C91532;
-    border-radius: 15px;
-    background-color: #C91532;
-    color: #f2f2f2;
-    text-align: center;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-.itemCountUp:hover {
-    border: 2px solid #333333;
-}
-
-.itemCountDown {
-    width: 23%;
+.down {
     margin-right: 5px;
-    height: 55px;
-    padding: 2px;
-    font-size: 20px;
-    border: 1px solid #C91532;
-    border-radius: 15px;
-    background-color: #C91532;
-    color: #f2f2f2;
-    text-align: center;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.itemCountDown:hover {
-    border: 2px solid #333333;
 }
 
 body {
@@ -244,14 +233,14 @@ body {
         margin-top: 5px;
         margin-bottom: 5px;
     }
-    .itemCountUp {
+    .itemCount {
         height: 35px;
         width: 30px;
         display: flex;
         align-items: center;
         justify-content: center;
     }
-    .itemCountDown {
+    .itemCount {
         height: 35px;
         width: 30px;
         display: flex;
