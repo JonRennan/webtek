@@ -23,6 +23,9 @@ function getName(id) {
 
 
 function getDescription(id) {
+    // to update language on menu item on homepage
+    let language = localStorage.getItem("language");
+
     let itemDescription = document.createElement("p");
     itemDescription.id = `itemDescription${id}`;
     itemDescription.className = "itemDescription";

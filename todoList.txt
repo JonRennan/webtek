@@ -10,5 +10,4 @@
 
 Bugs:
 - Noen ting, f.eks i navbaren, flyttes på når du hovrer over
-- Beskrivelsen til maten på fremsiden forsvinner når man bytter språk
 - Hvis man legger til 10 eller flere av en ting i meny-en så ødelegger det bestillingen

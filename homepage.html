@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en no">
 <head>
-    <meta charset="UTF-8" content="width=device-width, initial-sclae=1">
+    <meta charset="UTF-8" content="width=device-width, initial-scale=1">
     <title> Homepage </title>
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="icon" type="image/png" href="images/foodtruck.png">
@@ -68,6 +68,7 @@
 <script> 
     // random foodSuggestion
     let index = Math.floor(Math.random() * 6);
+    localStorage.setItem("index",index);
     let image = getImage(index, "Full").src;
     let name = getName(index).innerHTML;
     let description = getDescription(index).innerHTML;

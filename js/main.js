@@ -1,6 +1,6 @@
 // load navbar on all pages
-let no = "no"
-let en = "en"
+let no = "no";
+let en = "en";
 
 let navbar = '' +
     '<div class="navbar" id="navbar">' +
@@ -84,7 +84,6 @@ const homepage_en = {
     location: "We're located just behind the Studentersamfundet.",
     open: "Open: mon-sun | 19 - 02",
     suggestion: "On the fly? Grab one of these",
-    foodText: "",
     other: "Or try one of many other tasty alternatives >>>",
 }
 
@@ -95,8 +94,13 @@ const homepage_no = {
     location: "Du finner oss like bak Studentersamfundet.",
     open: "Åpen: man-søn | 19 - 02",
     suggestion: "På farten? Prøv en av disse",
-    foodText: "",
     other: "Eller prøv en av mange andre smakfulle retter >>>",
+}
+
+function foodSuggestionLanguage(){
+    let index = localStorage.getItem("index");
+    let description = getDescription(index).innerHTML;
+    document.getElementById("foodDescription").innerHTML = description;
 }
 
 function changeHomePageLanguage(lang) {
@@ -113,8 +117,8 @@ function changeHomePageLanguage(lang) {
     document.getElementById("homepageLocation").innerHTML = homepage.location;
     document.getElementById("homePageOpen").innerHTML = homepage.open;
     document.getElementById("suggestion").innerHTML = homepage.suggestion;
-    document.getElementById("foodDescription").innerHTML = homepage.foodText;
     document.getElementById("homePageOther").innerHTML = homepage.other;
+    foodSuggestionLanguage();
 }
 
 
@@ -253,6 +257,7 @@ function changeLanguage(lang) {
         contact_us.innerHTML = navbar_no.contact_us;
     }
     if (currentUrl === "homepage.html") {
+        changeMenuLanguage(lang);
         changeHomePageLanguage(lang);
     }
     if (currentUrl === "menu.html") {
