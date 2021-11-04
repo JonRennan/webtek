@@ -98,7 +98,7 @@ const homepage_no = {
     other: "Eller prøv en av mange andre smakfulle retter >>>",
 }
 
-function foodSuggestionLanguage(){
+function foodSuggestionLanguage() {
     let index = localStorage.getItem("index");
     let description = getDescription(index).innerHTML;
     document.getElementById("foodDescription").innerHTML = description;
@@ -174,6 +174,33 @@ const itemDescriptionsNO = [
     "Taco med kjøtt og andre godsaker",
 ];
 
+function changeAllergyLanguage(allergiesCurrent) {
+    for (let id = 0; id < allergiesCurrent.length; id++) {
+        allergiesCurrent.map(function (allergies, index) {
+            allergies.map(function (allergy) {
+                if (allergy === "H" || allergy === "W") {
+                    let itemAllergyH = document.getElementById(`itemAllergies${index}-H`);
+                    let itemAllergyW = document.getElementById(`itemAllergies${index}-W`);
+                    if (itemAllergyH) {
+                        itemAllergyH.innerHTML = allergy;
+                    } else if (itemAllergyW) {
+                        itemAllergyW.innerHTML = allergy;
+                    }
+                }
+            });
+        });
+    }
+}
+
+function changeOrderBackButtonLang(lang) {
+    let orderBackButton = document.getElementById("orderBackButton");
+    if (lang === en && orderBackButton) {
+        orderBackButton.innerText = "< Back to menu";
+    } else if (lang === no && orderBackButton) {
+        orderBackButton.innerText = "< Tilbake til menyen";
+    }
+}
+
 
 function changeMenuLanguage(lang) {
     let addButtons = document.getElementsByClassName("itemAdd");
@@ -183,7 +210,6 @@ function changeMenuLanguage(lang) {
     let countButton = "";
     let descriptions = [];
     let allergiesCurrent = [];
-    let allergiesOther = [];
 
     updateTotalPrice();
     updateGoToOrder();
@@ -193,43 +219,30 @@ function changeMenuLanguage(lang) {
         countButton = menu_en.countButton;
         descriptions = itemDescriptionsEN;
         allergiesCurrent = itemAllergiesEN;
-        allergiesOther = itemAllergiesNO;
     } else if (lang === no) {
         addButton = menu_no.addButton;
         countButton = menu_no.countButton;
         descriptions = itemDescriptionsNO;
         allergiesCurrent = itemAllergiesNO;
-        allergiesOther = itemAllergiesEN;
     } else {
         return;
     }
+    changeAllergyLanguage(allergiesCurrent);
+    changeOrderBackButtonLang(lang);
 
-    for (let id = 0; id < allergiesCurrent.length; id++) {
-        for (let j = 0; j < allergiesCurrent.length; j++) {
-            let allergyC = allergiesCurrent[j];
-            let allergyO = allergiesOther[j];
-            if (allergyC !== allergyO) {
-                let itemAllergyC = document.getElementById(`itemAllergies${id}-${allergyC}`);
-                let itemAllergyO = document.getElementById(`itemAllergies${id}-${allergyO}`);
-                if (itemAllergyC) {
-                    itemAllergyC.innerHTML = allergyC
-                } else if (itemAllergyO) {
-                    itemAllergyO.innerHTML = allergyC
-                }
-            }
-        }
-    }
     [].slice.call(addButtons).forEach(function (button) {
         button.innerHTML = addButton;
     });
     [].slice.call(countButtons).forEach(function (button) {
         button.innerHTML = countButton;
     });
-    let x = 0;
-    [].slice.call(itemDescriptions).forEach(function (description) {
-        description.innerHTML = descriptions[x];
-        x += 1;
-    });
+    if (itemDescriptions) {
+        let x = 0;
+        [].slice.call(itemDescriptions).forEach(function (description) {
+            description.innerHTML = descriptions[x];
+            x += 1;
+        });
+    }
 }
 
 
@@ -264,6 +277,9 @@ function changeLanguage(lang) {
         changeHomePageLanguage(lang);
     }
     if (currentUrl === "menu.html") {
+        changeMenuLanguage(lang);
+    }
+    if (currentUrl === "order.html") {
         changeMenuLanguage(lang);
     }
 }
