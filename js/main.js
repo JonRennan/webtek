@@ -42,9 +42,10 @@ if (window.innerWidth <= 400) {
 let currentUrl = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
 let navbarLinks = document.getElementsByClassName("navbarText");
 for (let i = 0; i < navbarLinks.length; i++) {
-    if (navbarLinks[i].id === currentUrl) {
-        document.getElementById(currentUrl).style.color = '#C91532';
+    if (navbarLinks[i].id === currentUrl || (navbarLinks[i].id === "menu.html" && currentUrl === "order.html")) {
+        document.getElementById(navbarLinks[i].id).style.color = '#C91532';
     }
+    console.log(currentUrl + " " + navbarLinks[i].id);
 }
 // set language and color it in the navbar
 const navbar_en = {
@@ -184,6 +185,9 @@ function changeMenuLanguage(lang) {
     let allergiesCurrent = [];
     let allergiesOther = [];
 
+    updateTotalPrice();
+    updateGoToOrder();
+
     if (lang === en) {
         addButton = menu_en.addButton;
         countButton = menu_en.countButton;
@@ -257,7 +261,6 @@ function changeLanguage(lang) {
         contact_us.innerHTML = navbar_no.contact_us;
     }
     if (currentUrl === "homepage.html") {
-        changeMenuLanguage(lang);
         changeHomePageLanguage(lang);
     }
     if (currentUrl === "menu.html") {

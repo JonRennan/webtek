@@ -30,10 +30,10 @@ function getDescription(id) {
     itemDescription.id = `itemDescription${id}`;
     itemDescription.className = "itemDescription";
 
-    if(language === no){
+    if (language === no) {
         itemDescription.innerText = itemDescriptionsNO[id];
     }
-    if(language === en){
+    if (language === en) {
         itemDescription.innerText = itemDescriptionsEN[id];
     }
     return itemDescription;
@@ -45,10 +45,10 @@ function getAllergies(id) {
     itemAllergiesList.className = "itemAllergies";
     let allergies = itemAllergiesEN[id];
 
-    if(language === no){
+    if (language === no) {
         allergies = itemAllergiesNO[id];
     }
-    if(language === en){
+    if (language === en) {
         allergies = itemAllergiesEN[id];
     }
 
@@ -100,53 +100,54 @@ function getImage(id, type) {
     return itemImage;
 }
 
-function getCountBox(id) {
+function getAmountCol(id, display, amount = 0) {
     let itemCountText = document.createElement("p");
     itemCountText.id = `itemCountText${id}`;
     itemCountText.className = "itemCountText";
-    if(language === no){
+    if (language === no) {
         itemCountText.innerText = "Hvor mange?";
     }
-    if(language === en){
+    if (language === en) {
         itemCountText.innerText = "How many?";
     }
     let itemCountBox = document.createElement("div");
     itemCountBox.id = `itemCountBox${id}`;
     itemCountBox.className = "itemCountBox";
-    itemCountBox.innerText = "0";
+    itemCountBox.innerText = `${amount}`;
 
-    let countCol = document.createElement("div");
-    countCol.className = "countCol";
-    countCol.id = `itemCount${id}`;
-    countCol.appendChild(itemCountText);
-    countCol.appendChild(itemCountBox);
+    let itemAmountCol = document.createElement("div");
+    itemAmountCol.className = "countCol";
+    itemAmountCol.id = `itemCount${id}`;
+    itemAmountCol.style.display = display;
+    itemAmountCol.appendChild(itemCountText);
+    itemAmountCol.appendChild(itemCountBox);
 
-    //let itemButtons = document.getElementById(`itemButtons${id}`);
-    //itemButtons.appendChild(col1);
-
-    //return [itemCountText, itemCountBox];
-    return countCol;
+    return itemAmountCol;
 }
 
-function getCountButtons(id /*, display*/) {
+function getCountButtons(id, display) {
     let itemCountUp = document.createElement("div");
     itemCountUp.id = `itemCountUp${id}`;
     itemCountUp.className = "itemCount up";
     itemCountUp.innerText = "+";
-    //itemCountUp.style.display = display;
-    itemCountUp.onclick = function() {increaseOrder(id)};
+    itemCountUp.style.display = display;
+    itemCountUp.onclick = function () {
+        increaseOrder(id)
+    };
 
     let itemCountDown = document.createElement("div");
     itemCountDown.id = `itemCountDown${id}`;
     itemCountDown.className = "itemCount down";
     itemCountDown.innerText = "-";
-    //itemCountDown.style.display = display;
-    itemCountDown.onclick = function() {decreaseOrder(id)};
+    itemCountDown.style.display = display;
+    itemCountDown.onclick = function () {
+        decreaseOrder(id)
+    };
 
     return [itemCountUp, itemCountDown];
 }
 
-function getItem(id, type) {
+function getItem(id, type, amount = 0) {
     let itemDiv = document.createElement("div");
     itemDiv.id = `menuItem${id}`;
     itemDiv.className = "menuItem";
@@ -176,53 +177,50 @@ function getItem(id, type) {
     itemButtons.className = "row";
 
     if (type === typeFull) {
-        let countCol = document.createElement("div");
-        countCol.className = "countCol";
-        countCol.id = `countCol1${id}`;
+        let itemAddCol = document.createElement("div");
+        itemAddCol.className = "countCol";
+        itemAddCol.id = `countCol${id}`;
 
         let addButton = document.createElement("a");
         addButton.id = `itemAddButton${id}`;
         addButton.className = "itemAdd";
-        
-        if(language === no){
+
+        if (language === no) {
             addButton.innerText = "Legg til";
         }
-        if(language === en){
+        if (language === en) {
             addButton.innerText = "Add to order";
         }
-        
-        addButton.onclick = function () {addToOrder(id)};
-        countCol.appendChild(addButton);
+
+        addButton.onclick = function () {
+            addToOrder(id)
+        };
+        itemAddCol.appendChild(addButton);
+        itemButtons.appendChild(itemAddCol);
 
         //add buttons to itemButtons
-        let [countUp, countDown] = getCountButtons(id);
-        let countBox = getCountBox(id);
-        itemButtons.appendChild(countDown);
-        itemButtons.appendChild(countCol);
-        itemButtons.appendChild(countBox);
-        itemButtons.appendChild(countUp);
-        countUp.style.display = "none";
-        countDown.style.display = "none";
-        countBox.style.display = "none";
-
-        //let countTextBox = getCountBox(id/*, "none"*/);
-        //itemButtons.appendChild(countTextBox[0]);
-        //itemButtons.appendChild(countTextBox[1]);
-
-        //let upDown = getCountButtons(id/*, "none"*/);
-        //itemButtons.appendChild(upDown[0]);
-        //itemButtons.appendChild(upDown[1]);
-    } 
-    else {
-        //let countTextBox = getCountBox(id/*, "block"*/);
-        //itemButtons.appendChild(countTextBox[0]);
-        //itemButtons.appendChild(countTextBox[1]);
-
-        if (type === typeOrder) {
-            //let upDown = getCountButtons(id/*, "block"*/);
-            //itemButtons.appendChild(upDown[0]);
-            //itemButtons.appendChild(upDown[1]);
+        let countUp;
+        let countDown;
+        let itemAmountCol;
+        if (amount !== 0) {
+            itemAddCol.style.display = "none";
+            [countUp, countDown] = getCountButtons(id, "flex");
+            itemAmountCol = getAmountCol(id, "flex", amount);
+        } else {
+            [countUp, countDown] = getCountButtons(id, "none");
+            itemAmountCol = getAmountCol(id, "none");
         }
+        itemButtons.appendChild(countDown);
+        itemButtons.appendChild(itemAmountCol);
+        itemButtons.appendChild(countUp);
+    } else if (type === typeOrder) {
+
+        //add buttons to itemButtons
+        let [countUp, countDown] = getCountButtons(id, "flex");
+        let itemAmountCol = getAmountCol(id, "flex", amount);
+        itemButtons.appendChild(countDown);
+        itemButtons.appendChild(itemAmountCol);
+        itemButtons.appendChild(countUp);
     }
 
     itemDiv.appendChild(itemButtons);
@@ -231,12 +229,14 @@ function getItem(id, type) {
 }
 
 function getFullMenu() {
+    let amounts = getOrderAmounts();
     let menu = document.getElementById("menu");
 
     for (let i = 0; i < itemNames.length; i++) {
-        menu.appendChild(getItem(i, typeFull));
+        menu.appendChild(getItem(i, typeFull, amounts[i]));
     }
-
+    updateTotalPrice();
+    updateGoToOrder();
     return menu;
 }
 
@@ -249,62 +249,135 @@ function addToOrder(id) {
     downButton.style.display = "flex";
     increaseOrder(id);
 
-    let addButton = document.getElementById(`countCol1${id}`);
+    let addButton = document.getElementById(`countCol${id}`);
     addButton.style.display = "none";
+    updateTotalPrice();
 }
 
 function increaseOrder(id) {
     let itemCountText = document.getElementById(`itemCountBox${id}`);
     itemCountText.innerText = parseInt(itemCountText.innerText) + 1;
+    updateTotalPrice();
+    updateOrder();
 }
 
 function decreaseOrder(id) {
     let itemCountText = document.getElementById(`itemCountBox${id}`);
-    if(parseInt(itemCountText.innerText) > 0){
+    if (parseInt(itemCountText.innerText) > 0) {
         itemCountText.innerText = parseInt(itemCountText.innerText) - 1;
     }
-    if(parseInt(itemCountText.innerText) === 0){
-        let addButton = document.getElementById(`countCol1${id}`);
-        addButton.style.display = "flex";
-        let countBox = document.getElementById(`itemCount${id}`);
-        let upButton = document.getElementById(`itemCountUp${id}`);
-        let downButton = document.getElementById(`itemCountDown${id}`);
-        countBox.style.display = "none";
-        upButton.style.display = "none";
-        downButton.style.display = "none";
+    if (parseInt(itemCountText.innerText) === 0) {
+        let currentUrl = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
+        if (currentUrl === "order.html") {
+            document.getElementById(`menuItem${id}`).remove()
+        } else {
+            let addButton = document.getElementById(`countCol1${id}`);
+            addButton.style.display = "flex";
+            let countBox = document.getElementById(`itemCount${id}`);
+            let upButton = document.getElementById(`itemCountUp${id}`);
+            let downButton = document.getElementById(`itemCountDown${id}`);
+            countBox.style.display = "none";
+            upButton.style.display = "none";
+            downButton.style.display = "none";
+        }
     }
+    updateTotalPrice();
+    updateOrder();
 }
 
-function sendOrder() {
+function updateOrder() {
     let order = "";
-    let empty_order = "";
 
     for (let i = 0; i < itemNames.length; i++) {
-        empty_order += "0";
+        if (order !== "") {
+            order += "-";
+        }
         let itemCount = document.getElementById(`itemCountBox${i}`);
-        if(itemCount){
+        if (itemCount) {
             order += itemCount.innerHTML;
         } else {
             order += "0";
         }
     }
-    if (order === empty_order) {
-        // TODO: Respons du må legge noe til i bestillingen
-    } else {
-        localStorage.setItem("order", order);
+    localStorage.setItem("order", order);
+}
+
+function toOrder() {
+    let order = localStorage.getItem("order");
+    if (order && order !== "") {
         window.location.href = "order.html";
+    } else {
+        // TODO: Respons du må legge noe til i bestillingen
     }
 }
 
-function getOrder() {
+function getOrderAmounts() {
     let order = localStorage.getItem("order");
+    if (order) {
+        return order.split("-").map(amount => parseInt(amount));
+    }
+    return Array(itemNames.length).fill(0);
+}
+
+function getOrder() {
+    let amounts = getOrderAmounts();
     let orderDiv = document.getElementById("order");
 
-
-    for (let i = 0; i < order.length; i++) {
-        let amount = parseInt(order.charAt(i));
-        if (amount > 0) {
-            orderDiv.appendChild(getItem(i, typeOrder));
+    for (let i = 0; i < amounts.length; i++) {
+        if (amounts[i] > 0) {
+            orderDiv.appendChild(getItem(i, typeOrder, amounts[i]));
         }
+    }
+    updateTotalPrice();
+    updateGoToPayment();
+}
+
+
+function getTotalPrice() {
+    let total = 0;
+    for (let i = 0; i < itemNames.length; i++) {
+        let itemCount = document.getElementById(`itemCountBox${i}`);
+        if (itemCount) {
+            let price = itemPrices[i];
+            total += price * parseInt(itemCount.innerHTML);
+        }
+    }
+    return total
+}
+
+function updateTotalPrice() {
+    // to update language on menu item on homepage
+    let language = localStorage.getItem("language");
+
+    let orderPrice = document.getElementById("orderPrice");
+    let price = getTotalPrice();
+    if (language === no) {
+        orderPrice.innerText = `Din total: ${price},-`;
+    } else if (language === en) {
+        orderPrice.innerText = `Your total: ${price},-`;
+    }
+}
+
+function updateGoToOrder() {
+    // to update language on menu item on homepage
+    let language = localStorage.getItem("language");
+
+    let orderNextPage = document.getElementById("orderNextPage");
+    if (language === no) {
+        orderNextPage.innerText = "Gå til kassen >";
+    } else if (language === en) {
+        orderNextPage.innerText = "Go to checkout >";
+    }
+}
+
+function updateGoToPayment() {
+    // to update language on menu item on homepage
+    let language = localStorage.getItem("language");
+
+    let orderNextPage = document.getElementById("orderNextPage");
+    if (language === no) {
+        orderNextPage.innerText = "Gå til betaling >";
+    } else if (language === en) {
+        orderNextPage.innerText = "Go to payment >";
     }
 }
