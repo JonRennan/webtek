@@ -45,7 +45,6 @@ for (let i = 0; i < navbarLinks.length; i++) {
     if (navbarLinks[i].id === currentUrl || (navbarLinks[i].id === "menu.html" && currentUrl === "order.html")) {
         document.getElementById(navbarLinks[i].id).style.color = '#C91532';
     }
-    console.log(currentUrl + " " + navbarLinks[i].id);
 }
 // set language and color it in the navbar
 const navbar_en = {
@@ -257,7 +256,6 @@ function changeLanguage(lang) {
     let menu = document.getElementById("menu.html");
     let about_us = document.getElementById("about_us.html");
     let contact_us = document.getElementById("contact_us.html");
-    console.log(currentUrl)
     if (lang === en) {
         document.getElementById("en").style.color = '#C91532';
         document.getElementById("no").style.color = '';
