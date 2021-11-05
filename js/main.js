@@ -244,6 +244,41 @@ function changeMenuLanguage(lang) {
     }
 }
 
+// about us-page
+const about_en = {
+    q1: "Who are we?",
+    q2: "What do we do?",
+    q3: "How to join us",
+    image1: "All the people working in the truck",
+    image2: "The foodtruck and UKA is love",
+    image3: "The foodtruck in action"
+}
+
+const about_no = {
+    q1: "Hvem er vi?",
+    q2: "Hva gjør vi",
+    q3: "Hvordan bli med",
+    image1: "Alle som jobber i trucken",
+    image2: "Foodtrucken og UKA er kjærlighet",
+    image3: "Foodtrucken i action"
+}
+
+function changeAboutPageLanguage(lang) {
+    let about = {};
+    if (lang === en) {
+        about = about_en;
+    } else if (lang === no) {
+        about = about_no;
+    } else {
+        return;
+    }
+    document.getElementById("q1").innerHTML = about.q1;
+    document.getElementById("q2").innerHTML = about.q2;
+    document.getElementById("q3").innerHTML = about.q3;
+    document.getElementById("image1").innerHTML = about.image1;
+    document.getElementById("image2").innerHTML = about.image2;
+    document.getElementById("image3").innerHTML = about.image3;
+}
 
 // change language
 if (localStorage.getItem("language") === no) {
@@ -279,5 +314,9 @@ function changeLanguage(lang) {
     }
     if (currentUrl === "order.html") {
         changeMenuLanguage(lang);
+    }
+    if (currentUrl === "about_us.html") {
+        console.log("I am activated")
+       changeAboutPageLanguage(lang)
     }
 }
