@@ -218,13 +218,13 @@ function changeMenuLanguage(lang) {
         countButton = menu_en.countButton;
         descriptions = itemDescriptionsEN;
         allergiesCurrent = itemAllergiesEN;
-        document.getElementById("response").innerHTML = "Please order something before contiuing";
+        document.getElementById("error").innerHTML = "Please order something before contiuing";
     } else if (lang === no) {
         addButton = menu_no.addButton;
         countButton = menu_no.countButton;
         descriptions = itemDescriptionsNO;
         allergiesCurrent = itemAllergiesNO;
-        document.getElementById("response").innerHTML = "Bestill noe før du går videre"
+        document.getElementById("error").innerHTML = "Bestill noe før du går videre"
     } else {
         return;
     }
@@ -315,7 +315,7 @@ const contact_no = {
 }
 
 // Modal handeling in about us and contact us
-if (document.getElementsByClassName("close") == 1) {
+if (document.getElementsByClassName("close").length == 1) {
     var modal = document.getElementById("myModal");
 
     // Get the <span> element that closes the modal

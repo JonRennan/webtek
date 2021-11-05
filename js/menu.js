@@ -303,7 +303,7 @@ function updateOrder() {
 }
 
 // Modal handeling in menu
-if (document.getElementsByClassName("close") == 1) {
+if (document.getElementsByClassName("close").length == 1) {
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
     // When the user clicks on <span> (x), close the modal
