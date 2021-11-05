@@ -325,22 +325,7 @@ if (document.getElementsByClassName("close").length == 1) {
     // Special case for contact page since two possible texts are available
     span.onclick = function () {
         modal.style.display = "none";
-        let response = ""
-        if (localStorage.getItem("language") == no) {
-            response = contact_no.response
-        }
-        else if (localStorage.getItem("language") == en) {
-            response = contact_en.response
-        }
-        document.getElementById("response").innerHTML = response
-    }
-
-    // When the user clicks anywhere outside of the modal, close it
-    // Special case for contact page since two possible texts are available
-    window.onclick = function (event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-            // modal2.style.display = "none";
+        if (document.getElementsByClassName("col") == 1) {
             let response = ""
             if (localStorage.getItem("language") == no) {
                 response = contact_no.response
@@ -349,6 +334,24 @@ if (document.getElementsByClassName("close").length == 1) {
                 response = contact_en.response
             }
             document.getElementById("response").innerHTML = response
+        }
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    // Special case for contact page since two possible texts are available
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+            if (document.getElementsByClassName("col") == 1) {
+                let response = ""
+                if (localStorage.getItem("language") == no) {
+                    response = contact_no.response
+                }
+                else if (localStorage.getItem("language") == en) {
+                    response = contact_en.response
+                }
+                document.getElementById("response").innerHTML = response
+            }
         }
     }
 
@@ -381,26 +384,28 @@ if (document.getElementsByClassName("close").length == 1) {
     }
 
     // Image modal handeling, pop up when clicking the picture
-    // Get the image and insert it inside the modal - use its "alt" text as a caption
-    var img1 = document.getElementById("img1");
-    var img2 = document.getElementById("img2");
-    var img3 = document.getElementById("img3");
-    var modalImg = document.getElementById("img01");
-    var captionText = document.getElementById("caption");
-    img1.onclick = function () {
-        modal.style.display = "block";
-        modalImg.src = this.src;
-        captionText.innerHTML = this.alt;
-    }
-    img2.onclick = function () {
-        modal.style.display = "block";
-        modalImg.src = this.src;
-        captionText.innerHTML = this.alt;
-    }
-    img3.onclick = function () {
-        modal.style.display = "block";
-        modalImg.src = this.src;
-        captionText.innerHTML = this.alt;
+    if (document.getElementsByClassName("aboutPicture").length == 3) {
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        var img1 = document.getElementById("img1");
+        var img2 = document.getElementById("img2");
+        var img3 = document.getElementById("img3");
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+        img1.onclick = function () {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+        }
+        img2.onclick = function () {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+        }
+        img3.onclick = function () {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+        }
     }
 }
 
