@@ -334,6 +334,7 @@ function changeLanguage(lang) {
     let about_us = document.getElementById("about_us.html");
     let contact_us = document.getElementById("contact_us.html");
     if (lang === en) {
+        document.documentElement.setAttribute("lang", "en")
         document.getElementById("en").style.color = '#C91532';
         document.getElementById("no").style.color = '';
         localStorage.setItem("language", en);
@@ -341,6 +342,7 @@ function changeLanguage(lang) {
         about_us.innerHTML = navbar_en.about_us;
         contact_us.innerHTML = navbar_en.contact_us;
     } else if (lang === no) {
+        document.documentElement.setAttribute("lang", "no")
         document.getElementById("no").style.color = '#C91532';
         document.getElementById("en").style.color = '';
         localStorage.setItem("language", no);
