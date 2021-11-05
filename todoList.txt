@@ -3,8 +3,6 @@
 - endre slik at all tekst har samme størrelse
 - fullføre de siste sidene
 - legge til en boks på menysiden med betydningen av allergener
-- Feedback når man sender inn skjemaet på kontakt oss
-- Feedback på at man må ha noe i bestillingen for å kunne gå videre
 - Fix design of order.html to closer match the figma
 - add name and comment box to order.html
 

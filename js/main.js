@@ -218,11 +218,13 @@ function changeMenuLanguage(lang) {
         countButton = menu_en.countButton;
         descriptions = itemDescriptionsEN;
         allergiesCurrent = itemAllergiesEN;
+        document.getElementById("response").innerHTML = "Please order something before contiuing";
     } else if (lang === no) {
         addButton = menu_no.addButton;
         countButton = menu_no.countButton;
         descriptions = itemDescriptionsNO;
         allergiesCurrent = itemAllergiesNO;
+        document.getElementById("response").innerHTML = "Bestill noe før du går videre"
     } else {
         return;
     }
@@ -245,6 +247,7 @@ function changeMenuLanguage(lang) {
 }
 
 // about us-page
+// English text
 const about_en = {
     q1: "Who are we?",
     q2: "What do we do?",
@@ -254,6 +257,7 @@ const about_en = {
     image3: "The foodtruck in action"
 }
 
+// Norwegian text
 const about_no = {
     q1: "Hvem er vi?",
     q2: "Hva gjør vi",
@@ -263,6 +267,7 @@ const about_no = {
     image3: "Foodtrucken i action"
 }
 
+// Change page language
 function changeAboutPageLanguage(lang) {
     let about = {};
     if (lang === en) {
@@ -281,6 +286,7 @@ function changeAboutPageLanguage(lang) {
 }
 
 // contact us-page
+// English text
 const contact_en = {
     contact_header: "Something wrong? Contact us!",
     firstname: "First Name",
@@ -289,9 +295,12 @@ const contact_en = {
     about: "What’s it about?",
     message: "Type your message here...",
     location_header: "Can’t find us? We’re here!",
-    location_description: "The foodtruck is located on the <br> backside of Studentersamfundet."
+    location_description: "The foodtruck is located on the <br> backside of Studentersamfundet.",
+    response: "Thank you for your input",
+    error: "Please fill out all fields"
 }
 
+// Norwegian text
 const contact_no = {
     contact_header: "Noe galt? Kontakt oss!",
     firstname: "Fornavn",
@@ -300,9 +309,102 @@ const contact_no = {
     about: "Hva gjelder det?",
     message: "Skriv meldingen din her...",
     location_header: "Finner du oss ikke? Her er vi!",
-    location_description: "Foodtrucken er på <br> baksiden av Studentersamfundet."
+    location_description: "Foodtrucken er på <br> baksiden av Studentersamfundet.",
+    response: "Takk for din tilbakemelding",
+    error: "Fyll ut alle felter"
 }
 
+// Modal handeling in about us and contact us
+if (document.getElementsByClassName("close") == 1) {
+    var modal = document.getElementById("myModal");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    // Special case for contact page since two possible texts are available
+    span.onclick = function () {
+        modal.style.display = "none";
+        let response = ""
+        if (localStorage.getItem("language") == no) {
+            response = contact_no.response
+        }
+        else if (localStorage.getItem("language") == en) {
+            response = contact_en.response
+        }
+        document.getElementById("response").innerHTML = response
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    // Special case for contact page since two possible texts are available
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+            // modal2.style.display = "none";
+            let response = ""
+            if (localStorage.getItem("language") == no) {
+                response = contact_no.response
+            }
+            else if (localStorage.getItem("language") == en) {
+                response = contact_en.response
+            }
+            document.getElementById("response").innerHTML = response
+        }
+    }
+
+    // Function for submitting form and giving response
+    function submitContact() {
+        let firstname = document.getElementById("firstname").value
+        let lastname = document.getElementById("lastname").value
+        let email = document.getElementById("email").value
+        let about = document.getElementById("about").value
+        let message = document.getElementById("message").value
+        if (firstname && lastname && email && about && message) {
+            document.getElementById("firstname").value = ""
+            document.getElementById("lastname").value = ""
+            document.getElementById("email").value = ""
+            document.getElementById("about").value = ""
+            document.getElementById("message").value = ""
+            modal.style.display = "block"
+        }
+        else {
+            let error = ""
+            if (localStorage.getItem("language") === no) {
+                error = contact_no.error
+            }
+            else if (localStorage.getItem("language") === en) {
+                error = contact_en.error
+            }
+            document.getElementById("response").innerHTML = error
+            modal.style.display = "block"
+        }
+    }
+
+    // Image modal handeling, pop up when clicking the picture
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img1 = document.getElementById("img1");
+    var img2 = document.getElementById("img2");
+    var img3 = document.getElementById("img3");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img1.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+    }
+    img2.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+    }
+    img3.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+    }
+}
+
+// Change page language
 function changeContactPageLanguage(lang) {
     let contact = {};
     if (lang === en) {
@@ -320,6 +422,7 @@ function changeContactPageLanguage(lang) {
     document.getElementById("message").placeholder = contact.message;
     document.getElementById("location_header").innerHTML = contact.location_header;
     document.getElementById("location_description").innerHTML = contact.location_description;
+    document.getElementById("response").innerHTML = contact.response;
 }
 
 // change language

@@ -40,7 +40,7 @@
                             <textarea id="message" class="full" name="message" rows="6"
                                 placeholder="Type your message here..." required></textarea>
                             <br><br>
-                            <button id="submitButton" type="submit">Send</button>
+                            <button id="submitButton" type="button" onclick="submitContact()">Send</button>
                         </form>
                     </div>
                 </div>
@@ -57,6 +57,16 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content2">
+                <span class="close">&times;</span>
+                <p id="response">Thank you for your input</p>
+            </div>
+
         </div>
 
     </div>

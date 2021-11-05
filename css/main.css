@@ -80,7 +80,7 @@ hr {
     font-weight: bold;
 }
 
-.en :lang(no){
+.en :lang(no) {
     display: none;
 }
 
@@ -89,8 +89,10 @@ hr {
 }
 
 /* homepage */
+
 /* for mobile devices */
-@media only screen and (max-width: 380px){
+
+@media only screen and (max-width: 380px) {
     .navbar {
         width: 90vw !important;
     }
@@ -121,7 +123,7 @@ hr {
     }
 }
 
-@media only screen and (min-width: 381px) and (max-width: 600px){
+@media only screen and (min-width: 381px) and (max-width: 600px) {
     .navbar {
         width: 90vw !important;
     }
@@ -153,7 +155,6 @@ hr {
     }
 }
 
-
 .paragraph {
     font-size: 20px;
 }
@@ -169,7 +170,7 @@ hr {
     width: 40vw;
     height: 350px;
     padding: 10px;
-    display: flex; 
+    display: flex;
     flex-direction: column;
     justify-content: flex-start;
 }
@@ -210,7 +211,7 @@ hr {
     padding: 5px;
     cursor: pointer;
     text-decoration: none;
-    color:#333333;
+    color: #333333;
 }
 
 .foodSuggestion:hover {
@@ -222,7 +223,7 @@ hr {
     width: fit-content;
     max-width: 50%;
     height: 110px;
-    display: flex; 
+    display: flex;
     flex-direction: column;
     justify-content: flex-start;
 }
@@ -231,7 +232,7 @@ hr {
     margin-top: 0;
     margin-left: 2px;
     line-height: 1em;
-    max-height: 3em;  
+    max-height: 3em;
     overflow: hidden;
 }
 
@@ -288,6 +289,7 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 }
 
 /* Contact Us */
+
 .vl {
     border-left: 3px solid #333333;
     height: 100%
@@ -350,16 +352,114 @@ form {
 
 .aboutImg {
     transition: transform .5s;
+    cursor: pointer;
 }
 
-/* https://www.w3schools.com/howto/howto_css_modal_images.asp */
 .aboutImg:hover {
-    margin: auto;
-    transform: scale(2.5);
+    opacity: 0.7;
 }
 
+/* The Modal (background) */
 
-/*  */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 99;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: auto;
+    max-height: 70%;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+
+.modal-content, #caption {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0)
+    }
+    to {
+        transform: scale(1)
+    }
+}
+
+/* The Close Button */
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover, .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+
+@media only screen and (max-width: 700px) {
+    .modal-content {
+        width: 100%;
+    }
+}
+
+/* Modal content (not image) */
+.modal-content2 {
+    background-color: #C4C4C4;
+    margin: 15% auto;
+    /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 20%;
+    /* Could be more or less, depending on screen size */
+    border-radius: 10px;
+}
+
 .col1 {
     float: left;
     display: flex;

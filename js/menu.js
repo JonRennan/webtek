@@ -302,12 +302,30 @@ function updateOrder() {
     localStorage.setItem("order", order);
 }
 
+// Modal handeling in menu
+if (document.getElementsByClassName("close") == 1) {
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+}
+
 function toOrder() {
     let order = localStorage.getItem("order");
+    // localStorage.setItem("order", "") // til testing, fordi man ikke kan sette bestilling til 0
     if (order && order !== "") {
         window.location.href = "order.html";
     } else {
-        // TODO: Respons du må legge noe til i bestillingen
+        document.getElementById("myModal").style.display = "block";
     }
 }
 
