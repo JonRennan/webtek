@@ -7,7 +7,6 @@
 - Feedback på at man må ha noe i bestillingen for å kunne gå videre
 - Fix design of order.html to closer match the figma
 - add name and comment box to order.html
-- Få språk til å bære over når man bytter side
 
 Bugs:
 - Noen ting, f.eks i navbaren, flyttes på når du hovrer over
