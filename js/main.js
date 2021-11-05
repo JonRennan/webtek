@@ -280,6 +280,48 @@ function changeAboutPageLanguage(lang) {
     document.getElementById("image3").innerHTML = about.image3;
 }
 
+// contact us-page
+const contact_en = {
+    contact_header: "Something wrong? Contact us!",
+    firstname: "First Name",
+    lastname: "Last Name",
+    email: "Email",
+    about: "What’s it about?",
+    message: "Type your message here...",
+    location_header: "Can’t find us? We’re here!",
+    location_description: "The foodtruck is located on the <br> backside of Studentersamfundet."
+}
+
+const contact_no = {
+    contact_header: "Noe galt? Kontakt oss!",
+    firstname: "Fornavn",
+    lastname: "Etternavn",
+    email: "Epost",
+    about: "Hva gjelder det?",
+    message: "Skriv meldingen din her...",
+    location_header: "Finner du oss ikke? Her er vi!",
+    location_description: "Foodtrucken er på <br> baksiden av Studentersamfundet."
+}
+
+function changeContactPageLanguage(lang) {
+    let contact = {};
+    if (lang === en) {
+        contact = contact_en;
+    } else if (lang === no) {
+        contact = contact_no;
+    } else {
+        return;
+    }
+    document.getElementById("contact_header").innerHTML = contact.contact_header;
+    document.getElementById("firstname").placeholder = contact.firstname;
+    document.getElementById("lastname").placeholder = contact.lastname;
+    document.getElementById("email").placeholder = contact.email;
+    document.getElementById("about").placeholder = contact.about;
+    document.getElementById("message").placeholder = contact.message;
+    document.getElementById("location_header").innerHTML = contact.location_header;
+    document.getElementById("location_description").innerHTML = contact.location_description;
+}
+
 // change language
 if (localStorage.getItem("language") === no) {
     changeLanguage(no);
@@ -316,7 +358,9 @@ function changeLanguage(lang) {
         changeMenuLanguage(lang);
     }
     if (currentUrl === "about_us.html") {
-        console.log("I am activated")
        changeAboutPageLanguage(lang)
+    }
+    if (currentUrl === "contact_us.html") {
+        changeContactPageLanguage(lang)
     }
 }

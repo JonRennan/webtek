@@ -1,4 +1,3 @@
-- norsk tekst på "kontakt oss"
 - style kontakt oss til mindre skjermer
 - style om oss til mindre skjermer
 - endre slik at all tekst har samme størrelse
