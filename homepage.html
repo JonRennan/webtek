@@ -10,9 +10,9 @@
 
 <body>
 
-    <!-- navbar -->
-    <div id="placeNavbar"></div>
-
+<!-- navbar -->
+<div id="placeNavbar"></div>
+<main>
     <div id="alignContent">
 
         <div class="row">
@@ -21,8 +21,7 @@
                     <h1 id="homePageTitle"> Hungry? </h1>
                     <p id="welcomeText" class="paragraph">
                         Hello, welcome to UKA's foodtruck! Get our delicious, hot food, either if you're going to or
-                        from
-                        the festival, or if you're just looking for a midnight snack.
+                        from the festival, or if you're just looking for a midnight snack.
                     </p>
                     <p id="homepageLocation" class="paragraph">
                         We're located just behind the Studentersamfundet.
@@ -41,7 +40,7 @@
         <div class="row">
             <div class="col leftCol">
                 <img id="map" src="images/map.png" alt="map"
-                    onclick="window.open('https://www.google.no/maps/place/@63.422449,10.396011,19z/data=!3m1!4b1!4m5!3m4!1s0x466d31914fa1a913:0xe3b097230cb12070!8m2!3d63.422449!4d10.396011')">
+                     onclick="window.open('https://www.google.no/maps/place/@63.422449,10.396011,19z/data=!3m1!4b1!4m5!3m4!1s0x466d31914fa1a913:0xe3b097230cb12070!8m2!3d63.422449!4d10.396011')">
             </div>
 
             <div class="col">
@@ -63,23 +62,24 @@
         </div>
 
     </div>
+</main>
 
-    <script src="js/menu.js"></script>
-    <script src="js/main.js"></script>
-    <script>
-        isOpen()
-    </script>
-    <script>
-        // random foodSuggestion
-        let index = Math.floor(Math.random() * 6);
-        localStorage.setItem("index", index);
-        let image = getImage(index, "Full").src;
-        let name = getName(index).innerHTML;
-        let description = getDescription(index).innerHTML;
-        document.getElementById("foodName").innerHTML = name;
-        document.getElementById("foodDescription").innerHTML = description;
-        document.getElementById("foodImage").src = image;
-    </script>
+<script src="js/menu.js"></script>
+<script src="js/main.js"></script>
+<script>
+    isOpen()
+</script>
+<script>
+    // random foodSuggestion
+    let index = Math.floor(Math.random() * 6);
+    localStorage.setItem("index", index);
+    let image = getImage(index, "Full").src;
+    let name = getName(index).innerHTML;
+    let description = getDescription(index).innerHTML;
+    document.getElementById("foodName").innerHTML = name;
+    document.getElementById("foodDescription").innerHTML = description;
+    document.getElementById("foodImage").src = image;
+</script>
 </body>
 
 </html>

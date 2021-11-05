@@ -12,8 +12,9 @@
 </head>
 
 <body>
-    <div id="placeNavbar"></div>
+<div id="placeNavbar"></div>
 
+<main>
     <div id="order"></div>
     <a onclick="window.history.back()" id="orderBackButton" style="cursor: pointer;"></a>
 
@@ -21,15 +22,16 @@
         <span id="orderPrice"></span>
         <span id="orderNextPage"></span>
     </button>
+</main>
 
-    <script src="js/menu.js"></script>
-    <script src="js/main.js"></script>
-    <script>
-        window.onload = function () {
-            getOrder()
-            changeOrderBackButtonLang(localStorage.getItem("language"))
-        }
-    </script>
+<script src="js/menu.js"></script>
+<script src="js/main.js"></script>
+<script>
+    window.onload = function () {
+        getOrder()
+        changeOrderBackButtonLang(localStorage.getItem("language"))
+    }
+</script>
 </body>
 
 </html>
