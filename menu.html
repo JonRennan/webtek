@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title> Menu </title>
@@ -10,21 +11,22 @@
 </head>
 
 <body>
-<div id="placeNavbar"></div>
+    <div id="placeNavbar"></div>
 
-<div id="menu"></div>
+    <div id="menu"></div>
 
-<button id="orderButton" type="submit" onclick="toOrder()">
-    <span id="orderPrice"></span>
-    <span id="orderNextPage"></span>
-</button>
+    <button id="orderButton" type="submit" onclick="toOrder()">
+        <span id="orderPrice"></span>
+        <span id="orderNextPage"></span>
+    </button>
 
-<script src="js/main.js"></script>
-<script src="js/menu.js"></script>
-<script>
-    window.onload = function () {
-        getFullMenu()
-    }
-</script>
+    <script src="js/main.js"></script>
+    <script src="js/menu.js"></script>
+    <script>
+        window.onload = function () {
+            getFullMenu()
+        }
+    </script>
 </body>
+
 </html>

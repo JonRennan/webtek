@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title> Order </title>
@@ -9,24 +10,26 @@
     <link rel="icon" type="image/png" href="images/foodtruck.png">
 
 </head>
+
 <body>
-<div id="placeNavbar"></div>
+    <div id="placeNavbar"></div>
 
-<div id="order"></div>
-<a onclick="window.history.back()" id="orderBackButton"></a>
+    <div id="order"></div>
+    <a onclick="window.history.back()" id="orderBackButton"></a>
 
-<button id="orderButton" type="submit" onclick="">
-    <span id="orderPrice"></span>
-    <span id="orderNextPage"></span>
-</button>
+    <button id="orderButton" type="submit" onclick="">
+        <span id="orderPrice"></span>
+        <span id="orderNextPage"></span>
+    </button>
 
-<script src="js/main.js"></script>
-<script src="js/menu.js"></script>
-<script>
-    window.onload = function () {
-        getOrder()
-        changeOrderBackButtonLang(localStorage.getItem("language"))
-    }
-</script>
+    <script src="js/main.js"></script>
+    <script src="js/menu.js"></script>
+    <script>
+        window.onload = function () {
+            getOrder()
+            changeOrderBackButtonLang(localStorage.getItem("language"))
+        }
+    </script>
 </body>
+
 </html>

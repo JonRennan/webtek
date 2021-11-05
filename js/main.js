@@ -351,16 +351,16 @@ function changeLanguage(lang) {
     if (currentUrl === "homepage.html") {
         changeHomePageLanguage(lang);
     }
-    if (currentUrl === "menu.html") {
+    else if (currentUrl === "menu.html") {
         changeMenuLanguage(lang);
     }
-    if (currentUrl === "order.html") {
+    else if (currentUrl === "order.html") {
         changeMenuLanguage(lang);
     }
-    if (currentUrl === "about_us.html") {
-       changeAboutPageLanguage(lang)
+    else if (currentUrl === "about_us.html") {
+        changeAboutPageLanguage(lang)
     }
-    if (currentUrl === "contact_us.html") {
+    else if (currentUrl === "contact_us.html") {
         changeContactPageLanguage(lang)
     }
 }
