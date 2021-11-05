@@ -11,67 +11,65 @@
 
 <body>
 
-    <!-- navbar -->
-    <div id="placeNavbar"></div>
+<!-- navbar -->
+<div id="placeNavbar"></div>
 
-    <div id="language">
-
-        <div id="alignContent">
-            <div class="row">
-                <div class="col">
-                    <div class="contact">
-                        <h1 id="contact_header">Something wrong? Contact us!</h1>
-                        <form id="contact_form" action="contact_us.html" method="post">
-                            <label for="firstname"></label>
-                            <input id="firstname" class="half" type="text" name="firstname"
-                                pattern="[A-Z a-z æøåÆØÅ]{1,}" placeholder="First Name" required>
-                            <label for="lastname"></label>
-                            <input id="lastname" class="half" type="text" name="lastname" pattern="[A-Z a-z æøåÆØÅ]{1,}"
-                                placeholder="Last Name" required>
-                            <br><br>
-                            <label for="email"></label>
-                            <input id="email" class="full" type="email" name="email" placeholder="Email" required>
-                            <br><br>
-                            <label for="about"></label>
-                            <input id="about" class="full" type="text" name="about" pattern="[A-Z a-z æøåÆØÅ]{1,}"
-                                placeholder="What’s it about?" required>
-                            <br><br>
-                            <label for="message"></label>
-                            <textarea id="message" class="full" name="message" rows="6"
-                                placeholder="Type your message here..." required></textarea>
-                            <br><br>
-                            <button id="submitButton" type="button" onclick="submitContact()">Send</button>
-                        </form>
-                    </div>
+<main>
+    <div id="alignContent">
+        <div class="row">
+            <div class="col">
+                <div class="contact">
+                    <h1 id="contact_header">Something wrong? Contact us!</h1>
+                    <form id="contact_form" action="contact_us.html" method="post">
+                        <label for="firstname"></label>
+                        <input id="firstname" class="half" type="text" name="firstname"
+                               pattern="[A-Z a-z æøåÆØÅ]{1,}" placeholder="First Name" required>
+                        <label for="lastname"></label>
+                        <input id="lastname" class="half" type="text" name="lastname" pattern="[A-Z a-z æøåÆØÅ]{1,}"
+                               placeholder="Last Name" required>
+                        <br><br>
+                        <label for="email"></label>
+                        <input id="email" class="full" type="email" name="email" placeholder="Email" required>
+                        <br><br>
+                        <label for="about"></label>
+                        <input id="about" class="full" type="text" name="about" pattern="[A-Z a-z æøåÆØÅ]{1,}"
+                               placeholder="What’s it about?" required>
+                        <br><br>
+                        <label for="message"></label>
+                        <textarea id="message" class="full" name="message" rows="6"
+                                  placeholder="Type your message here..." required></textarea>
+                        <br><br>
+                        <button id="submitButton" type="button" onclick="submitContact()">Send</button>
+                    </form>
                 </div>
-                <div class="col vl">
-                    <div class="location">
-                        <h1 id="location_header">Can’t find us? We’re here!</h1>
-                        <img id="map" src="images/map.png" alt="map"
-                            onclick="window.open('https://www.google.no/maps/place/@63.422449,10.396011,19z/data=!3m1!4b1!4m5!3m4!1s0x466d31914fa1a913:0xe3b097230cb12070!8m2!3d63.422449!4d10.396011')">
+            </div>
+            <div class="col vl">
+                <div class="location">
+                    <h1 id="location_header">Can’t find us? We’re here!</h1>
+                    <img id="map" src="images/map.png" alt="map"
+                         onclick="window.open('https://www.google.no/maps/place/@63.422449,10.396011,19z/data=!3m1!4b1!4m5!3m4!1s0x466d31914fa1a913:0xe3b097230cb12070!8m2!3d63.422449!4d10.396011')">
 
-                        <p id="location_description">
-                            The foodtruck is located on the <br>
-                            backside of Studentersamfundet.
-                        </p>
-                    </div>
+                    <p id="location_description">
+                        The foodtruck is located on the <br>
+                        backside of Studentersamfundet.
+                    </p>
                 </div>
             </div>
         </div>
-        <!-- The Modal -->
-        <div id="myModal" class="modal">
+    </div>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
 
-            <!-- Modal content -->
-            <div class="modal-content2">
-                <span class="close">&times;</span>
-                <p id="response">Thank you for your input</p>
-            </div>
-
+        <!-- Modal content -->
+        <div class="modal-content2">
+            <span class="close">&times;</span>
+            <p id="response">Thank you for your input</p>
         </div>
 
     </div>
+</main>
 
-    <script src="js/main.js"></script>
+<script src="js/main.js"></script>
 
 </body>
 
