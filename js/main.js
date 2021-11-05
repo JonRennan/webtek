@@ -325,7 +325,9 @@ if (document.getElementsByClassName("close").length == 1) {
     // Special case for contact page since two possible texts are available
     span.onclick = function () {
         modal.style.display = "none";
-        if (document.getElementsByClassName("col") == 1) {
+        console.log("I am here")
+        if (document.getElementsByClassName("row").length == 1) {
+            console.log("And also here")
             let response = ""
             if (localStorage.getItem("language") == no) {
                 response = contact_no.response
@@ -333,6 +335,7 @@ if (document.getElementsByClassName("close").length == 1) {
             else if (localStorage.getItem("language") == en) {
                 response = contact_en.response
             }
+            console.log(response)
             document.getElementById("response").innerHTML = response
         }
     }
@@ -342,7 +345,7 @@ if (document.getElementsByClassName("close").length == 1) {
     window.onclick = function (event) {
         if (event.target == modal) {
             modal.style.display = "none";
-            if (document.getElementsByClassName("col") == 1) {
+            if (document.getElementsByClassName("row").length == 1) {
                 let response = ""
                 if (localStorage.getItem("language") == no) {
                     response = contact_no.response
