@@ -2,7 +2,6 @@
 - style om oss til mindre skjermer
 - endre slik at all tekst har samme størrelse
 - fullføre de siste sidene
-- legge til en boks på menysiden med betydningen av allergener
 - Fix design of order.html to closer match the figma
 - add name and comment box to order.html
 
