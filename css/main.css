@@ -28,12 +28,8 @@ body {
     cursor: pointer;
 }
 
-.navbarText:active {
-    color: #C91532;
-}
-
 .navbarText:hover {
-    font-weight: bold;
+    color: #C91532;
 }
 
 hr {
@@ -45,10 +41,6 @@ hr {
     color: #333333;
     text-decoration: none;
     float: left;
-}
-
-.logo:hover {
-    font-weight: bold;
 }
 
 .logoName {
@@ -71,13 +63,8 @@ hr {
     text-decoration: none;
     list-style-type: none;
 }
-
-.navbarItem:active {
-    color: #C91532;
-}
-
 .navbarItem:hover {
-    font-weight: bold;
+    color: #C91532;
 }
 
 .en :lang(no) {

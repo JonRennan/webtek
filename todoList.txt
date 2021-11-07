@@ -7,5 +7,4 @@
 - add name and comment box to order.html
 
 Bugs:
-- Noen ting, f.eks i navbaren, flyttes på når du hovrer over
 - Hvis man legger til 10 eller flere av en ting i meny-en så ødelegger det bestillingen

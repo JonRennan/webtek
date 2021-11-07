@@ -146,6 +146,13 @@ const itemAllergiesEN = [
     ["E", "M", "W"],
 ];
 
+const allergyMeaningEN = [
+    ["E","Egg"],
+    ["M", "Milk"],
+    ["W", "Wheat"],
+    ["S", "Soy"],
+];
+
 const itemAllergiesNO = [
     ["E", "M", "H", "S"],
     [],
@@ -154,6 +161,29 @@ const itemAllergiesNO = [
     ["E", "M", "H"],
     ["E", "M", "H"],
 ];
+
+const allergyMeaningNO = [
+    ["E","Egg"],
+    ["M", "Melk"],
+    ["H", "Hvete"],
+    ["S", "Soya"],
+];
+
+function getAllergyMeaning() {
+    let allergyMeaning = document.getElementById("allergyMeaning");
+    for(let i = 0; i < allergyMeaningEN.length; i++) {
+        let allergyItem = document.createElement("li");
+        allergyItem.className = `itemAllergy${allergyMeaningEN[i][0]}`;
+        allergyItem.id = `itemAllergy${allergyMeaningEN[i][0]}`;
+        if(language === en){
+           allergyItem.innerHTML =  allergyMeaningEN[i][1];
+        }
+        if(language === no){
+            allergyItem.innerHTML =  allergyMeaningNO[i][1];
+        }
+        allergyMeaning.appendChild(allergyItem);
+    }
+}
 
 const itemDescriptionsEN = [
     "Dirty dirty fries",
@@ -244,7 +274,19 @@ function changeMenuLanguage(lang) {
             x += 1;
         });
     }
+    for(let i = 0; i < allergyMeaningEN.length; i++) {
+        let allergyItem = document.getElementById(`itemAllergy${allergyMeaningEN[i][0]}`);
+        if(allergyItem){
+            if(lang === en){
+                allergyItem.innerHTML = allergyMeaningEN[i][1];
+            }
+            if(lang === no){
+                allergyItem.innerHTML = allergyMeaningNO[i][1];
+            }
+        }
+    }
 }
+
 
 // about us-page
 // English text

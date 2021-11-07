@@ -179,7 +179,7 @@ function getItem(id, type, amount = 0) {
     if (type === typeFull) {
         let itemAddCol = document.createElement("div");
         itemAddCol.className = "countCol";
-        itemAddCol.id = `countCol${id}`;
+        itemAddCol.id = `countCol1${id}`;
 
         let addButton = document.createElement("a");
         addButton.id = `itemAddButton${id}`;
@@ -249,7 +249,7 @@ function addToOrder(id) {
     downButton.style.display = "flex";
     increaseOrder(id);
 
-    let addButton = document.getElementById(`countCol${id}`);
+    let addButton = document.getElementById(`countCol1${id}`);
     addButton.style.display = "none";
     updateTotalPrice();
 }

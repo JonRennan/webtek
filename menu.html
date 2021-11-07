@@ -14,6 +14,9 @@
 <div id="placeNavbar"></div>
 
 <main>
+    <div id="centerAllgergyMeaning">
+        <ul id="allergyMeaning" class="allergiesMeaning"></ul>
+    </div>
     <div id="menu"></div>
 
     <button id="orderButton" type="submit" onclick="toOrder()">
@@ -37,6 +40,7 @@
 <script src="js/main.js"></script>
 <script>
     window.onload = function () {
+        getAllergyMeaning();
         getFullMenu()
     }
 </script>
