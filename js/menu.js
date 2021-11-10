@@ -21,7 +21,6 @@ function getName(id) {
     return itemName;
 }
 
-
 function getDescription(id) {
     // to update language on menu item on homepage
     let language = localStorage.getItem("language");
