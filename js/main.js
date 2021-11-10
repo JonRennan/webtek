@@ -10,7 +10,7 @@ let navbar = '' +
     '<hr>' +
     '<div>' +
     '<a class="logo" href="homepage.html">' +
-    '<img style="width:35px; float: left" src="images/foodtruck.png" alt="foodtruck logo">' +
+    '<img style="width:35px; float: left" src="images/foodtruck.png" alt="foodtruck logo" id="logo_img">' +
     '<p class="logoName"> UKA </p>' +
     '<p class="logoName" style="font-weight: bold"> FOODTRUCK </p>' +
     '</a>' +
@@ -337,7 +337,7 @@ const contact_en = {
     about: "What’s it about?",
     message: "Type your message here...",
     location_header: "Can’t find us? We’re here!",
-    location_description: "The foodtruck is located on the <br> backside of Studentersamfundet.",
+    location_description: "The foodtruck is located behind Studentersamfundet.",
     response: "Thank you for your input",
     error: "Please fill out all fields"
 }
@@ -351,12 +351,12 @@ const contact_no = {
     about: "Hva gjelder det?",
     message: "Skriv meldingen din her...",
     location_header: "Finner du oss ikke? Her er vi!",
-    location_description: "Foodtrucken er på <br> baksiden av Studentersamfundet.",
+    location_description: "Foodtrucken er på baksiden av Studentersamfundet.",
     response: "Takk for din tilbakemelding",
     error: "Fyll ut alle felter"
 }
 
-// Modal handeling in about us and contact us
+// Modal handling in about us and contact us
 if (document.getElementsByClassName("close").length == 1) {
     var modal = document.getElementById("myModal");
 

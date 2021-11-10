@@ -110,19 +110,22 @@ function getAmountCol(id, display, amount = 0) {
     if (language === en) {
         itemCountText.innerText = "How many?";
     }
-    let itemCountBox = document.createElement("div");
-    itemCountBox.id = `itemCountBox${id}`;
-    itemCountBox.className = "itemCountBox";
-    itemCountBox.innerText = `${amount}`;
-
     let itemAmountCol = document.createElement("div");
     itemAmountCol.className = "countCol";
     itemAmountCol.id = `itemCount${id}`;
     itemAmountCol.style.display = display;
     itemAmountCol.appendChild(itemCountText);
-    itemAmountCol.appendChild(itemCountBox);
+    itemAmountCol.appendChild(getAmountDiv(id, display, amount));
 
     return itemAmountCol;
+}
+
+function getAmountDiv(id, display, amount = 0) {
+    let itemCountBox = document.createElement("div");
+    itemCountBox.id = `itemCountBox${id}`;
+    itemCountBox.className = "itemCountBox";
+    itemCountBox.innerText = `${amount}`;
+    return itemCountBox;
 }
 
 function getCountButtons(id, display) {
@@ -228,6 +231,30 @@ function getItem(id, type, amount = 0) {
     return itemDiv;
 }
 
+function getNameInput() {
+    let nameInput = document.createElement("input");
+    nameInput.id = `orderNameInput`;
+    nameInput.className = "orderInput";
+    nameInput.type = "text";
+    nameInput.name = "name";
+    nameInput.pattern = "[A-Z a-z æøåÆØÅ]{1,}";
+    nameInput.placeholder = "Name";
+    nameInput.required = true;
+    return nameInput;
+}
+
+function getCommentTextarea(disabled = false) {
+    let commentTextarea = document.createElement("textarea");
+    commentTextarea.id = `orderComment`;
+    commentTextarea.className = "orderTextarea";
+    commentTextarea.name = "comment";
+    commentTextarea.pattern = "[A-Z a-z æøåÆØÅ]{0,}";
+    commentTextarea.rows = 6;
+    commentTextarea.placeholder = "Type your message here...";
+    commentTextarea.disabled = disabled;
+    return commentTextarea
+}
+
 function getFullMenu() {
     let amounts = getOrderAmounts();
     let menu = document.getElementById("menu");
@@ -271,6 +298,10 @@ function decreaseOrder(id) {
         let currentUrl = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
         if (currentUrl === "order.html") {
             document.getElementById(`menuItem${id}`).remove()
+            console.log(orderIsEmpty())
+            if (orderIsEmpty()) {
+                window.location.href = "menu.html";
+            }
         } else {
             let addButton = document.getElementById(`countCol1${id}`);
             addButton.style.display = "flex";
@@ -315,6 +346,12 @@ function getEmptyOrder() {
     return order;
 }
 
+function orderIsEmpty() {
+    let order = localStorage.getItem("order");
+
+    return !(order && order !== "" && order !== getEmptyOrder());
+}
+
 // Modal handeling in menu
 if (document.getElementsByClassName("close").length == 1) {
     // Get the <span> element that closes the modal
@@ -333,9 +370,8 @@ if (document.getElementsByClassName("close").length == 1) {
 }
 
 function toOrder() {
-    let order = localStorage.getItem("order");
     // localStorage.setItem("order", "") // til testing, fordi man ikke kan sette bestilling til 0
-    if (order && order !== "" && order !== getEmptyOrder()) {
+    if (!orderIsEmpty()) {
         window.location.href = "order.html";
     } else {
         document.getElementById("myModal").style.display = "block";
@@ -359,6 +395,8 @@ function getOrder() {
             orderDiv.appendChild(getItem(i, typeOrder, amounts[i]));
         }
     }
+    orderDiv.appendChild(getNameInput());
+    orderDiv.appendChild(getCommentTextarea());
     updateTotalPrice();
     updateGoToPayment();
 }
@@ -411,4 +449,8 @@ function updateGoToPayment() {
     } else if (language === en) {
         orderNextPage.innerText = "Go to payment >";
     }
+}
+
+function clearOrder(){
+    localStorage.setItem("order", getEmptyOrder());
 }

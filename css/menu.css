@@ -39,6 +39,7 @@
 
 .itemInfo {
     margin-left: 2%;
+    margin-top: 15px;
     width: 55%;
 }
 
@@ -49,7 +50,8 @@
 }
 
 .itemDescription {
-
+    font-size: 18px;
+    color: #333333;
 }
 
 .itemPrice {
@@ -191,7 +193,7 @@
     width: 80px;
     height: 55px;
     display: flex;
-    font-size: 20px;
+    font-size: 18px;
     align-items: center;
     justify-content: center;
     margin-left: auto;
@@ -207,7 +209,7 @@
     max-width: 86px;
     height: 55px;
     padding: 2px;
-    font-size: 20px;
+    font-size: 18px;
     border: 1px solid #C91532;
     border-radius: 15px;
     background-color: #C91532;
@@ -247,7 +249,7 @@ body {
     width: 380px;
     display: flex;
     position: relative;
-    font-size: 24px;
+    font-size: 18px;
     vertical-align: center;
 }
 
@@ -272,7 +274,7 @@ body {
 
 @media only screen  and (-webkit-min-device-pixel-ratio: 3) and (max-width:1920px) {
     .itemName {
-        font-size: 20px;
+        font-size: 18px;
         margin-bottom: 5px;
     }
 
@@ -320,7 +322,7 @@ body {
     }
 
     .itemPrice {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .itemDescription {
@@ -348,7 +350,7 @@ body {
     }
 
     #orderButton {
-        font-size: 20px;
+        font-size: 18px;
         width: 320px;
     }
 }
