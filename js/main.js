@@ -339,17 +339,14 @@ const receipt_no = {
 }
 
 function checkNoComment() {
-    console.log(localStorage.getItem("comment"))
     if (localStorage.getItem("comment") == "") {
-        document.getElementById("commentReceipt").remove()
-        document.getElementById("commentLabel").remove()
+        document.getElementById("commentReceipt").style.display = "none";
+        document.getElementById("commentLabel").style.display = "none";
     }
 }
 
 function changeReceiptLanguage(lang) {
-    let receipt = {};
-    let itemDescriptions = document.getElementsByClassName("itemDescription");
-    let descriptions = [];
+    let receipt;
     if (lang === en) {
         receipt = receipt_en;
     } else if (lang === no) {
@@ -357,14 +354,7 @@ function changeReceiptLanguage(lang) {
     } else {
         return;
     }
-    if (itemDescriptions) {
-        let x = 0;
-        [].slice.call(itemDescriptions).forEach(function (description) {
-            description.innerHTML = descriptions[x];
-            x += 1;
-        });
-    }
-    document.getElementById("commentLabel").innerHTML = receipt.commentLabel
+    document.getElementById("commentLabel").innerHTML = receipt.commentLabel;
     headerLanguage()
 }
 
@@ -558,6 +548,6 @@ function changeLanguage(lang) {
     } else if (currentUrl === "contact_us.html") {
         changeContactPageLanguage(lang);
     } else if (currentUrl === "receipt.html") {
-        changeReceiptLanguage(lang)
+        changeReceiptLanguage(lang);
     }
 }
