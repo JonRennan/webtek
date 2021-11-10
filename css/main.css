@@ -79,7 +79,7 @@ hr {
 
 /* for mobile devices */
 
-@media only screen and (max-width: 380px) {
+@media only screen and (-webkit-min-device-pixel-ratio: 3) and (max-width:1920px){
     .navbar {
         width: 90vw !important;
     }
@@ -110,40 +110,8 @@ hr {
     }
 }
 
-@media only screen and (min-width: 381px) and (max-width: 600px) {
-    .navbar {
-        width: 90vw !important;
-    }
-    #alignContent {
-        width: 95vw !important;
-    }
-    .col {
-        width: 95% !important;
-        height: fit-content !important;
-    }
-    .isOpen {
-        width: 35vw !important;
-        max-width: 180px !important;
-        padding: 10px;
-    }
-    #openCol {
-        position: absolute;
-        top: 115px;
-        right: 10%;
-        width: fit-content!important;
-        margin: 0 0 0 15% !important;
-    }
-    #homepageText {
-        margin-top: 70px;
-    }
-    #map {
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
-
 .paragraph {
-    font-size: 20px;
+    font-size: 18px;
 }
 
 #alignContent {
@@ -429,7 +397,7 @@ form {
 
 /* 100% Image Width on Smaller Screens */
 
-@media only screen and (max-width: 700px) {
+@media only screen  and (-webkit-min-device-pixel-ratio: 3) and (max-width:1920px) {
     .modal-content {
         width: 100%;
     }

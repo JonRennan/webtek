@@ -119,18 +119,18 @@
 }
 
 .itemImageFull {
-    width: 20%;
     height: fit-content;
+    width: 20%;
     border: 3px solid #C91532;
     border-radius: 15px;
 }
 
+
 .itemImageOrder {
-    width: 5%;
+    width: 8%;
     height: fit-content;
     border: 3px solid #C91532;
     border-radius: 15px;
-
 }
 
 .itemImageReceipt {
@@ -270,7 +270,7 @@ body {
     padding-left: 100px;
 }
 
-@media only screen and (max-width: 570px) {
+@media only screen  and (-webkit-min-device-pixel-ratio: 3) and (max-width:1920px) {
     .itemName {
         font-size: 20px;
         margin-bottom: 5px;
@@ -334,6 +334,11 @@ body {
     }
 
     .itemImageFull {
+        border: none !important;
+        border-radius: 15px;
+    }
+
+    .itemImageOrder {
         border: none !important;
         border-radius: 15px;
     }
