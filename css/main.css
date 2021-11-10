@@ -430,3 +430,15 @@ form {
     margin-right: 10vw;
     width: 39vw;
 }
+
+/* Reciept */
+
+#recieptHeader {
+    text-align: center;
+}
+
+#name, #comment, #nameLabel, #commentLabel {
+    display: block;
+    margin: auto;
+    text-align: center;
+}
