@@ -387,6 +387,7 @@ form {
 
 /* contact us for smaller devices*/
 @media only screen and (-webkit-min-device-pixel-ratio: 3) and (max-width: 1920px) {
+
     .vl {
         border: 0 solid black !important;
     }

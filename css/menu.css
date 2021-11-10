@@ -111,7 +111,7 @@
 
 .itemImageOrder, .itemImageReceipt {
     width: 15%;
-    height: fit-content;
+    height: 15%;
     border: 3px solid #C91532;
     border-radius: 15px;
 }
