@@ -398,8 +398,6 @@ function getOrder() {
             orderDiv.appendChild(getItem(i, typeOrder, amounts[i]));
         }
     }
-    orderDiv.appendChild(getNameInput());
-    orderDiv.appendChild(getCommentTextarea());
     updateTotalPrice();
     updateGoToPayment();
 }

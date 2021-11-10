@@ -17,6 +17,19 @@
 <main id="menu">
     <div id="order"></div>
     <a onclick="window.location.href='menu.html';" id="orderBackButton" style="cursor: pointer;"></a>
+    <br>
+    <form>
+        <label for="orderNameInput" id="orderNameLabel">Your name:</label>
+        <input id="orderNameInput" class="orderInput" type="text" name="name" pattern="[A-Z a-z æøåÆØÅ]{1,}"
+               placeholder="Name" required>
+        <br>
+        <label for="orderComment" id="orderCommentLabel">
+            Allergies, or something you don’t like?
+            Tell us and we will customize your order.
+        </label>
+        <textarea id="orderComment" class="orderTextarea" name="comment" rows="6"
+                  placeholder="Type your message here..." required></textarea>
+    </form>
 
     <button id="orderButton" type="submit" onclick="toReceipt()">
         <span id="orderPrice"></span>
