@@ -577,10 +577,12 @@ form {
 #commentReceipt, #commentLabel {
     display: block;
     margin: auto;
-    text-align: center;
 }
 
 #commentReceipt {
-    width: 75%;
     margin-bottom: 40px;
+}
+
+#commentLabel {
+    text-align: center;
 }
