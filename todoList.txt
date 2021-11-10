@@ -6,4 +6,3 @@
 - add name and comment box to order.html
 
 Bugs:
-- Hvis man legger til 10 eller flere av en ting i meny-en så ødelegger det bestillingen

@@ -266,6 +266,7 @@ function decreaseOrder(id) {
     if (parseInt(itemCountText.innerText) > 0) {
         itemCountText.innerText = parseInt(itemCountText.innerText) - 1;
     }
+    updateOrder();
     if (parseInt(itemCountText.innerText) === 0) {
         let currentUrl = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
         if (currentUrl === "order.html") {
@@ -282,7 +283,6 @@ function decreaseOrder(id) {
         }
     }
     updateTotalPrice();
-    updateOrder();
 }
 
 function updateOrder() {
@@ -300,6 +300,19 @@ function updateOrder() {
         }
     }
     localStorage.setItem("order", order);
+}
+
+function getEmptyOrder() {
+    let order = "";
+
+    for (let i = 0; i < itemNames.length; i++) {
+        if (order !== "") {
+            order += "-0";
+        } else {
+            order += "0";
+        }
+    }
+    return order;
 }
 
 // Modal handeling in menu
@@ -322,7 +335,7 @@ if (document.getElementsByClassName("close").length == 1) {
 function toOrder() {
     let order = localStorage.getItem("order");
     // localStorage.setItem("order", "") // til testing, fordi man ikke kan sette bestilling til 0
-    if (order && order !== "") {
+    if (order && order !== "" && order !== getEmptyOrder()) {
         window.location.href = "order.html";
     } else {
         document.getElementById("myModal").style.display = "block";
