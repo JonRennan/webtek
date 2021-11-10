@@ -126,8 +126,7 @@ hr {
     }
 
     #map {
-        margin-left: auto;
-        margin-right: auto;
+        margin: 10px auto;
     }
 }
 
@@ -233,7 +232,6 @@ hr {
 
 #foodDescription {
     margin-top: 0;
-    margin-left: 5px;
     line-height: 1em;
     max-height: 6em;
     overflow: hidden;
@@ -244,7 +242,7 @@ hr {
 #foodImage {
     width: 15vw;
     max-width: 100%;
-    margin: 0px;
+    margin: 0 10px;
     border-radius: 15px;
     border: 2px solid #C91532;
 }
@@ -386,7 +384,7 @@ form {
 }
 
 /* contact us for smaller devices*/
-@media only screen and (-webkit-min-device-pixel-ratio: 3) and (max-width: 1920px) {
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1920px) {
 
     .vl {
         border: 0 solid black !important;
@@ -540,7 +538,7 @@ form {
 
 /* About us on smaller screens */
 
-@media only screen  and (-webkit-min-device-pixel-ratio: 3) and (max-width: 1920px) {
+@media only screen  and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1920px) {
     .modal-content {
         width: 90vw;
     }

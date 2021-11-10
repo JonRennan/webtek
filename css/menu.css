@@ -250,7 +250,7 @@ body {
     left: auto;
 }
 
-@media only screen  and (-webkit-min-device-pixel-ratio: 3) and (max-width:1920px) {
+@media only screen  and (-webkit-min-device-pixel-ratio: 2) and (max-width:1920px) {
     .itemName {
         font-size: 18px;
         margin-bottom: 5px;
