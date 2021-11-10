@@ -237,21 +237,68 @@ hr {
 }
 
 input {
-    background: #C4C4C4;
-    font-size: 18px;
-    border: 0;
+    background: #f2f2f2;
+    padding: 5px 5px 5px 10px;
+    border: 2px solid #C91532;
+    border-radius: 5px;
+    width: 200px;
+    font: 18px 'Lato', sans-serif;
+    color: #333333;
+    display: block;
+    margin-bottom: 10px;
 }
 
 textarea {
-    background: #C4C4C4;
-    font-size: 18px;
-    border: 0;
+    background: #f2f2f2;
+    padding: 5px 5px 5px 10px;
+    border: 2px solid #C91532;
+    border-radius: 5px;
+    width: 300px;
+    display: block;
+    font: 18px 'Lato', sans-serif;
+    color: #333333;
     resize: none;
+}
+
+#orderNameLabel{
+    display: block;
+    font: 18px 'Lato', sans-serif;
+    color: #888888;
+    margin-bottom: 10px;
+}
+
+#orderCommentLabel {
+    display: block;
+    font: 18px 'Lato', sans-serif;
+    color: #888888;
+    margin-bottom: 10px;
+}
+
+#orderBackButtonArea {
+    display: block;
+    justify-content: left;
+    margin-bottom: 10px;
+}
+
+#orderBackButton {
+    border-radius: 5px;
+    padding: 10px 20px 13px 10px;
+    background-color: #C91532;
+    color: #f2f2f2;
+    margin-bottom: 10px;
+}
+
+#orderBackButton:hover {
+    border-radius: 5px;
+    text-decoration: underline;
+    background-color: #C91532;
+    color: #f2f2f2;
 }
 
 button {
     width: 100px;
     height: 60px;
+    border: 2px solid #C91532;
     border-radius: 15px;
     font-size: 18px;
     color: #f2f2f2;
