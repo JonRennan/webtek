@@ -294,7 +294,6 @@ function decreaseOrder(id) {
     }
     updateOrder();
     if (parseInt(itemCountText.innerText) === 0) {
-        let currentUrl = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
         if (currentUrl === "order.html") {
             document.getElementById(`menuItem${id}`).remove()
             console.log(orderIsEmpty())
@@ -450,6 +449,22 @@ function updateGoToPayment() {
     }
 }
 
-function clearOrder(){
+function saveNameInput() {
+    let name = document.getElementById("orderNameInput")
+    if (name) {
+        localStorage.setItem("name", name.value);
+    }
+}
+
+function saveComment() {
+    let comment = document.getElementById("orderNameInput")
+    if (comment) {
+        localStorage.setItem("comment", comment.value);
+    }
+}
+
+function clearOrder() {
     localStorage.setItem("order", getEmptyOrder());
+    localStorage.setItem("name", "");
+    localStorage.setItem("comment", "");
 }
