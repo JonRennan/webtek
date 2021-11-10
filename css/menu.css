@@ -17,17 +17,14 @@
     vertical-align: middle;
 }
 
-#centerAllgergyMeaning {
+#centerAllergyMeaning {
     margin-left: auto;
     margin-right: auto;
     width: fit-content;
     border: 1px solid #333333;
     border-radius: 15px;
     margin-bottom: 25px;
-    padding: 5px 7px 5px 0px;
-}
-
-.menu {
+    padding: 5px 7px 5px 0;
 }
 
 .menuItem {
@@ -83,33 +80,16 @@
     vertical-align: middle;
 }
 
-
-.itemAllergyE {
-
-}
-
 .itemAllergyE::before {
     color: #d64e65;
-}
-
-.itemAllergyM {
-
 }
 
 .itemAllergyM::before {
     color: rgb(106, 230, 230);
 }
 
-.itemAllergyW, .itemAllergyH {
-
-}
-
 .itemAllergyW::before, .itemAllergyH::before {
     color: rgb(224, 153, 87);
-}
-
-.itemAllergyS {
-
 }
 
 .itemAllergyS::before {
@@ -330,7 +310,7 @@ body {
 
     .menuItem {
         flex-wrap: wrap;
-        border: 1.5px solid #C91532;
+        border: 2px solid #C91532;
         border-radius: 15px;
     }
 
