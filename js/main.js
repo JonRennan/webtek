@@ -147,7 +147,7 @@ const itemAllergiesEN = [
 ];
 
 const allergyMeaningEN = [
-    ["E","Egg"],
+    ["E", "Egg"],
     ["M", "Milk"],
     ["W", "Wheat"],
     ["S", "Soy"],
@@ -163,7 +163,7 @@ const itemAllergiesNO = [
 ];
 
 const allergyMeaningNO = [
-    ["E","Egg"],
+    ["E", "Egg"],
     ["M", "Melk"],
     ["H", "Hvete"],
     ["S", "Soya"],
@@ -171,15 +171,15 @@ const allergyMeaningNO = [
 
 function getAllergyMeaning() {
     let allergyMeaning = document.getElementById("allergyMeaning");
-    for(let i = 0; i < allergyMeaningEN.length; i++) {
+    for (let i = 0; i < allergyMeaningEN.length; i++) {
         let allergyItem = document.createElement("li");
         allergyItem.className = `itemAllergy${allergyMeaningEN[i][0]}`;
         allergyItem.id = `itemAllergy${allergyMeaningEN[i][0]}`;
-        if(language === en){
-           allergyItem.innerHTML =  allergyMeaningEN[i][1];
+        if (language === en) {
+            allergyItem.innerHTML = allergyMeaningEN[i][1];
         }
-        if(language === no){
-            allergyItem.innerHTML =  allergyMeaningNO[i][1];
+        if (language === no) {
+            allergyItem.innerHTML = allergyMeaningNO[i][1];
         }
         allergyMeaning.appendChild(allergyItem);
     }
@@ -274,13 +274,13 @@ function changeMenuLanguage(lang) {
             x += 1;
         });
     }
-    for(let i = 0; i < allergyMeaningEN.length; i++) {
+    for (let i = 0; i < allergyMeaningEN.length; i++) {
         let allergyItem = document.getElementById(`itemAllergy${allergyMeaningEN[i][0]}`);
-        if(allergyItem){
-            if(lang === en){
+        if (allergyItem) {
+            if (lang === en) {
                 allergyItem.innerHTML = allergyMeaningEN[i][1];
             }
-            if(lang === no){
+            if (lang === no) {
                 allergyItem.innerHTML = allergyMeaningNO[i][1];
             }
         }
@@ -363,68 +363,32 @@ if (document.getElementsByClassName("close").length == 1) {
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
 
+    // Overriding submit so that modal will pop up instead for contact page
+    if (document.getElementsByClassName("row").length == 1) {
+        document.getElementById("contact_form").onsubmit = function (event) {
+            event.preventDefault()
+            modal.style.display = "block"
+            return false
+        }
+    }
+
     // When the user clicks on <span> (x), close the modal
-    // Special case for contact page since two possible texts are available
+    // Special case for contact page so that submit happens on closing the modal
     span.onclick = function () {
         modal.style.display = "none";
-        console.log("I am here")
         if (document.getElementsByClassName("row").length == 1) {
-            console.log("And also here")
-            let response = ""
-            if (localStorage.getItem("language") == no) {
-                response = contact_no.response
-            }
-            else if (localStorage.getItem("language") == en) {
-                response = contact_en.response
-            }
-            console.log(response)
-            document.getElementById("response").innerHTML = response
+            document.getElementById("contact_form").submit()
         }
     }
 
     // When the user clicks anywhere outside of the modal, close it
-    // Special case for contact page since two possible texts are available
+    // Special case for contact page so that submit happens on closing the modal
     window.onclick = function (event) {
         if (event.target == modal) {
             modal.style.display = "none";
             if (document.getElementsByClassName("row").length == 1) {
-                let response = ""
-                if (localStorage.getItem("language") == no) {
-                    response = contact_no.response
-                }
-                else if (localStorage.getItem("language") == en) {
-                    response = contact_en.response
-                }
-                document.getElementById("response").innerHTML = response
+                document.getElementById("contact_form").submit()
             }
-        }
-    }
-
-    // Function for submitting form and giving response
-    function submitContact() {
-        let firstname = document.getElementById("firstname").value
-        let lastname = document.getElementById("lastname").value
-        let email = document.getElementById("email").value
-        let about = document.getElementById("about").value
-        let message = document.getElementById("message").value
-        if (firstname && lastname && email && about && message) {
-            document.getElementById("firstname").value = ""
-            document.getElementById("lastname").value = ""
-            document.getElementById("email").value = ""
-            document.getElementById("about").value = ""
-            document.getElementById("message").value = ""
-            modal.style.display = "block"
-        }
-        else {
-            let error = ""
-            if (localStorage.getItem("language") === no) {
-                error = contact_no.error
-            }
-            else if (localStorage.getItem("language") === en) {
-                error = contact_en.error
-            }
-            document.getElementById("response").innerHTML = error
-            modal.style.display = "block"
         }
     }
 
