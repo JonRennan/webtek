@@ -355,7 +355,7 @@ function orderIsEmpty() {
     return !(order && order !== "" && order !== getEmptyOrder());
 }
 
-// Modal handeling in menu
+// Modal handeling in menu from w3 schools
 if (document.getElementsByClassName("close").length == 1) {
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];

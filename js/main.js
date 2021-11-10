@@ -381,7 +381,7 @@ const contact_no = {
     error: "Fyll ut alle felter"
 }
 
-// Modal handling in about us and contact us
+// Modal handling in about us and contact us from w3 schools
 if (document.getElementById("myModal")) {
     var modal = document.getElementById("myModal");
 
