@@ -285,7 +285,7 @@ form {
 }
 
 .half {
-    width: 45%;
+    width: 44%;
 }
 
 .full {
@@ -322,7 +322,7 @@ form {
 /* contact us for smaller devices*/
 @media only screen and (-webkit-min-device-pixel-ratio: 3) and (max-width:1920px){
     .vl {
-    border: 0 !important;
+        border: 0 solid black !important;
     }
 
     .contact {
@@ -343,7 +343,15 @@ form {
 /* About us */
 
 .aboutPicture {
-    display: inline-block
+    display: inline-block;
+    margin: 0 1% 0 1%;
+    width: 30%;
+    text-align: center;
+}
+
+.aboutSection {
+    display: inline-flex;
+    align-items: flex-start;
 }
 
 .aboutSection h2, .aboutSection p {
@@ -358,19 +366,26 @@ form {
 }
 
 .pictureSection {
-    margin: 3% auto 5% 9%;
+    display: flex;
+    margin: 20px auto 20px auto;
+    width: 95%;
+    justify-content: space-between;
 }
 
 .aboutImg {
     transition: transform .5s;
     cursor: pointer;
+    width: 100%;
+    object-fit: cover;
 }
 
 .aboutImg:hover {
     opacity: 0.7;
 }
 
-
+#aboutUs {
+    overflow-x: hidden;
+}
 
 /* The Modal (background) */
 
@@ -453,12 +468,34 @@ form {
     cursor: pointer;
 }
 
-/* 100% Image Width on Smaller Screens */
+/* About us on smaller screens */
 
 @media only screen  and (-webkit-min-device-pixel-ratio: 3) and (max-width:1920px) {
     .modal-content {
+        width: 90vw;
+    }
+    .aboutSection {
+        display: flex;
+        flex-direction: column;
+        width: 95%;
+        margin:auto;
+    }
+    .aboutSection h2 {
+        margin-left:0;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 0;
+    }
+
+    .aboutSection p {
         width: 100%;
     }
+
+
+    .aboutImg {
+        width:
+    }
+
 }
 
 /* Modal content (not image) */
