@@ -1,4 +1,3 @@
 - Fix design of order.html to closer match the figma
-- add name and comment box to order.html
 
 Bugs:

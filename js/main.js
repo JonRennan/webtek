@@ -29,17 +29,6 @@ let navbar = '' +
     '</div>';
 document.getElementById("placeNavbar").innerHTML = navbar;
 
-
-// remove "UKA foodtruck" to save space in navbar on small devices
-/*
-if (window.innerWidth <= 400) {
-    let logoName = document.getElementsByClassName("logoName");
-    [].slice.call(logoName).forEach(function (name) {
-        name.innerHTML = "";
-    });
-}
-*/
-
 // set color to current page in the navbar
 let currentUrl = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
 let navbarLinks = document.getElementsByClassName("navbarText");

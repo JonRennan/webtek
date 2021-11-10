@@ -129,7 +129,7 @@
 
 
 .itemImageOrder, .itemImageReceipt {
-    width: 8%;
+    width: 15%;
     height: fit-content;
     border: 3px solid #C91532;
     border-radius: 15px;
@@ -271,6 +271,7 @@ body {
     .itemName {
         font-size: 18px;
         margin-bottom: 5px;
+        margin-top: 0;
     }
 
     .itemInfo {
