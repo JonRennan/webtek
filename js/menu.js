@@ -298,6 +298,10 @@ function decreaseOrder(id) {
         let currentUrl = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
         if (currentUrl === "order.html") {
             document.getElementById(`menuItem${id}`).remove()
+            console.log(orderIsEmpty())
+            if (orderIsEmpty()) {
+                window.location.href = "menu.html";
+            }
         } else {
             let addButton = document.getElementById(`countCol1${id}`);
             addButton.style.display = "flex";
@@ -342,6 +346,12 @@ function getEmptyOrder() {
     return order;
 }
 
+function orderIsEmpty() {
+    let order = localStorage.getItem("order");
+
+    return !(order && order !== "" && order !== getEmptyOrder());
+}
+
 // Modal handeling in menu
 if (document.getElementsByClassName("close").length == 1) {
     // Get the <span> element that closes the modal
@@ -360,9 +370,8 @@ if (document.getElementsByClassName("close").length == 1) {
 }
 
 function toOrder() {
-    let order = localStorage.getItem("order");
     // localStorage.setItem("order", "") // til testing, fordi man ikke kan sette bestilling til 0
-    if (order && order !== "" && order !== getEmptyOrder()) {
+    if (!orderIsEmpty()) {
         window.location.href = "order.html";
     } else {
         document.getElementById("myModal").style.display = "block";
