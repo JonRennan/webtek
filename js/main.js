@@ -444,7 +444,7 @@ if (document.getElementById("myModal")) {
     var span = document.getElementsByClassName("close")[0];
 
     // Overriding submit so that modal will pop up instead for contact page
-    if (currentUrl === "contact_us") {
+    if (currentUrl === "contact_us.html") {
         document.getElementById("contact_form").onsubmit = function (event) {
             event.preventDefault();
             modal.style.display = "block";
@@ -456,7 +456,7 @@ if (document.getElementById("myModal")) {
     // Special case for contact page so that submit happens on closing the modal
     span.onclick = function () {
         modal.style.display = "none";
-        if (currentUrl === "contact_us") {
+        if (currentUrl === "contact_us.html") {
             document.getElementById("contact_form").submit();
         }
     }
@@ -466,14 +466,14 @@ if (document.getElementById("myModal")) {
     window.onclick = function (event) {
         if (event.target == modal) {
             modal.style.display = "none";
-            if (currentUrl === "contact_us") {
+            if (currentUrl === "contact_us.html") {
                 document.getElementById("contact_form").submit();
             }
         }
     }
 
     // Image modal handeling, pop up when clicking the picture
-    if (currentUrl === "about_us") {
+    if (currentUrl === "about_us.html") {
         // Get the image and insert it inside the modal - use its "alt" text as a caption
         var img1 = document.getElementById("img1");
         var img2 = document.getElementById("img2");
