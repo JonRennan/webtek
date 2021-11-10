@@ -235,30 +235,6 @@ function getItem(id, type, amount = 0) {
     return itemDiv;
 }
 
-function getNameInput() {
-    let nameInput = document.createElement("input");
-    nameInput.id = `orderNameInput`;
-    nameInput.className = "orderInput";
-    nameInput.type = "text";
-    nameInput.name = "name";
-    nameInput.pattern = "[A-Z a-z æøåÆØÅ]{1,}";
-    nameInput.placeholder = "Name";
-    nameInput.required = true;
-    return nameInput;
-}
-
-function getCommentTextarea(disabled = false) {
-    let commentTextarea = document.createElement("textarea");
-    commentTextarea.id = `orderComment`;
-    commentTextarea.className = "orderTextarea";
-    commentTextarea.name = "comment";
-    commentTextarea.pattern = "[A-Z a-z æøåÆØÅ]{0,}";
-    commentTextarea.rows = 6;
-    commentTextarea.placeholder = "Type your message here...";
-    commentTextarea.disabled = disabled;
-    return commentTextarea;
-}
-
 function getFullMenu() {
     let amounts = getOrderAmounts();
     let menu = document.getElementById("menu");
@@ -356,9 +332,9 @@ function orderIsEmpty() {
 }
 
 // Modal handeling in menu from w3 schools
-if (document.getElementsByClassName("close").length == 1) {
+if (document.getElementsByClassName("close").length === 1) {
     // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
+    let span = document.getElementsByClassName("close")[0];
     // When the user clicks on <span> (x), close the modal
     span.onclick = function () {
         modal.style.display = "none";
@@ -366,7 +342,7 @@ if (document.getElementsByClassName("close").length == 1) {
 
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function (event) {
-        if (event.target == modal) {
+        if (event.target === modal) {
             modal.style.display = "none";
         }
     }

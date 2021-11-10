@@ -90,8 +90,7 @@ const homepage_no = {
 
 function foodSuggestionLanguage() {
     let index = localStorage.getItem("index");
-    let description = getDescription(index).innerHTML;
-    document.getElementById("foodDescription").innerHTML = description;
+    document.getElementById("foodDescription").innerHTML = getDescription(index).innerHTML;
 }
 
 function changeHomePageLanguage(lang) {
@@ -120,7 +119,7 @@ function changeHomePageLanguage(lang) {
 const menu_en = {
     addButton: "Add to order",
     countButton: "How many?",
-    error: "Please order something before contiuing",
+    error: "Please order something before continuing",
 }
 
 //norwegian
@@ -259,38 +258,34 @@ function changeMenuLanguage(lang) {
         orderNameInput = document.getElementById("orderNameInput")
         orderNameLabel = document.getElementById("orderNameLabel")
     }
-
     updateTotalPrice();
     updateGoToOrder();
 
+    let menu = {};
+    let order = {};
+
     if (lang === en) {
-        addButton = menu_en.addButton;
-        countButton = menu_en.countButton;
+        menu = menu_en;
         descriptions = itemDescriptionsEN;
         allergiesCurrent = itemAllergiesEN;
-        if (currentUrl === "menu.html") {
-            errorElement.innerHTML = menu_en.error;
-        } else if (currentUrl === "order.html") {
-            orderComment.placeholder = order_en.orderComment;
-            orderCommentLabel.innerHTML = order_en.orderCommentLabel;
-            orderNameInput.placeholder = order_en.orderNameInput;
-            orderNameLabel.innerHTML = order_en.orderNameLabel;
-        }
+        order = order_en;
     } else if (lang === no) {
-        addButton = menu_no.addButton;
-        countButton = menu_no.countButton;
+        menu = menu_no;
         descriptions = itemDescriptionsNO;
         allergiesCurrent = itemAllergiesNO;
-        if (currentUrl === "menu.html") {
-            errorElement.innerHTML = menu_no.error;
-        } else if (currentUrl === "order.html") {
-            orderComment.placeholder = order_no.orderComment;
-            orderCommentLabel.innerHTML = order_no.orderCommentLabel;
-            orderNameInput.placeholder = order_no.orderNameInput;
-            orderNameLabel.innerHTML = order_no.orderNameLabel;
-        }
+        order = order_no;
     } else {
         return;
+    }
+    addButton = menu.addButton;
+    countButton = menu.countButton;
+    if (currentUrl === "menu.html") {
+        errorElement.innerHTML = menu.error;
+    } else if (currentUrl === "order.html") {
+        orderComment.placeholder = order.orderComment;
+        orderCommentLabel.innerHTML = order.orderCommentLabel;
+        orderNameInput.placeholder = order.orderNameInput;
+        orderNameLabel.innerHTML = order.orderNameLabel;
     }
     changeAllergyLanguage(allergiesCurrent);
     changeOrderBackButtonLang(lang);
@@ -339,7 +334,7 @@ const receipt_no = {
 }
 
 function checkNoComment() {
-    if (localStorage.getItem("comment") == "") {
+    if (localStorage.getItem("comment") === "") {
         document.getElementById("commentReceipt").style.display = "none";
         document.getElementById("commentLabel").style.display = "none";
     }
@@ -429,10 +424,10 @@ const contact_no = {
 
 // Modal handling in about us and contact us from w3 schools
 if (document.getElementById("myModal")) {
-    var modal = document.getElementById("myModal");
+    let modal = document.getElementById("myModal");
 
     // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
+    let span = document.getElementsByClassName("close")[0];
 
     // Overriding submit so that modal will pop up instead for contact page
     if (currentUrl === "contact_us.html") {
@@ -455,7 +450,7 @@ if (document.getElementById("myModal")) {
     // When the user clicks anywhere outside of the modal, close it
     // Special case for contact page so that submit happens on closing the modal
     window.onclick = function (event) {
-        if (event.target == modal) {
+        if (event.target === modal) {
             modal.style.display = "none";
             if (currentUrl === "contact_us.html") {
                 document.getElementById("contact_form").submit();
@@ -463,14 +458,14 @@ if (document.getElementById("myModal")) {
         }
     }
 
-    // Image modal handeling, pop up when clicking the picture
+    // Image modal handling, pop up when clicking the picture
     if (currentUrl === "about_us.html") {
         // Get the image and insert it inside the modal - use its "alt" text as a caption
-        var img1 = document.getElementById("img1");
-        var img2 = document.getElementById("img2");
-        var img3 = document.getElementById("img3");
-        var modalImg = document.getElementById("img01");
-        var captionText = document.getElementById("caption");
+        let img1 = document.getElementById("img1");
+        let img2 = document.getElementById("img2");
+        let img3 = document.getElementById("img3");
+        let modalImg = document.getElementById("img01");
+        let captionText = document.getElementById("caption");
         img1.onclick = function () {
             modal.style.display = "block";
             modalImg.src = this.src;
