@@ -463,6 +463,13 @@ function saveComment() {
     }
 }
 
+function toReceipt() {
+    saveNameInput();
+    saveComment();
+    window.location.href = "receipt.html";
+}
+
+
 function clearOrder() {
     localStorage.setItem("order", getEmptyOrder());
     localStorage.setItem("name", "");
