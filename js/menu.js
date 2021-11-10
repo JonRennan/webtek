@@ -1,6 +1,6 @@
 const typeFull = "Full";
 const typeOrder = "Order";
-// const typeReceipt = "Receipt";
+const typeReceipt = "Receipt";
 
 let language = localStorage.getItem("language");
 
@@ -224,6 +224,11 @@ function getItem(id, type, amount = 0) {
         itemButtons.appendChild(countDown);
         itemButtons.appendChild(itemAmountCol);
         itemButtons.appendChild(countUp);
+    } else if (type === typeReceipt) {
+
+        //add buttons to itemButtons
+        let itemAmountDiv = getAmountDiv(id, "flex", amount);
+        itemButtons.appendChild(itemAmountDiv);
     }
 
     itemDiv.appendChild(itemButtons);
@@ -453,4 +458,22 @@ function updateGoToPayment() {
 
 function clearOrder(){
     localStorage.setItem("order", getEmptyOrder());
+}
+
+function getFinalOrder() {
+    /* localStorage.setItem("name", "Name Nameson")
+    localStorage.setItem("comment", "A new comment that is a little bit longer that the one before, A new comment that is a little bit longer that the one before") */
+    let name = localStorage.getItem("name")
+    let comment = localStorage.getItem("comment")
+    document.getElementById("receiptHeader").innerHTML = name + ", thank you for your purchase!"
+    document.getElementById("commentReceipt").innerHTML = comment
+    
+    let amounts = getOrderAmounts();
+    let orderDiv = document.getElementById("order");
+
+    for (let i = 0; i < amounts.length; i++) {
+        if (amounts[i] > 0) {
+            orderDiv.appendChild(getItem(i, typeReceipt, amounts[i]));
+        }
+    }
 }

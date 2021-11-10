@@ -128,7 +128,7 @@
 }
 
 
-.itemImageOrder {
+.itemImageOrder, .itemImageReceipt {
     width: 8%;
     height: fit-content;
     border: 3px solid #C91532;
@@ -239,7 +239,7 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
-#menu {
+#menu, #fullOrder {
     width: 90vw;
     margin-left: auto;
     margin-right: auto;
@@ -340,7 +340,7 @@ body {
         border-radius: 15px;
     }
 
-    .itemImageOrder {
+    .itemImageOrder, .itemImageReceipt {
         border: none !important;
         border-radius: 15px;
     }

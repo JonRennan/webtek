@@ -479,12 +479,17 @@ form {
 
 /* Reciept */
 
-#recieptHeader {
+#receiptHeader {
     text-align: center;
 }
 
-#name, #comment, #nameLabel, #commentLabel {
+#commentReceipt, #commentLabel {
     display: block;
     margin: auto;
     text-align: center;
+}
+
+#commentReceipt {
+    width: 75%;
+    margin-bottom: 40px;
 }

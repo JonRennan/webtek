@@ -42,7 +42,7 @@ if (window.innerWidth <= 400) {
 let currentUrl = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
 let navbarLinks = document.getElementsByClassName("navbarText");
 for (let i = 0; i < navbarLinks.length; i++) {
-    if (navbarLinks[i].id === currentUrl || (navbarLinks[i].id === "menu.html" && currentUrl === "order.html")) {
+    if (navbarLinks[i].id === currentUrl || (navbarLinks[i].id === "menu.html" && currentUrl === "order.html") || (navbarLinks[i].id === "menu.html" && currentUrl === "receipt.html")) {
         document.getElementById(navbarLinks[i].id).style.color = '#C91532';
     }
 }
@@ -248,13 +248,17 @@ function changeMenuLanguage(lang) {
         countButton = menu_en.countButton;
         descriptions = itemDescriptionsEN;
         allergiesCurrent = itemAllergiesEN;
-        document.getElementById("error").innerHTML = "Please order something before contiuing";
+        if (currentUrl === "menu.html") {
+            document.getElementById("error").innerHTML = "Please order something before contiuing";
+        }
     } else if (lang === no) {
         addButton = menu_no.addButton;
         countButton = menu_no.countButton;
         descriptions = itemDescriptionsNO;
         allergiesCurrent = itemAllergiesNO;
-        document.getElementById("error").innerHTML = "Bestill noe før du går videre"
+        if (currentUrl === "menu.html") {
+            document.getElementById("error").innerHTML = "Bestill noe før du går videre";
+        }
     } else {
         return;
     }
@@ -357,14 +361,14 @@ const contact_no = {
 }
 
 // Modal handling in about us and contact us
-if (document.getElementsByClassName("close").length == 1) {
+if (document.getElementById("myModal")) {
     var modal = document.getElementById("myModal");
 
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
 
     // Overriding submit so that modal will pop up instead for contact page
-    if (document.getElementsByClassName("row").length == 1) {
+    if (currentUrl === "contact_us") {
         document.getElementById("contact_form").onsubmit = function (event) {
             event.preventDefault()
             modal.style.display = "block"
@@ -376,7 +380,7 @@ if (document.getElementsByClassName("close").length == 1) {
     // Special case for contact page so that submit happens on closing the modal
     span.onclick = function () {
         modal.style.display = "none";
-        if (document.getElementsByClassName("row").length == 1) {
+        if (currentUrl === "contact_us") {
             document.getElementById("contact_form").submit()
         }
     }
@@ -386,14 +390,14 @@ if (document.getElementsByClassName("close").length == 1) {
     window.onclick = function (event) {
         if (event.target == modal) {
             modal.style.display = "none";
-            if (document.getElementsByClassName("row").length == 1) {
+            if (currentUrl === "contact_us") {
                 document.getElementById("contact_form").submit()
             }
         }
     }
 
     // Image modal handeling, pop up when clicking the picture
-    if (document.getElementsByClassName("aboutPicture").length == 3) {
+    if (currentUrl === "about_us") {
         // Get the image and insert it inside the modal - use its "alt" text as a caption
         var img1 = document.getElementById("img1");
         var img2 = document.getElementById("img2");
