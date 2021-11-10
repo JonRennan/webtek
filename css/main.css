@@ -244,7 +244,7 @@ input {
     width: 200px;
     font: 18px 'Lato', sans-serif;
     color: #333333;
-    display: block;
+    display: inline-block;
     margin-bottom: 10px;
 }
 
@@ -254,7 +254,7 @@ textarea {
     border: 2px solid #C91532;
     border-radius: 5px;
     width: 300px;
-    display: block;
+    display: inline-block;
     font: 18px 'Lato', sans-serif;
     color: #333333;
     resize: none;
@@ -263,14 +263,14 @@ textarea {
 #orderNameLabel{
     display: block;
     font: 18px 'Lato', sans-serif;
-    color: #888888;
+    color: #333333;
     margin-bottom: 10px;
 }
 
 #orderCommentLabel {
     display: block;
     font: 18px 'Lato', sans-serif;
-    color: #888888;
+    color: #333333;
     margin-bottom: 10px;
 }
 
