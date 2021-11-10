@@ -44,6 +44,7 @@
 }
 
 .itemName {
+    font-weight: 800;
     line-height: 0;
     margin-top: 15px;
     white-space: nowrap;
