@@ -251,7 +251,7 @@ body {
     position: relative;
     font-size: 18px;
     margin:auto;
-        align-items: center;
+    align-items: center;
 }
 
 #orderPrice {
@@ -346,5 +346,6 @@ body {
     #orderButton {
         font-size: 18px;
         width: 320px;
+        margin-top: auto;
     }
 }
