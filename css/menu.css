@@ -250,26 +250,20 @@ body {
     display: flex;
     position: relative;
     font-size: 18px;
-    vertical-align: center;
+    margin:auto;
+        align-items: center;
 }
 
 #orderPrice {
-    position: fixed;
     left: 2vh;
-    margin-top: 10px;
     text-decoration: underline;
-    vertical-align: middle;
-    display: flex;
-    padding-right: 100px;
+    position: absolute;
 }
 
 #orderNextPage {
-    position: fixed;
     right: 2vh;
-    margin-top: 10px;
-    vertical-align: middle;
-    display: flex;
-    padding-left: 100px;
+    position: absolute;
+    left: auto;
 }
 
 @media only screen  and (-webkit-min-device-pixel-ratio: 3) and (max-width:1920px) {
