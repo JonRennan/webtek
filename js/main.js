@@ -120,12 +120,28 @@ function changeHomePageLanguage(lang) {
 const menu_en = {
     addButton: "Add to order",
     countButton: "How many?",
+    error: "Please order something before contiuing",
 }
 
 //norwegian
 const menu_no = {
     addButton: "Legg til",
     countButton: "Hvor mange?",
+    error: "Venligst bestill noe før du går videre",
+}
+
+const order_en = {
+    orderNameInput: "Name",
+    orderNameLabel: "Your name:",
+    orderComment: "Type your comment here...",
+    orderCommentLabel: "Allergies, or something you don’t like? Tell us and we will customize your order!",
+}
+
+const order_no = {
+    orderNameInput: "Navn",
+    orderNameLabel: "Ditt Navn:",
+    orderComment: "Skriv din kommentar her...",
+    orderCommentLabel: "Allergier eller noe du ikke liker? Fortell oss og vi tilpasser bestillingen!",
 }
 
 const itemAllergiesEN = [
@@ -230,6 +246,19 @@ function changeMenuLanguage(lang) {
     let countButton = "";
     let descriptions = [];
     let allergiesCurrent = [];
+    let errorElement;
+    let orderComment;
+    let orderCommentLabel;
+    let orderNameInput;
+    let orderNameLabel;
+    if (currentUrl === "menu.html") {
+        errorElement = document.getElementById("error")
+    } else if (currentUrl === "order.html") {
+        orderComment = document.getElementById("orderComment")
+        orderCommentLabel = document.getElementById("orderCommentLabel")
+        orderNameInput = document.getElementById("orderNameInput")
+        orderNameLabel = document.getElementById("orderNameLabel")
+    }
 
     updateTotalPrice();
     updateGoToOrder();
@@ -240,7 +269,12 @@ function changeMenuLanguage(lang) {
         descriptions = itemDescriptionsEN;
         allergiesCurrent = itemAllergiesEN;
         if (currentUrl === "menu.html") {
-            document.getElementById("error").innerHTML = "Please order something before contiuing";
+            errorElement.innerHTML = menu_en.error;
+        } else if (currentUrl === "order.html") {
+            orderComment.placeholder = order_en.orderComment;
+            orderCommentLabel.innerHTML = order_en.orderCommentLabel;
+            orderNameInput.placeholder = order_en.orderNameInput;
+            orderNameLabel.innerHTML = order_en.orderNameLabel;
         }
     } else if (lang === no) {
         addButton = menu_no.addButton;
@@ -248,7 +282,12 @@ function changeMenuLanguage(lang) {
         descriptions = itemDescriptionsNO;
         allergiesCurrent = itemAllergiesNO;
         if (currentUrl === "menu.html") {
-            document.getElementById("error").innerHTML = "Bestill noe før du går videre";
+            errorElement.innerHTML = menu_no.error;
+        } else if (currentUrl === "order.html") {
+            orderComment.placeholder = order_no.orderComment;
+            orderCommentLabel.innerHTML = order_no.orderCommentLabel;
+            orderNameInput.placeholder = order_no.orderNameInput;
+            orderNameLabel.innerHTML = order_no.orderNameLabel;
         }
     } else {
         return;
@@ -282,6 +321,14 @@ function changeMenuLanguage(lang) {
     }
 }
 
+if (currentUrl === "order.html") {
+    document.getElementById("orderForm").onsubmit = function (event) {
+        event.preventDefault();
+        toReceipt();
+        return false;
+    }
+}
+
 // receipt page
 const receipt_en = {
     commentLabel: "Your comment:",
@@ -292,7 +339,7 @@ const receipt_no = {
 }
 
 function changeReceiptLanguage(lang) {
-    let receipt ={};
+    let receipt = {};
     let itemDescriptions = document.getElementsByClassName("itemDescription");
     let descriptions = [];
     if (lang === en) {

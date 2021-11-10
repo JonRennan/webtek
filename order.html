@@ -12,39 +12,38 @@
 </head>
 
 <body>
-<div id="placeNavbar"></div>
+    <div id="placeNavbar"></div>
 
-<main id="menu">
-    <div id="order"></div>
-    <a onclick="window.location.href='menu.html';" id="orderBackButton" style="cursor: pointer;"></a>
-    <br>
-    <form>
-        <label for="orderNameInput" id="orderNameLabel">Your name:</label>
-        <input id="orderNameInput" class="orderInput" type="text" name="name" pattern="[A-Z a-z æøåÆØÅ]{1,}"
-               placeholder="Name" required>
+    <main id="menu">
+        <div id="order"></div>
+        <a onclick="window.location.href='menu.html';" id="orderBackButton" style="cursor: pointer;"></a>
         <br>
-        <label for="orderComment" id="orderCommentLabel">
-            Allergies, or something you don’t like?
-            Tell us and we will customize your order.
-        </label>
-        <textarea id="orderComment" class="orderTextarea" name="comment" rows="6"
-                  placeholder="Type your message here..." required></textarea>
-    </form>
+        <form id="orderForm">
+            <label for="orderNameInput" id="orderNameLabel">Your name:</label>
+            <input id="orderNameInput" class="orderInput" type="text" name="name" pattern="[A-Z a-z æøåÆØÅ]{1,}"
+                placeholder="Name" required>
+            <br>
+            <label for="orderComment" id="orderCommentLabel">
+                Allergies, or something you don’t like?
+                Tell us and we will customize your order!
+            </label>
+            <textarea id="orderComment" class="orderTextarea" name="comment" rows="6"
+                placeholder="Type your comment here..."></textarea>
+            <button id="orderButton" type="submit">
+                <span id="orderPrice"></span>
+                <span id="orderNextPage"></span>
+            </button>
+        </form>
+    </main>
 
-    <button id="orderButton" type="submit" onclick="toReceipt()">
-        <span id="orderPrice"></span>
-        <span id="orderNextPage"></span>
-    </button>
-</main>
-
-<script src="js/menu.js"></script>
-<script src="js/main.js"></script>
-<script>
-    window.onload = function () {
-        getOrder()
-        changeOrderBackButtonLang(localStorage.getItem("language"))
-    }
-</script>
+    <script src="js/menu.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        window.onload = function () {
+            getOrder()
+            changeOrderBackButtonLang(localStorage.getItem("language"))
+        }
+    </script>
 </body>
 
 </html>
