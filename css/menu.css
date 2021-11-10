@@ -244,12 +244,14 @@ body {
     margin-left: auto;
     margin-right: auto;
     height: 100%;
+    margin-bottom: 70px;
 }
 
 #orderButton {
-    width: 380px;
+    bottom: 5px;
+    width: 90%;
     display: flex;
-    position: relative;
+    position: fixed;
     font-size: 18px;
     margin:auto;
     align-items: center;
