@@ -95,7 +95,7 @@ function foodSuggestionLanguage() {
 }
 
 function changeHomePageLanguage(lang) {
-    let homepage = {};
+    let homepage;
     if (lang === en) {
         homepage = homepage_en;
     } else if (lang === no) {
@@ -381,7 +381,7 @@ const about_no = {
 
 // Change page language
 function changeAboutPageLanguage(lang) {
-    let about = {};
+    let about;
     if (lang === en) {
         about = about_en;
     } else if (lang === no) {
@@ -490,7 +490,7 @@ if (document.getElementById("myModal")) {
 
 // Change page language
 function changeContactPageLanguage(lang) {
-    let contact = {};
+    let contact;
     if (lang === en) {
         contact = contact_en;
     } else if (lang === no) {
