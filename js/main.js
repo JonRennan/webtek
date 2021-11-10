@@ -338,6 +338,14 @@ const receipt_no = {
     commentLabel: "Din kommentar:"
 }
 
+function checkNoComment() {
+    console.log(localStorage.getItem("comment"))
+    if (localStorage.getItem("comment") == "") {
+        document.getElementById("commentReceipt").remove()
+        document.getElementById("commentLabel").remove()
+    }
+}
+
 function changeReceiptLanguage(lang) {
     let receipt = {};
     let itemDescriptions = document.getElementsByClassName("itemDescription");
