@@ -179,7 +179,6 @@ hr {
     width: 90%;
     max-width: 400px;
     height: auto;
-    margin-bottom: 20px;
     cursor: pointer;
     border: 2px solid #333333;
     border-radius: 10px;
@@ -212,6 +211,8 @@ hr {
     cursor: pointer;
     text-decoration: none;
     color: #333333;
+    width: fit-content;
+    margin-bottom: 15px;
 }
 
 .foodSuggestion:hover {
@@ -220,11 +221,8 @@ hr {
 
 .foodItem {
     float: left;
-    width: fit-content;
-    max-width: 50%;
-    height: 110px;
+    max-width: 49%;
     display: flex;
-    padding: 10px;
     flex-direction: column;
     justify-content: flex-start;
 }
@@ -233,21 +231,24 @@ hr {
     margin-top: 0;
     margin-left: 5px;
     line-height: 1em;
-    max-height: 3em;
+    max-height: 6em;
     overflow: hidden;
+    display:flex;
+    flex-direction: column;
 }
 
 #foodImage {
-    width: 100px;
-    margin: 10px;
+    width: 15vw;
+    max-width: 100%;
+    margin: 0px;
     border-radius: 15px;
     border: 2px solid #C91532;
 }
 
 #foodName {
-    font-size: 24px;
-    margin-bottom: 0;
-    margin-top: 20px;
+    font-size: 20px;
+    margin-bottom: 0px;
+    margin-top: 0px;
     margin-left: 5px;
 }
 
