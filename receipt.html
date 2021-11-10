@@ -2,7 +2,9 @@
 <html lang="en">
 
 <head>
-    <title>Recipt</title>
+    <title>Receipt</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/menu.css">
     <link rel="icon" type="image/png" href="images/foodtruck.png">
@@ -11,21 +13,21 @@
 </head>
 
 <body>
-    <!-- navbar -->
-    <div id="placeNavbar"></div>
+<!-- navbar -->
+<div id="placeNavbar"></div>
 
-    <main id="fullOrder">
-        <h1 id="receiptHeader"></h1>
-        <div>
-            <label id="commentLabel" for="commentReceipt">Your comment:</label>
-            <textarea name="comment" id="commentReceipt" rows="6" disabled ></textarea>
-        </div>
-        <div id="order"></div>
-    </main>
+<main id="fullOrder">
+    <h1 id="receiptHeader"></h1>
+    <div>
+        <label id="commentLabel" for="commentReceipt">Your comment:</label>
+        <textarea name="comment" id="commentReceipt" rows="6" disabled></textarea>
+    </div>
+    <div id="order"></div>
+</main>
 </body>
 
 <script>
-    window.onload = function() {
+    window.onload = function () {
         getFinalOrder()
     }
 </script>
