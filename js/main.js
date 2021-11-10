@@ -10,7 +10,7 @@ let navbar = '' +
     '<hr>' +
     '<div>' +
     '<a class="logo" href="homepage.html">' +
-    '<img style="width:35px; float: left" src="images/foodtruck.png" alt="foodtruck logo">' +
+    '<img style="width:35px; float: left" src="images/foodtruck.png" alt="foodtruck logo" id="logo_img">' +
     '<p class="logoName"> UKA </p>' +
     '<p class="logoName" style="font-weight: bold"> FOODTRUCK </p>' +
     '</a>' +

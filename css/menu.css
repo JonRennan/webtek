@@ -39,6 +39,7 @@
 
 .itemInfo {
     margin-left: 2%;
+    margin-top: 15px;
     width: 55%;
 }
 
@@ -49,7 +50,8 @@
 }
 
 .itemDescription {
-
+    font-size: 18px;
+    color: #333333;
 }
 
 .itemPrice {
