@@ -84,11 +84,12 @@ hr {
         width: 90vw !important;
     }
     #alignContent {
-        width: 90vw !important;
+        width: 95vw !important;
     }
     .col {
-        width: 95% !important;
+        width: 100% !important;
         height: fit-content !important;
+        align-items: center;
     }
     .isOpen {
         width: 40vw !important;
@@ -118,7 +119,6 @@ hr {
 #logo_img{
     margin-top: 9.5px;
 }
-
 .paragraph {
     font-size: 18px;
 }
@@ -229,13 +229,13 @@ hr {
 
 input {
     background: #C4C4C4;
-    font-size: 20px;
+    font-size: 18px;
     border: 0;
 }
 
 textarea {
     background: #C4C4C4;
-    font-size: 20px;
+    font-size: 18px;
     border: 0;
     resize: none;
 }
@@ -244,13 +244,11 @@ button {
     width: 100px;
     height: 60px;
     border-radius: 15px;
-    font-size: 20px;
+    font-size: 18px;
     color: #f2f2f2;
     background: #C91532;
     text-align: center;
     position: relative;
-    left: 50%;
-    transform: translateX(-50%);
     cursor: pointer;
 }
 
@@ -297,6 +295,7 @@ form {
 
 .contact {
     width: fit-content;
+    text-align: center;
 }
 
 .location {
@@ -308,6 +307,27 @@ form {
     font-size: 18px;
     color: #333333;
 }
+
+/* contact us for smaller devices*/
+@media only screen and (-webkit-min-device-pixel-ratio: 3) and (max-width:1920px){
+    .vl {
+    border: 0 !important;
+    }
+
+    .contact {
+        width: 90% !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-right: 5%;
+    }
+
+    form {
+    width: 80% !important
+    }
+
+}
+
 
 /* About us */
 
@@ -337,6 +357,8 @@ form {
 .aboutImg:hover {
     opacity: 0.7;
 }
+
+
 
 /* The Modal (background) */
 
@@ -408,7 +430,7 @@ form {
     top: 15px;
     right: 35px;
     color: #f1f1f1;
-    font-size: 40px;
+    font-size: 18px;
     font-weight: bold;
     transition: 0.3s;
 }
