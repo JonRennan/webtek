@@ -282,6 +282,36 @@ function changeMenuLanguage(lang) {
     }
 }
 
+// receipt page
+const receipt_en = {
+    commentLabel: "Your comment:",
+}
+
+const receipt_no = {
+    commentLabel: "Din kommentar:"
+}
+
+function changeReceiptLanguage(lang) {
+    let receipt ={};
+    let itemDescriptions = document.getElementsByClassName("itemDescription");
+    let descriptions = [];
+    if (lang === en) {
+        receipt = receipt_en;
+    } else if (lang === no) {
+        receipt = receipt_no;
+    } else {
+        return;
+    }
+    if (itemDescriptions) {
+        let x = 0;
+        [].slice.call(itemDescriptions).forEach(function (description) {
+            description.innerHTML = descriptions[x];
+            x += 1;
+        });
+    }
+    document.getElementById("commentLabel").innerHTML = receipt.commentLabel
+    headerLanguage()
+}
 
 // about us-page
 // English text
@@ -361,9 +391,9 @@ if (document.getElementById("myModal")) {
     // Overriding submit so that modal will pop up instead for contact page
     if (currentUrl === "contact_us") {
         document.getElementById("contact_form").onsubmit = function (event) {
-            event.preventDefault()
-            modal.style.display = "block"
-            return false
+            event.preventDefault();
+            modal.style.display = "block";
+            return false;
         }
     }
 
@@ -372,7 +402,7 @@ if (document.getElementById("myModal")) {
     span.onclick = function () {
         modal.style.display = "none";
         if (currentUrl === "contact_us") {
-            document.getElementById("contact_form").submit()
+            document.getElementById("contact_form").submit();
         }
     }
 
@@ -382,7 +412,7 @@ if (document.getElementById("myModal")) {
         if (event.target == modal) {
             modal.style.display = "none";
             if (currentUrl === "contact_us") {
-                document.getElementById("contact_form").submit()
+                document.getElementById("contact_form").submit();
             }
         }
     }
@@ -464,17 +494,15 @@ function changeLanguage(lang) {
     }
     if (currentUrl === "homepage.html") {
         changeHomePageLanguage(lang);
-    }
-    else if (currentUrl === "menu.html") {
+    } else if (currentUrl === "menu.html") {
         changeMenuLanguage(lang);
-    }
-    else if (currentUrl === "order.html") {
+    } else if (currentUrl === "order.html") {
         changeMenuLanguage(lang);
-    }
-    else if (currentUrl === "about_us.html") {
-        changeAboutPageLanguage(lang)
-    }
-    else if (currentUrl === "contact_us.html") {
-        changeContactPageLanguage(lang)
+    } else if (currentUrl === "about_us.html") {
+        changeAboutPageLanguage(lang);
+    } else if (currentUrl === "contact_us.html") {
+        changeContactPageLanguage(lang);
+    } else if (currentUrl === "receipt.html") {
+        changeReceiptLanguage(lang)
     }
 }

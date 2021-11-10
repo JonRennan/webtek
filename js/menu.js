@@ -195,7 +195,7 @@ function getItem(id, type, amount = 0) {
         }
 
         addButton.onclick = function () {
-            addToOrder(id)
+            addToOrder(id);
         };
         itemAddCol.appendChild(addButton);
         itemButtons.appendChild(itemAddCol);
@@ -256,7 +256,7 @@ function getCommentTextarea(disabled = false) {
     commentTextarea.rows = 6;
     commentTextarea.placeholder = "Type your message here...";
     commentTextarea.disabled = disabled;
-    return commentTextarea
+    return commentTextarea;
 }
 
 function getFullMenu() {
@@ -300,8 +300,8 @@ function decreaseOrder(id) {
     updateOrder();
     if (parseInt(itemCountText.innerText) === 0) {
         if (currentUrl === "order.html") {
-            document.getElementById(`menuItem${id}`).remove()
-            console.log(orderIsEmpty())
+            document.getElementById(`menuItem${id}`).remove();
+            console.log(orderIsEmpty());
             if (orderIsEmpty()) {
                 window.location.href = "menu.html";
             }
@@ -455,14 +455,14 @@ function updateGoToPayment() {
 }
 
 function saveNameInput() {
-    let name = document.getElementById("orderNameInput")
+    let name = document.getElementById("orderNameInput");
     if (name) {
         localStorage.setItem("name", name.value);
     }
 }
 
 function saveComment() {
-    let comment = document.getElementById("orderNameInput")
+    let comment = document.getElementById("orderComment");
     if (comment) {
         localStorage.setItem("comment", comment.value);
     }
@@ -477,18 +477,25 @@ function toReceipt() {
 
 function clearOrder() {
     localStorage.setItem("order", getEmptyOrder());
-    localStorage.setItem("name", "");
-    localStorage.setItem("comment", "");
+}
+
+function headerLanguage() {
+    let language = localStorage.getItem("language")
+    let name = localStorage.getItem("name");
+    if (language === en) {
+        document.getElementById("receiptHeader").innerHTML = name + ", thank you for your purchase!";
+    } else if (language === no) {
+        document.getElementById("receiptHeader").innerHTML = "Takk for kjøpet " + name + "!";
+    }
 }
 
 function getFinalOrder() {
     /* localStorage.setItem("name", "Name Nameson")
     localStorage.setItem("comment", "A new comment that is a little bit longer that the one before, A new comment that is a little bit longer that the one before") */
-    let name = localStorage.getItem("name")
-    let comment = localStorage.getItem("comment")
-    document.getElementById("receiptHeader").innerHTML = name + ", thank you for your purchase!"
-    document.getElementById("commentReceipt").innerHTML = comment
-    
+    let comment = localStorage.getItem("comment");
+    headerLanguage()
+    document.getElementById("commentReceipt").innerHTML = comment;
+
     let amounts = getOrderAmounts();
     let orderDiv = document.getElementById("order");
 
@@ -497,4 +504,6 @@ function getFinalOrder() {
             orderDiv.appendChild(getItem(i, typeReceipt, amounts[i]));
         }
     }
+
+    clearOrder();
 }
