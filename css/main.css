@@ -126,7 +126,7 @@ hr {
 }
 
 #logo_img{
-    margin-top: 9.5px;
+    margin-top: 10px;
 }
 .paragraph {
     font-size: 18px;
@@ -349,6 +349,7 @@ form {
 .aboutSection h2, .aboutSection p {
     width: 40%;
     display: inline-block;
+    vertical-align: top;
 }
 
 .aboutSection h2 {
@@ -488,7 +489,7 @@ form {
     width: 39vw;
 }
 
-/* Reciept */
+/* Receipt */
 
 #receiptHeader {
     text-align: center;
