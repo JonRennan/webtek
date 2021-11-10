@@ -355,7 +355,8 @@ function changeReceiptLanguage(lang) {
         return;
     }
     document.getElementById("commentLabel").innerHTML = receipt.commentLabel;
-    headerLanguage()
+    headerLanguage();
+    buttonPrice();
 }
 
 // about us-page

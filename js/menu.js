@@ -466,9 +466,17 @@ function saveComment() {
     }
 }
 
+function savePrice() {
+    let price = getTotalPrice()
+    if (price) {
+        localStorage.setItem("price", price)
+    }
+}
+
 function toReceipt() {
     saveNameInput();
     saveComment();
+    savePrice();
     window.location.href = "receipt.html";
 }
 
@@ -478,20 +486,31 @@ function clearOrder() {
 }
 
 function headerLanguage() {
-    let language = localStorage.getItem("language")
+    let language = localStorage.getItem("language");
     let name = localStorage.getItem("name");
+    let header = document.getElementById("receiptHeader");
     if (language === en) {
-        document.getElementById("receiptHeader").innerHTML = name + ", thank you for your purchase!";
+        header.innerHTML = name + ", thank you for your purchase!";
     } else if (language === no) {
-        document.getElementById("receiptHeader").innerHTML = "Takk for kjøpet " + name + "!";
+        header.innerHTML = "Takk for kjøpet " + name + "!";
+    }
+}
+
+function buttonPrice() {
+    let language = localStorage.getItem("language");
+    let totalPrice = document.getElementById("totalPrice");
+    let price = localStorage.getItem("price");
+    if (language === no) {
+        totalPrice.innerText = `Din total: ${price},-`;
+    } else if (language === en) {
+        totalPrice.innerText = `Your total: ${price},-`;
     }
 }
 
 function getFinalOrder() {
-    /* localStorage.setItem("name", "Name Nameson")
-    localStorage.setItem("comment", "A new comment that is a little bit longer that the one before, A new comment that is a little bit longer that the one before") */
     let comment = localStorage.getItem("comment");
-    headerLanguage()
+    buttonPrice();
+    headerLanguage();
     document.getElementById("commentReceipt").innerHTML = comment;
 
     let amounts = getOrderAmounts();

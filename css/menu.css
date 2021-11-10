@@ -248,7 +248,7 @@ body {
     margin-bottom: 70px;
 }
 
-#orderButton {
+#orderButton, #totalPrice {
     bottom: 5px;
     width: 90%;
     display: flex;
@@ -348,7 +348,7 @@ body {
         margin-left: 5px;
     }
 
-    #orderButton {
+    #orderButton, #totalPrice {
         font-size: 18px;
         width: 320px;
         margin-top: auto;
