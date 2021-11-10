@@ -3,8 +3,10 @@
 
 <head>
     <title> Homepage </title>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="icon" type="image/png" href="images/foodtruck.png">
 </head>
@@ -60,28 +62,27 @@
                     <p id="homePageOther" class="paragraph"> Or try one of many other tasty alternatives >>> </p>
                 </a>
             </div>
-            <div> </div>
         </div>
-
     </div>
 </main>
 
-<script src="js/menu.js"></script>
 <script src="js/main.js"></script>
+<script src="js/menu.js"></script>
+<script src="js/language.js"></script>
 <script>
     isOpen()
 </script>
 <script>
     // random foodSuggestion
-    let index = Math.floor(Math.random() * 6);
-    localStorage.setItem("index", index);
-    let image = getImage(index, "Full").src;
-    let name = getName(index).innerHTML;
-    let description = getDescription(index).innerHTML;
+    let randomFoodId = Math.floor(Math.random() * itemNames.length);
+    localStorage.setItem("homeFoodId", randomFoodId);
+    let image = getImage(randomFoodId, "Full").src;
+    let name = getName(randomFoodId).innerHTML;
+    let description = getFoodDescriptionText(randomFoodId);
     document.getElementById("foodName").innerHTML = name;
     document.getElementById("foodDescription").innerHTML = description;
     document.getElementById("foodImage").src = image;
 </script>
-</body>
 
+</body>
 </html>

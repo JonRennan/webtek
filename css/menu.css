@@ -181,10 +181,6 @@
     margin-right: auto;
 }
 
-.countCol2 {
-    float: left;
-}
-
 .itemCount {
     width: 23%;
     max-width: 86px;
@@ -228,7 +224,7 @@ body {
     margin-bottom: 70px;
 }
 
-#orderButton, #totalPrice {
+#orderButton {
     bottom: 5px;
     width: 90%;
     display: flex;
@@ -328,7 +324,7 @@ body {
         margin-left: 5px;
     }
 
-    #orderButton, #totalPrice {
+    #orderButton {
         font-size: 18px;
         width: 320px;
         margin-top: auto;

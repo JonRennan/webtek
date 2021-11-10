@@ -2,8 +2,6 @@ const typeFull = "Full";
 const typeOrder = "Order";
 const typeReceipt = "Receipt";
 
-let language = localStorage.getItem("language");
-
 const itemNames = [
     "Dirty Fries",
     "Sweet Potato Fries",
@@ -22,19 +20,10 @@ function getName(id) {
 }
 
 function getDescription(id) {
-    // to update language on menu item on homepage
-    let language = localStorage.getItem("language");
-
     let itemDescription = document.createElement("p");
     itemDescription.id = `itemDescription${id}`;
     itemDescription.className = "itemDescription";
-
-    if (language === no) {
-        itemDescription.innerText = itemDescriptionsNO[id];
-    }
-    if (language === en) {
-        itemDescription.innerText = itemDescriptionsEN[id];
-    }
+    itemDescription.innerText = getFoodDescriptionText(id);
     return itemDescription;
 }
 
@@ -42,14 +31,7 @@ function getAllergies(id) {
     let itemAllergiesList = document.createElement("ul");
     itemAllergiesList.id = `itemAllergies${id}`;
     itemAllergiesList.className = "itemAllergies";
-    let allergies = itemAllergiesEN[id];
-
-    if (language === no) {
-        allergies = itemAllergiesNO[id];
-    }
-    if (language === en) {
-        allergies = itemAllergiesEN[id];
-    }
+    let allergies = getAllergiesText(id);
 
     for (let i = 0; i < allergies.length; i++) {
         let itemAllergy = document.createElement("li");
@@ -103,12 +85,8 @@ function getAmountCol(id, display, amount = 0) {
     let itemCountText = document.createElement("p");
     itemCountText.id = `itemCountText${id}`;
     itemCountText.className = "itemCountText";
-    if (language === no) {
-        itemCountText.innerText = "Hvor mange?";
-    }
-    if (language === en) {
-        itemCountText.innerText = "How many?";
-    }
+    itemCountText.innerText = getItemCountText();
+
     let itemAmountCol = document.createElement("div");
     itemAmountCol.className = "countCol";
     itemAmountCol.id = `itemCount${id}`;
@@ -178,21 +156,19 @@ function getItem(id, type, amount = 0) {
     itemButtons.id = `itemButtons${id}`;
     itemButtons.className = "row";
 
+    let countUp;
+    let countDown;
+    let itemAmountCol;
+
     if (type === typeFull) {
         let itemAddCol = document.createElement("div");
         itemAddCol.className = "countCol";
-        itemAddCol.id = `countCol1${id}`;
+        itemAddCol.id = `countCol${id}`;
 
         let addButton = document.createElement("a");
         addButton.id = `itemAddButton${id}`;
         addButton.className = "itemAdd";
-
-        if (language === no) {
-            addButton.innerText = "Legg til";
-        }
-        if (language === en) {
-            addButton.innerText = "Add to order";
-        }
+        addButton.innerText = getAddButtonText();
 
         addButton.onclick = function () {
             addToOrder(id);
@@ -201,9 +177,6 @@ function getItem(id, type, amount = 0) {
         itemButtons.appendChild(itemAddCol);
 
         //add buttons to itemButtons
-        let countUp;
-        let countDown;
-        let itemAmountCol;
         if (amount !== 0) {
             itemAddCol.style.display = "none";
             [countUp, countDown] = getCountButtons(id, "flex");
@@ -216,18 +189,15 @@ function getItem(id, type, amount = 0) {
         itemButtons.appendChild(itemAmountCol);
         itemButtons.appendChild(countUp);
     } else if (type === typeOrder) {
-
         //add buttons to itemButtons
-        let [countUp, countDown] = getCountButtons(id, "flex");
-        let itemAmountCol = getAmountCol(id, "flex", amount);
+        [countUp, countDown] = getCountButtons(id, "flex");
+        itemAmountCol = getAmountCol(id, "flex", amount);
         itemButtons.appendChild(countDown);
         itemButtons.appendChild(itemAmountCol);
         itemButtons.appendChild(countUp);
     } else if (type === typeReceipt) {
-
-        //add buttons to itemButtons
-        let itemAmountDiv = getAmountDiv(id, "flex", amount);
-        itemButtons.appendChild(itemAmountDiv);
+        //adds the div with the amount
+        itemButtons.appendChild(getAmountDiv(id, "flex", amount));
     }
 
     itemDiv.appendChild(itemButtons);
@@ -256,7 +226,7 @@ function addToOrder(id) {
     downButton.style.display = "flex";
     increaseOrder(id);
 
-    let addButton = document.getElementById(`countCol1${id}`);
+    let addButton = document.getElementById(`countCol${id}`);
     addButton.style.display = "none";
     updateTotalPrice();
 }
@@ -282,7 +252,7 @@ function decreaseOrder(id) {
                 window.location.href = "menu.html";
             }
         } else {
-            let addButton = document.getElementById(`countCol1${id}`);
+            let addButton = document.getElementById(`countCol${id}`);
             addButton.style.display = "flex";
             let countBox = document.getElementById(`itemCount${id}`);
             let upButton = document.getElementById(`itemCountUp${id}`);
@@ -331,25 +301,7 @@ function orderIsEmpty() {
     return !(order && order !== "" && order !== getEmptyOrder());
 }
 
-// Modal handeling in menu from w3 schools
-if (document.getElementsByClassName("close").length === 1) {
-    // Get the <span> element that closes the modal
-    let span = document.getElementsByClassName("close")[0];
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function () {
-        modal.style.display = "none";
-    }
-
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function (event) {
-        if (event.target === modal) {
-            modal.style.display = "none";
-        }
-    }
-}
-
 function toOrder() {
-    // localStorage.setItem("order", "") // til testing, fordi man ikke kan sette bestilling til 0
     if (!orderIsEmpty()) {
         window.location.href = "order.html";
     } else {
@@ -391,43 +343,6 @@ function getTotalPrice() {
     return total
 }
 
-function updateTotalPrice() {
-    // to update language on menu item on homepage
-    let language = localStorage.getItem("language");
-
-    let orderPrice = document.getElementById("orderPrice");
-    let price = getTotalPrice();
-    if (language === no) {
-        orderPrice.innerText = `Din total: ${price},-`;
-    } else if (language === en) {
-        orderPrice.innerText = `Your total: ${price},-`;
-    }
-}
-
-function updateGoToOrder() {
-    // to update language on menu item on homepage
-    let language = localStorage.getItem("language");
-
-    let orderNextPage = document.getElementById("orderNextPage");
-    if (language === no) {
-        orderNextPage.innerText = "Gå til kassen >";
-    } else if (language === en) {
-        orderNextPage.innerText = "Go to checkout >";
-    }
-}
-
-function updateGoToPayment() {
-    // to update language on menu item on homepage
-    let language = localStorage.getItem("language");
-
-    let orderNextPage = document.getElementById("orderNextPage");
-    if (language === no) {
-        orderNextPage.innerText = "Gå til betaling >";
-    } else if (language === en) {
-        orderNextPage.innerText = "Go to payment >";
-    }
-}
-
 function saveNameInput() {
     let name = document.getElementById("orderNameInput");
     if (name) {
@@ -443,9 +358,9 @@ function saveComment() {
 }
 
 function savePrice() {
-    let price = getTotalPrice()
+    let price = getTotalPrice();
     if (price) {
-        localStorage.setItem("price", price)
+        localStorage.setItem("price", price);
     }
 }
 
@@ -461,31 +376,9 @@ function clearOrder() {
     localStorage.setItem("order", getEmptyOrder());
 }
 
-function headerLanguage() {
-    let language = localStorage.getItem("language");
-    let name = localStorage.getItem("name");
-    let header = document.getElementById("receiptHeader");
-    if (language === en) {
-        header.innerHTML = name + ", thank you for your purchase!";
-    } else if (language === no) {
-        header.innerHTML = "Takk for kjøpet " + name + "!";
-    }
-}
-
-function buttonPrice() {
-    let language = localStorage.getItem("language");
-    let totalPrice = document.getElementById("totalPrice");
-    let price = localStorage.getItem("price");
-    if (language === no) {
-        totalPrice.innerText = `Din total: ${price},-`;
-    } else if (language === en) {
-        totalPrice.innerText = `Your total: ${price},-`;
-    }
-}
-
 function getFinalOrder() {
     let comment = localStorage.getItem("comment");
-    buttonPrice();
+    updateTotalPrice();
     headerLanguage();
     document.getElementById("commentReceipt").innerHTML = comment;
 

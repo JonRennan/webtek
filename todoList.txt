@@ -1,3 +1,4 @@
 - Fix design of order.html to closer match the figma
 
 Bugs:
+- Fargen på EN og NO forsvinner på meny, order og receipt
