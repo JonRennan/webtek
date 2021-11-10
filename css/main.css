@@ -76,6 +76,10 @@ hr {
     display: none;
 }
 
+#homePageBottomDiv {
+    padding-bottom: 30px;
+}
+
 /* homepage */
 
 /* for mobile devices */
@@ -298,6 +302,7 @@ textarea {
 
 #orderBackButton {
     border-radius: 5px;
+    border: 2px solid #C91532;
     padding: 10px 20px 13px 10px;
     background-color: #C91532;
     color: #f2f2f2;
@@ -305,10 +310,8 @@ textarea {
 }
 
 #orderBackButton:hover {
-    border-radius: 5px;
+    border: 2px solid #333333;
     text-decoration: underline;
-    background-color: #C91532;
-    color: #f2f2f2;
 }
 
 button {
