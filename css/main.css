@@ -759,7 +759,7 @@ form {
 
 /* for mobile devices */
 
-@media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1920px) {
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1023px) {
     /* navbar */
     .navbar {
         width: 90vw !important;
@@ -831,6 +831,11 @@ form {
 
     #contactSpace {
         display: block;
+    }
+
+    #location_header {
+        text-align: center;
+        margin-top: 20px;
     }
 
 
