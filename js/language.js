@@ -40,14 +40,14 @@ const menu_en = {
     addButton: "Add to order",
     countButton: "How many?",
     toCheckout: "Go to checkout >",
-    error: "Please order something before continuing",
+    response: "Please order something before continuing",
 };
 
 const menu_no = {
     addButton: "Legg til",
     countButton: "Hvor mange?",
     toCheckout: "Gå til kassen >",
-    error: "Venligst bestill noe før du går videre",
+    response: "Venligst bestill noe før du går videre",
 };
 
 const order_en = {
@@ -364,8 +364,8 @@ function changeMenuOrderLanguage() {
     let addButtons = document.getElementsByClassName("itemAdd");
     let countButtons = document.getElementsByClassName("itemCountText");
     let itemDescriptions = document.getElementsByClassName("itemDescription");
-    let menu = {};
-    let order = {};
+    let menu;
+    let order;
     let addButton = "";
     let countButton = "";
     let descriptions = [];
@@ -390,7 +390,7 @@ function changeMenuOrderLanguage() {
 
     // updates specific fields for only menu.html or order.html
     if (currentUrl === "menu.html") {
-        document.getElementById("error").innerHTML = menu.error;
+        document.getElementById("response").innerHTML = menu.response;
     } else if (currentUrl === "order.html") {
         document.getElementById("orderComment").placeholder = order.comment;
         document.getElementById("orderCommentLabel").innerHTML = order.commentLabel;

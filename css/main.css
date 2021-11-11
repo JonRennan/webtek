@@ -393,7 +393,7 @@ form {
 }
 
 
-/* The Modal (background) */
+/* The Modal (background), modal code from www.w3schools.com */
 .modal {
     display: none;
     /* Hidden by default */

@@ -29,6 +29,17 @@ document.getElementById("placeNavbar").innerHTML = navbar;
 // sets currentUrl variable to the name of the html file that is loaded
 let currentUrl = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
 
+// modal code from www.w3schools.com
+if (currentUrl === "menu.html" || currentUrl === "contact_us.html") {
+    let modal = '<div id="myModal" class="modal">' +
+    '<div class="modal-content2">' +
+    '<span class="close">&times;</span>' +
+    '<p id="response"></p>' +
+    '</div>' +
+    '</div>';
+    document.getElementById("placeModal").innerHTML = modal
+}
+
 // set color to current page in the navbar
 let navbarLinks = document.getElementsByClassName("navbarText");
 for (let i = 0; i < navbarLinks.length; i++) {
