@@ -759,7 +759,7 @@ form {
 
 /* for mobile devices */
 
-@media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1023px) {
+@media only screen and (max-width: 1023px) {
     /* navbar */
     .navbar {
         width: 90vw !important;
@@ -788,6 +788,7 @@ form {
 
     .isOpen {
         width: 40vw !important;
+        max-width: 230px;
         padding: 20px 10px 20px 30px;
     }
 
@@ -823,10 +824,6 @@ form {
 
     form {
         width: 80% !important;
-    }
-
-    .half {
-        width: 41%;
     }
 
     #contactSpace {
@@ -947,5 +944,12 @@ form {
         font-size: 18px;
         width: 320px;
         margin-top: auto;
+    }
+}
+
+/* for smaller/older mobile devices */
+@media only screen and (max-width: 523px) {
+    .half {
+        width: 41%;
     }
 }
