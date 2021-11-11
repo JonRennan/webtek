@@ -769,6 +769,7 @@ form {
 
     .navbarList {
         float: none;
+        text-align: center;
         justify-content: space-between;
         padding-left: 10px !important;
     }
@@ -930,7 +931,7 @@ form {
 
     #orderButton {
         font-size: 18px;
-        width: 320px;
+        min-width: 320px;
         margin-top: auto;
     }
 }
