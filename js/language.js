@@ -138,7 +138,7 @@ const about_en = {
 
 const about_no = {
     q1: "Hvem er vi?",
-    q2: "Hva gjør vi",
+    q2: "Hva gjør vi?",
     q3: "Hvordan bli med",
     image1: "Alle som jobber i trucken",
     image2: "Foodtrucken og UKA er kjærlighet",
