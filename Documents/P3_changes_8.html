@@ -73,13 +73,25 @@
     <br>
     <h2>Modularity</h2>
     <p>
-        To fulfill the modularity requirement we relied on css. We implemented a @media check to change some styles for
-        smaller devices. We landed a max-width of 1023 through trial and error. Setting it higher would make some iPads
-        show the mobile version while the screen being large enough to comfortably displaying the desktop version. Going
-        lower made the desktop version show on high resolution mobile screens. We also experimented with
+        To fulfill the modularity requirement we wrote a lot of javascript code. Silje made the navbar in main.js and
+        added it to every html file. Jon made a solution to dynamically create the menu based on the menu items defined
+        in the javascript file, so that changing the menu would be easy as well as getting the selected items on a
+        different page, like order and receipt page. Kristian adapted the modal example code from
+        <a href="https://www.w3schools.com/" target="_blank">w3schools</a> into main.js, so that the modals would work
+        on the order, about us and contact us page without duplicate code. We also create language.js, which changes the
+        language of every page by changing the text in each element on every page instead of having a Norwegian version
+        and an English version of the page.
+    </p>
+    <br>
+    <h2>Responsive webdesign</h2>
+    <p>
+        To make the website work equally on any device we relied on css. We implemented a @media query to change some
+        styles for smaller devices. We landed a max-width of 1023 through trial and error. Setting it higher would make
+        some iPads show the mobile version while the screen being large enough to comfortably displaying the desktop
+        version. Going lower made the desktop version show on high resolution mobile screens. We also experimented with
         -webkit-min-device-pixel-ratio, but that caused MacBooks to display the mobile version.<br>
         While making the site we scaled down the window to see how it looked on smaller screens and add custom css
-        within the @media check to make it work better on smaller devices. We all contributed to the css of the smaller
+        within the @media query to make it work better on smaller devices. We all contributed to the css of the smaller
         screens, but the main design changes going from desktop to mobile version were done by Silje and Vetle.
     </p>
 </section>
