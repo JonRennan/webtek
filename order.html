@@ -22,14 +22,11 @@
     </div>
     <br>
     <form id="orderForm">
-        <label for="orderNameInput" id="orderNameLabel">Your name:</label>
+        <label for="orderNameInput" id="orderNameLabel"></label>
         <input id="orderNameInput" class="orderInput" type="text" name="name" pattern="[A-Z a-z æøåÆØÅ]{1,}"
                placeholder="Name" required>
         <br>
-        <label for="orderComment" id="orderCommentLabel">
-            Allergies, or something you don’t like?
-            Tell us and we will customize your order!
-        </label>
+        <label for="orderComment" id="orderCommentLabel"></label>
         <textarea id="orderComment" class="orderTextarea" name="comment" rows="6"
                   placeholder="Type your comment here..."></textarea>
         <button id="orderButton" type="submit">
@@ -45,7 +42,6 @@
 <script>
     window.onload = function () {
         getOrder()
-        setOrderBackButtonText()
     }
 </script>
 

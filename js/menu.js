@@ -212,6 +212,7 @@ function getFullMenu() {
     for (let i = 0; i < itemNames.length; i++) {
         menu.appendChild(getItem(i, typeFull, amounts[i]));
     }
+    getAllergyMeaning();
     updateTotalPrice();
     updateGoToOrder();
     return menu;
@@ -326,6 +327,7 @@ function getOrder() {
             orderDiv.appendChild(getItem(i, typeOrder, amounts[i]));
         }
     }
+    setOrderBackButtonText()
     updateTotalPrice();
     updateGoToPayment();
 }
@@ -381,6 +383,8 @@ function getFinalOrder() {
     updateTotalPrice();
     headerLanguage();
     document.getElementById("commentReceipt").innerHTML = comment;
+
+    checkNoComment()
 
     let amounts = getOrderAmounts();
     let orderDiv = document.getElementById("order");

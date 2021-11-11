@@ -172,12 +172,10 @@ const contact_no = {
 
 
 // make sure the correct language is loaded when the script is loaded
-window.onload = function () {
-    if (localStorage.getItem("language") === no) {
-        changeLanguage(no);
-    } else {
-        changeLanguage(en); // Default language
-    }
+if (localStorage.getItem("language") === no) {
+    changeLanguage(no);
+} else {
+    changeLanguage(en); // Default language
 }
 
 function changeLanguage(lang) {
@@ -186,6 +184,8 @@ function changeLanguage(lang) {
         language = en;
     } else if (lang === no) {
         language = no;
+    } else {
+        return;
     }
     // store the new language variable
     localStorage.setItem("language", language);
@@ -196,16 +196,14 @@ function changeLanguage(lang) {
 
     if (currentUrl === "homepage.html") {
         changeHomePageLanguage();
-    } else if (currentUrl === "menu.html") {
+    } else if (currentUrl === "menu.html" || currentUrl === "order.html") {
         changeMenuOrderLanguage();
-    } else if (currentUrl === "order.html") {
-        changeMenuOrderLanguage();
+    } else if (currentUrl === "receipt.html") {
+        changeReceiptLanguage();
     } else if (currentUrl === "about_us.html") {
         changeAboutPageLanguage();
     } else if (currentUrl === "contact_us.html") {
         changeContactPageLanguage();
-    } else if (currentUrl === "receipt.html") {
-        changeReceiptLanguage();
     }
 }
 
@@ -272,21 +270,19 @@ function getAllergyMeaning() {
 }
 
 function changeAllergyLanguage(allergiesCurrent) {
-    for (let id = 0; id < allergiesCurrent.length; id++) {
-        allergiesCurrent.map(function (allergies, index) {
-            allergies.map(function (allergy) {
-                if (allergy === "H" || allergy === "W") {
-                    let itemAllergyH = document.getElementById(`itemAllergies${index}-H`);
-                    let itemAllergyW = document.getElementById(`itemAllergies${index}-W`);
-                    if (itemAllergyH) {
-                        itemAllergyH.innerHTML = allergy;
-                    } else if (itemAllergyW) {
-                        itemAllergyW.innerHTML = allergy;
-                    }
+    allergiesCurrent.map(function (allergies, index) {
+        allergies.map(function (allergy) {
+            if (allergy === "H" || allergy === "W") {
+                let itemAllergyH = document.getElementById(`itemAllergies${index}-H`);
+                let itemAllergyW = document.getElementById(`itemAllergies${index}-W`);
+                if (itemAllergyH) {
+                    itemAllergyH.innerHTML = allergy;
+                } else if (itemAllergyW) {
+                    itemAllergyW.innerHTML = allergy;
                 }
-            });
+            }
         });
-    }
+    });
 }
 
 function getFoodDescriptionText(id) {
@@ -425,7 +421,7 @@ function changeMenuOrderLanguage() {
     }
 
     for (let i = 0; i < allergiesMeaning.length; i++) {
-        let allergyItem = document.getElementById(`itemAllergy${allergiesMeaning[i][0]}`);
+        let allergyItem = document.getElementById(`itemAllergy${allergyMeaningEN[i][0]}`);
         if (allergyItem) {
             allergyItem.innerHTML = allergiesMeaning[i][1];
         }
