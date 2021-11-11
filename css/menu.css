@@ -1,6 +1,4 @@
 /* Menu classes */
-
-
 .allergiesMeaning {
     display: flex;
     list-style: none;
@@ -116,10 +114,6 @@
     border-radius: 15px;
 }
 
-.itemImageReceipt {
-
-}
-
 .row {
     display: flex;
     align-items: flex-end;
@@ -153,10 +147,6 @@
 
 .itemAdd:hover {
     border: 2px solid #333333;
-}
-
-.itemCount {
-
 }
 
 .itemCountText {
@@ -209,11 +199,6 @@
 
 .down {
     margin-right: 5px;
-}
-
-body {
-    background-color: #f2f2f2;
-    font-family: 'Lato', sans-serif;
 }
 
 #menu, #fullOrder {

@@ -80,55 +80,8 @@ hr {
     padding-bottom: 30px;
 }
 
+
 /* homepage */
-
-/* for mobile devices */
-
-@media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1920px) {
-    .navbar {
-        width: 90vw !important;
-    }
-
-    .logoName {
-        display: none !important;
-    }
-
-    .navbarList {
-        justify-content: space-between;
-        padding-left: 10px !important;
-    }
-
-    #alignContent {
-        width: 95vw !important;
-    }
-
-    .col {
-        width: 100% !important;
-        height: fit-content !important;
-        align-items: center;
-    }
-
-    .isOpen {
-        width: 40vw !important;
-        padding: 20px 10px 20px 30px;
-    }
-
-    #openCol {
-        position: absolute;
-        top: 115px;
-        left: 45% !important;
-        width: fit-content !important;
-        margin: 0 !important;
-    }
-
-    #homepageText {
-        margin-top: 40px;
-    }
-
-    #map {
-        margin: 10px auto;
-    }
-}
 
 #homePageTitle {
     font-size: 45px;
@@ -249,10 +202,13 @@ hr {
 
 #foodName {
     font-size: 20px;
-    margin-bottom: 0px;
-    margin-top: 0px;
+    margin-bottom: 0;
+    margin-top: 0;
     margin-left: 5px;
 }
+
+
+/* contact us */
 
 input {
     background: #f2f2f2;
@@ -329,6 +285,10 @@ button:hover:enabled {
     border: 2px solid #333333;
 }
 
+button:hover:disabled {
+    cursor: default;
+}
+
 ::placeholder {
     color: #333333;
 }
@@ -336,6 +296,7 @@ button:hover:enabled {
 input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
     -webkit-box-shadow: 0 0 0 30px #C4C4C4 inset !important;
 }
+
 
 /* Contact Us */
 
@@ -381,31 +342,6 @@ form {
     margin-top: 0;
     font-size: 18px;
     color: #333333;
-}
-
-/* contact us for smaller devices*/
-@media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1920px) {
-
-    .vl {
-        border: 0 solid black !important;
-    }
-
-    .contact {
-        width: 90% !important;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-right: 5%;
-    }
-
-    form {
-        width: 80% !important
-    }
-
-    #contactSpace {
-        display: block;
-    }
-
 }
 
 
@@ -455,8 +391,8 @@ form {
     overflow-x: hidden;
 }
 
-/* The Modal (background) */
 
+/* The Modal (background) */
 .modal {
     display: none;
     /* Hidden by default */
@@ -511,10 +447,10 @@ form {
 
 @keyframes zoom {
     from {
-        transform: scale(0)
+        transform: scale(0);
     }
     to {
-        transform: scale(1)
+        transform: scale(1);
     }
 }
 
@@ -534,33 +470,6 @@ form {
     color: #bbb;
     text-decoration: none;
     cursor: pointer;
-}
-
-/* About us on smaller screens */
-
-@media only screen  and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1920px) {
-    .modal-content {
-        width: 90vw;
-    }
-
-    .aboutSection {
-        display: flex;
-        flex-direction: column;
-        width: 95%;
-        margin: auto;
-    }
-
-    .aboutSection h2 {
-        margin-left: 0;
-        width: 100%;
-        text-align: center;
-        margin-bottom: 0;
-    }
-
-    .aboutSection p {
-        width: 100%;
-    }
-
 }
 
 /* Modal content (not image) */
@@ -591,6 +500,7 @@ form {
     width: 39vw;
 }
 
+
 /* Receipt */
 
 #receiptHeader {
@@ -608,4 +518,102 @@ form {
 
 #commentLabel {
     text-align: center;
+}
+
+
+/* for mobile devices */
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1920px) {
+    /* navbar */
+    .navbar {
+        width: 90vw !important;
+    }
+
+    .logoName {
+        display: none !important;
+    }
+
+    .navbarList {
+        justify-content: space-between;
+        padding-left: 10px !important;
+    }
+
+
+    /* homepage */
+    #alignContent {
+        width: 95vw !important;
+    }
+
+    .col {
+        width: 100% !important;
+        height: fit-content !important;
+        align-items: center;
+    }
+
+    .isOpen {
+        width: 40vw !important;
+        padding: 20px 10px 20px 30px;
+    }
+
+    #openCol {
+        position: absolute;
+        top: 115px;
+        left: 45% !important;
+        width: fit-content !important;
+        margin: 0 !important;
+    }
+
+    #homepageText {
+        margin-top: 40px;
+    }
+
+    #map {
+        margin: 10px auto;
+    }
+
+
+    /* contact us */
+    .vl {
+        border: 0 solid black !important;
+    }
+
+    .contact {
+        width: 90% !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-right: 5%;
+    }
+
+    form {
+        width: 80% !important;
+    }
+
+    #contactSpace {
+        display: block;
+    }
+
+
+    /* about us */
+    .modal-content {
+        width: 90vw;
+    }
+
+    .aboutSection {
+        display: flex;
+        flex-direction: column;
+        width: 95%;
+        margin: auto;
+    }
+
+    .aboutSection h2 {
+        margin-left: 0;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 0;
+    }
+
+    .aboutSection p {
+        width: 100%;
+    }
 }
