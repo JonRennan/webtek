@@ -788,7 +788,7 @@ form {
 
     .isOpen {
         width: 40vw !important;
-        max-width: 230px;
+        max-width: 230px !important;
         padding: 20px 10px 20px 30px;
     }
 
