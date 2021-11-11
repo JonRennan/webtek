@@ -167,8 +167,9 @@ hr {
     cursor: pointer;
     text-decoration: none;
     color: #333333;
-    width: fit-content;
+    width: 90%;
     margin-bottom: 15px;
+    max-width: 4000px;
 }
 
 .foodSuggestion:hover {
