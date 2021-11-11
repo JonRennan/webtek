@@ -340,8 +340,8 @@ function getTotalPrice() {
     let amounts = getOrderAmounts();
 
     amounts.map(function (amount, index) {
-        total += amount * itemPrices[index]
-    })
+        total += amount * itemPrices[index];
+    });
 
     return total;
 }

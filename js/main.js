@@ -84,7 +84,7 @@ if (currentUrl === "menu.html" || currentUrl === "contact_us.html") {
         '<span class="close">&times;</span>' +
         '<p id="response"></p>' +
         '</div>' +
-        '</div>'
+        '</div>';
 }
 
 // Modal handling, base from w3schools.com and customized with custom cases by us
