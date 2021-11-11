@@ -17,23 +17,23 @@ const navbar_no = {
 };
 
 // homepage language
-const homepage_en = {
-    title: "Hungry?",
-    welcomeText: "Hello, welcome to UKA's foodtruck! Get our delicious, hot food, either if you're going to or from the festival, or if you're just looking for a midnight snack.",
-    location: "We're located just behind the Studentersamfundet.",
-    open: "Open: mon-sun | 19 - 02",
-    suggestion: "On the fly? Grab this one",
-    other: "Or try one of many other tasty alternatives >>>",
-};
+const homepage_en = [
+    ["homePageTitle", "Hungry?"],
+    ["welcomeText", "Hello, welcome to UKA's foodtruck! Get our delicious, hot food, either if you're going to or from the festival, or if you're just looking for a midnight snack."],
+    ["homePageLocation", "We're located just behind the Studentersamfundet."],
+    ["homePageOpen", "Open: mon-sun | 19 - 02"],
+    ["suggestion", "On the fly? Grab this one"],
+    ["homePageOther", "Or try one of many other tasty alternatives >>>"],
+];
 
-const homepage_no = {
-    title: "Sulten?",
-    welcomeText: "Hei, velkommen til UKAs foodtruck! Kom og prøv vår smaksfulle og varme retter enten du er på vei til eller fra festivalen, eller om du bare er ute etter nattmat.",
-    location: "Du finner oss like bak Studentersamfundet.",
-    open: "Åpen: man-søn | 19 - 02",
-    suggestion: "På farten? Prøv denne",
-    other: "Eller prøv en av mange andre smakfulle retter >>>",
-};
+const homepage_no = [
+    ["homePageTitle", "Sulten?"],
+    ["welcomeText", "Hei, velkommen til UKAs foodtruck! Kom og prøv vår smaksfulle og varme retter enten du er på vei til eller fra festivalen, eller om du bare er ute etter nattmat."],
+    ["homePageLocation", "Du finner oss like bak Studentersamfundet."],
+    ["homePageOpen", "Åpen: man-søn | 19 - 02"],
+    ["suggestion", "På farten? Prøv denne"],
+    ["homePageOther", "Eller prøv en av mange andre smakfulle retter >>>"],
+];
 
 // menu, order and receipt language
 const menu_en = {
@@ -136,49 +136,55 @@ const receipt_no = {
     commentLabel: "Din kommentar:",
 };
 
-// about us language
-const about_en = {
-    q1: "Who are we?",
-    q2: "What do we do?",
-    q3: "How to join us",
-    image1: "All the people working in the truck",
-    image2: "The foodtruck and UKA is love",
-    image3: "The foodtruck in action",
-};
+// about-us language
+const about_en = [
+    ["q1", "Who are we?"],
+    ["q2", "What do we do?"],
+    ["q3", "How to join us"],
+    ["desc1", "All the people working in the truck"],
+    ["desc2", "The foodtruck and UKA is love"],
+    ["desc3", "The foodtruck in action"],
+    ["img1", "A group picture of the foodtruck workers"],
+    ["img2", "The foodtruck parked"],
+    ["img3", "A bad picture of the truck operating"],
+];
 
-const about_no = {
-    q1: "Hvem er vi?",
-    q2: "Hva gjør vi?",
-    q3: "Hvordan bli med",
-    image1: "Alle som jobber i trucken",
-    image2: "Foodtrucken og UKA er kjærlighet",
-    image3: "Foodtrucken i action",
-};
+const about_no = [
+    ["q1", "Hvem er vi?"],
+    ["q2", "Hva gjør vi?"],
+    ["q3", "Hvordan bli med"],
+    ["desc1", "Alle som jobber i trucken"],
+    ["desc2", "Foodtrucken og UKA er kjærlighet"],
+    ["desc3", "Foodtrucken i action"],
+    ["img1", "Et gruppebilde med foodtruckarbeiderne"],
+    ["img2", "Foodtrucken parkert"],
+    ["img3", "Et dårlig bilde av trucken i drift"],
+];
 
-// contact us language
-const contact_en = {
-    contact_header: "Something wrong? Contact us!",
-    firstname: "First Name",
-    lastname: "Last Name",
-    email: "Email",
-    about: "What’s it about?",
-    message: "Type your message here...",
-    location_header: "Can’t find us? We’re here!",
-    location_description: "The foodtruck is located behind Studentersamfundet.",
-    response: "Thank you for your input",
-};
+// contact-us language
+const contact_en = [
+    ["contact_header", "Something wrong? Contact us!"],
+    ["firstname", "First Name"],
+    ["lastname", "Last Name"],
+    ["email", "Email"],
+    ["about", "What’s it about?"],
+    ["message", "Type your message here..."],
+    ["location_header", "Can’t find us? We’re here!"],
+    ["location_description", "The foodtruck is located behind Studentersamfundet."],
+    ["response", "Thank you for your input"],
+];
 
-const contact_no = {
-    contact_header: "Noe galt? Kontakt oss!",
-    firstname: "Fornavn",
-    lastname: "Etternavn",
-    email: "Epost",
-    about: "Hva gjelder det?",
-    message: "Skriv meldingen din her...",
-    location_header: "Finner du oss ikke? Her er vi!",
-    location_description: "Foodtrucken er på baksiden av Studentersamfundet.",
-    response: "Takk for din tilbakemelding",
-};
+const contact_no = [
+    ["contact_header", "Noe galt? Kontakt oss!"],
+    ["firstname", "Fornavn"],
+    ["lastname", "Etternavn"],
+    ["email", "Epost"],
+    ["about", "Hva gjelder det?"],
+    ["message", "Skriv meldingen din her..."],
+    ["location_header", "Finner du oss ikke? Her er vi!"],
+    ["location_description", "Foodtrucken er på baksiden av Studentersamfundet."],
+    ["response", "Takk for din tilbakemelding"],
+];
 
 
 // make sure the correct language is loaded when the script is loaded
@@ -204,19 +210,14 @@ function changeLanguage(lang) {
 
     updateNavbar();
 
-    if (currentUrl === "homepage.html") {
-        changeHomePageLanguage();
-    } else if (currentUrl === "menu.html" || currentUrl === "order.html") {
+    if (currentUrl === "menu.html" || currentUrl === "order.html") {
         changeMenuOrderLanguage();
-    } else if (currentUrl === "receipt.html") {
-        changeReceiptLanguage();
-    } else if (currentUrl === "about_us.html") {
-        changeAboutPageLanguage();
-    } else if (currentUrl === "contact_us.html") {
-        changeContactPageLanguage();
+    } else {
+        genericChangeLanguage();
     }
 }
 
+// updates the navbar to current language
 function updateNavbar() {
     let menu = document.getElementById("menu.html");
     let about_us = document.getElementById("about_us.html");
@@ -237,30 +238,11 @@ function updateNavbar() {
 }
 
 
-// language change for homepage.html
+// language change for food suggestion on homepage.html
 function updateFoodSuggestionDescription() {
     let homeFoodId = localStorage.getItem("homeFoodId");
     document.getElementById("foodDescription").innerHTML = getFoodDescriptionText(homeFoodId);
 }
-
-function changeHomePageLanguage() {
-    let homepage;
-    if (language === en) {
-        homepage = homepage_en;
-    } else if (language === no) {
-        homepage = homepage_no;
-    } else {
-        return;
-    }
-    document.getElementById("homePageTitle").innerHTML = homepage.title;
-    document.getElementById("welcomeText").innerHTML = homepage.welcomeText;
-    document.getElementById("homepageLocation").innerHTML = homepage.location;
-    document.getElementById("homePageOpen").innerHTML = homepage.open;
-    document.getElementById("suggestion").innerHTML = homepage.suggestion;
-    document.getElementById("homePageOther").innerHTML = homepage.other;
-    updateFoodSuggestionDescription();
-}
-
 
 // language change for menu.html and order.html
 function getAllergyMeaning() {
@@ -279,8 +261,8 @@ function getAllergyMeaning() {
     }
 }
 
-function changeAllergyLanguage(allergiesCurrent) {
-    allergiesCurrent.map(function (allergies, index) {
+function changeAllergyLanguage(allergies) {
+    allergies.map(function (allergies, index) {
         allergies.map(function (allergy) {
             if (allergy === "H" || allergy === "W") {
                 let itemAllergyH = document.getElementById(`itemAllergies${index}-H`);
@@ -379,19 +361,19 @@ function changeMenuOrderLanguage() {
     let addButton = "";
     let countButton = "";
     let descriptions = [];
-    let allergiesCurrent = [];
+    let allergies = [];
     let allergiesMeaning = [];
 
     if (language === en) {
         menu = menu_en;
         descriptions = itemDescriptionsEN;
-        allergiesCurrent = itemAllergiesEN;
+        allergies = itemAllergiesEN;
         order = order_en;
         allergiesMeaning = allergyMeaningEN;
     } else if (language === no) {
         menu = menu_no;
         descriptions = itemDescriptionsNO;
-        allergiesCurrent = itemAllergiesNO;
+        allergies = itemAllergiesNO;
         order = order_no;
         allergiesMeaning = allergyMeaningNO;
     } else {
@@ -412,7 +394,7 @@ function changeMenuOrderLanguage() {
     updateTotalPrice();
     updateGoToOrder();
     setOrderBackButtonText();
-    changeAllergyLanguage(allergiesCurrent);
+    changeAllergyLanguage(allergies);
 
     addButton = menu.addButton;
     countButton = menu.countButton;
@@ -440,7 +422,7 @@ function changeMenuOrderLanguage() {
 }
 
 
-// language change for receipt.html
+// language change for the header in receipt.html
 function headerLanguage() {
     let name = localStorage.getItem("name");
     let header = document.getElementById("receiptHeader");
@@ -451,57 +433,48 @@ function headerLanguage() {
     }
 }
 
-function changeReceiptLanguage() {
-    let receipt;
+// a generic language change function for the homepage, about-us, contact-us and receipt pages
+function genericChangeLanguage() {
+    let languageList = [];
     if (language === en) {
-        receipt = receipt_en;
+        if (currentUrl === "homepage.html") {
+            languageList = homepage_en;
+            updateFoodSuggestionDescription();
+        } else if (currentUrl === "about_us.html") {
+            languageList = about_en;
+        } else if (currentUrl === "contact_us.html") {
+            languageList = contact_en;
+        } else if (currentUrl === "receipt.html") {
+            languageList = receipt_en;
+            headerLanguage();
+            updateTotalPrice();
+            changeAllergyLanguage(itemAllergiesEN);
+        }
     } else if (language === no) {
-        receipt = receipt_no;
+        if (currentUrl === "homepage.html") {
+            languageList = homepage_no;
+            updateFoodSuggestionDescription();
+        } else if (currentUrl === "about_us.html") {
+            languageList = about_no;
+        } else if (currentUrl === "contact_us.html") {
+            languageList = contact_no;
+        } else if (currentUrl === "receipt.html") {
+            languageList = receipt_no;
+            headerLanguage();
+            updateTotalPrice();
+            changeAllergyLanguage(itemAllergiesNO);
+        }
     } else {
         return;
     }
-    document.getElementById("commentLabel").innerHTML = receipt.commentLabel;
-    headerLanguage();
-    updateTotalPrice();
-}
-
-
-// language change for about_us.html
-function changeAboutPageLanguage() {
-    let about;
-    if (language === en) {
-        about = about_en;
-    } else if (language === no) {
-        about = about_no;
-    } else {
-        return;
+    for (let key_value of languageList) {
+        element = document.getElementById(key_value[0]);
+        if (element.tagName === "INPUT" || element.tagName === "TEXTAREA") {
+            element.placeholder = key_value[1];
+        } else if (element.tagName === "IMG") {
+            element.alt = key_value[1];
+        } else {
+            element.innerHTML = key_value[1];
+        }
     }
-    document.getElementById("q1").innerHTML = about.q1;
-    document.getElementById("q2").innerHTML = about.q2;
-    document.getElementById("q3").innerHTML = about.q3;
-    document.getElementById("image1").innerHTML = about.image1;
-    document.getElementById("image2").innerHTML = about.image2;
-    document.getElementById("image3").innerHTML = about.image3;
-}
-
-
-// language change for contact_us.html
-function changeContactPageLanguage() {
-    let contact;
-    if (language === en) {
-        contact = contact_en;
-    } else if (language === no) {
-        contact = contact_no;
-    } else {
-        return;
-    }
-    document.getElementById("contact_header").innerHTML = contact.contact_header;
-    document.getElementById("firstname").placeholder = contact.firstname;
-    document.getElementById("lastname").placeholder = contact.lastname;
-    document.getElementById("email").placeholder = contact.email;
-    document.getElementById("about").placeholder = contact.about;
-    document.getElementById("message").placeholder = contact.message;
-    document.getElementById("location_header").innerHTML = contact.location_header;
-    document.getElementById("location_description").innerHTML = contact.location_description;
-    document.getElementById("response").innerHTML = contact.response;
 }
