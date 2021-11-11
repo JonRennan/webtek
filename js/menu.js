@@ -25,14 +25,14 @@ const itemPrices = [
 ];
 
 const itemImages = [
-    "placeholder.png",
-    "placeholder.png",
-    "placeholder.png",
-    "placeholder.png",
-    "placeholder.png",
-    "placeholder.png",
-    "placeholder.png",
-    "placeholder.png",
+    "fries.jpg",
+    "fries.jpg",
+    "fries.jpg",
+    "taco.jpg",
+    "taco.jpg",
+    "taco.jpg",
+    "burger.jpg",
+    "burger.jpg",
 ];
 
 
