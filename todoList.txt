@@ -1,5 +1,4 @@
 - Fix design of order.html to closer match the figma
 
 Bugs:
-- Størrelsen på Food på fremsiden endrer seg basert på hvilken rett som dukker opp
 - knappen nederst på meny/order/receipt er ikke midtstilt på små skjermer
