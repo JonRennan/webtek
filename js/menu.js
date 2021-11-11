@@ -112,7 +112,7 @@ function getCountButtons(id, display) {
     itemCountUp.innerText = "+";
     itemCountUp.style.display = display;
     itemCountUp.onclick = function () {
-        increaseOrder(id)
+        increaseOrder(id);
     };
 
     let itemCountDown = document.createElement("div");
@@ -121,7 +121,7 @@ function getCountButtons(id, display) {
     itemCountDown.innerText = "-";
     itemCountDown.style.display = display;
     itemCountDown.onclick = function () {
-        decreaseOrder(id)
+        decreaseOrder(id);
     };
 
     return [itemCountUp, itemCountDown];
@@ -327,7 +327,7 @@ function getOrder() {
             orderDiv.appendChild(getItem(i, typeOrder, amounts[i]));
         }
     }
-    setOrderBackButtonText()
+    setOrderBackButtonText();
     updateTotalPrice();
     updateGoToPayment();
 }
@@ -342,7 +342,7 @@ function getTotalPrice() {
             total += price * parseInt(itemCount.innerHTML);
         }
     }
-    return total
+    return total;
 }
 
 function saveNameInput() {
@@ -384,7 +384,7 @@ function getFinalOrder() {
     headerLanguage();
     document.getElementById("commentReceipt").innerHTML = comment;
 
-    checkNoComment()
+    checkNoComment();
 
     let amounts = getOrderAmounts();
     let orderDiv = document.getElementById("order");

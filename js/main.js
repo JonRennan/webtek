@@ -61,7 +61,7 @@ if (currentUrl === "order.html") {
         event.preventDefault();
         toReceipt();
         return false;
-    }
+    };
 }
 
 
@@ -91,7 +91,7 @@ if (document.getElementById("myModal")) {
         if (currentUrl === "contact_us.html") {
             document.getElementById("contact_form").submit();
         }
-    }
+    };
 
     // When the user clicks anywhere outside of the modal, close it
     // Special case for contact page so that submit happens on closing the modal
@@ -102,7 +102,7 @@ if (document.getElementById("myModal")) {
                 document.getElementById("contact_form").submit();
             }
         }
-    }
+    };
 
     // Overriding onsubmit so that the modal will pop up instead of immediately submitting the form on the contact page
     // and image modal handling on about us page so images pop up when clicking the picture
@@ -111,7 +111,7 @@ if (document.getElementById("myModal")) {
             event.preventDefault();
             modal.style.display = "block";
             return false;
-        }
+        };
     } else if (currentUrl === "about_us.html") {
         // Get the image and insert it inside the modal - use its "alt" text as a caption
         let img1 = document.getElementById("img1");
@@ -124,18 +124,18 @@ if (document.getElementById("myModal")) {
             modalImg.src = this.src;
             modalImg.alt = this.alt;
             captionText.innerHTML = this.alt;
-        }
+        };
         img2.onclick = function () {
             modal.style.display = "block";
             modalImg.src = this.src;
             modalImg.alt = this.alt;
             captionText.innerHTML = this.alt;
-        }
+        };
         img3.onclick = function () {
             modal.style.display = "block";
             modalImg.src = this.src;
             modalImg.alt = this.alt;
             captionText.innerHTML = this.alt;
-        }
+        };
     }
 }
