@@ -768,6 +768,7 @@ form {
     }
 
     .navbarList {
+        float: none;
         justify-content: space-between;
         padding-left: 10px !important;
     }
