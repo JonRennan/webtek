@@ -167,7 +167,7 @@ function getItem(id, type, amount = 0) {
     // div containing all the buttons
     let itemButtons = document.createElement("div");
     itemButtons.id = `itemButtons${id}`;
-    itemButtons.className = "row";
+    itemButtons.className = "row buttonRow";
 
     let countUp;
     let countDown;

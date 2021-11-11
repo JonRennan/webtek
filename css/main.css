@@ -618,7 +618,7 @@ form {
     border-radius: 15px;
 }
 
-.row {
+.buttonRow {
     display: flex;
     align-items: flex-end;
     margin-bottom: 15px;
@@ -897,7 +897,7 @@ form {
         justify-content: center;
     }
 
-    .row {
+    .buttonRow {
         width: 60%;
         margin-bottom: 5px;
         margin-left: 22%;
