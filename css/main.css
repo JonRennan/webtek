@@ -719,7 +719,7 @@ form {
     display: flex;
     position: fixed;
     font-size: 18px;
-    margin:auto;
+    margin: auto;
     align-items: center;
 }
 
@@ -824,6 +824,10 @@ form {
         width: 80% !important;
     }
 
+    .half {
+        width: 42%;
+    }
+
     #contactSpace {
         display: block;
     }
@@ -870,13 +874,13 @@ form {
         margin-top: 20px;
     }
 
-    .itemAddCol{
+    .itemAddCol {
         max-width: 90px;
         align-items: center;
         justify-content: center;
     }
 
-    .countCol{
+    .countCol {
         max-width: 50px;
     }
 
