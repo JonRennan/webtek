@@ -3,6 +3,4 @@
 Bugs:
 - Størrelsen på Food på fremsiden endrer seg basert på hvilken rett som dukker opp
 - contact us fornavn og etternavn blir på 2 linjer på mobil
-- + og - knappene kunne vært større på liten skjerm
-- kunne vært litt margin mellom "hvor mange?" og det over på liten skjerm
 - knappen nederst på meny/order/receipt er ikke midtstilt på små skjermer

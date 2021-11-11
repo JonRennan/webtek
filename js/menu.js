@@ -176,8 +176,8 @@ function getItem(id, type, amount = 0) {
     if (type === typeFull) {
         // creates the 'add to order' button, only on the menu page
         let itemAddCol = document.createElement("div");
-        itemAddCol.className = "countCol";
-        itemAddCol.id = `countCol${id}`;
+        itemAddCol.className = "itemAddCol";
+        itemAddCol.id = `itemAddCol${id}`;
 
         let addButton = document.createElement("a");
         addButton.id = `itemAddButton${id}`;
@@ -225,7 +225,7 @@ function getItem(id, type, amount = 0) {
 
 // hides the 'add to order' and shows the '+', '-' and amount
 function addToOrder(id) {
-    let addButton = document.getElementById(`countCol${id}`);
+    let addButton = document.getElementById(`itemAddCol${id}`);
     let countBox = document.getElementById(`itemCount${id}`);
     let upButton = document.getElementById(`itemCountUp${id}`);
     let downButton = document.getElementById(`itemCountDown${id}`);
@@ -260,7 +260,7 @@ function decreaseOrder(id) {
                 window.location.href = "menu.html";
             }
         } else {
-            let addButton = document.getElementById(`countCol${id}`);
+            let addButton = document.getElementById(`itemAddCol${id}`);
             let countBox = document.getElementById(`itemCount${id}`);
             let upButton = document.getElementById(`itemCountUp${id}`);
             let downButton = document.getElementById(`itemCountDown${id}`);
