@@ -51,6 +51,7 @@ const menu_no = {
 };
 
 const order_en = {
+    title: "Confirm your order",
     nameInput: "Name",
     nameLabel: "Your name:",
     comment: "Type your comment here...",
@@ -60,6 +61,7 @@ const order_en = {
 };
 
 const order_no = {
+    title: "Bekreft bestillingen din",
     nameInput: "Navn",
     nameLabel: "Ditt Navn:",
     comment: "Skriv din kommentar her...",
@@ -400,6 +402,7 @@ function changeMenuOrderLanguage() {
     if (currentUrl === "menu.html") {
         document.getElementById("response").innerHTML = menu.response;
     } else if (currentUrl === "order.html") {
+        document.getElementById("orderTitle").innerHTML = order.title;
         document.getElementById("orderComment").placeholder = order.comment;
         document.getElementById("orderCommentLabel").innerHTML = order.commentLabel;
         document.getElementById("orderNameInput").placeholder = order.nameInput;
