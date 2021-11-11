@@ -436,36 +436,38 @@ function headerLanguage() {
 // a generic language change function for the homepage, about-us, contact-us and receipt pages
 function genericChangeLanguage() {
     let languageList = [];
+    let homepage;
+    let about;
+    let contact;
+    let receipt;
+    let allergies;
     if (language === en) {
-        if (currentUrl === "homepage.html") {
-            languageList = homepage_en;
-            updateFoodSuggestionDescription();
-        } else if (currentUrl === "about_us.html") {
-            languageList = about_en;
-        } else if (currentUrl === "contact_us.html") {
-            languageList = contact_en;
-        } else if (currentUrl === "receipt.html") {
-            languageList = receipt_en;
-            headerLanguage();
-            updateTotalPrice();
-            changeAllergyLanguage(itemAllergiesEN);
-        }
+        homepage = homepage_en;
+        about = about_en;
+        contact = contact_en;
+        receipt = receipt_en;
+        allergies = itemAllergiesEN;
     } else if (language === no) {
-        if (currentUrl === "homepage.html") {
-            languageList = homepage_no;
-            updateFoodSuggestionDescription();
-        } else if (currentUrl === "about_us.html") {
-            languageList = about_no;
-        } else if (currentUrl === "contact_us.html") {
-            languageList = contact_no;
-        } else if (currentUrl === "receipt.html") {
-            languageList = receipt_no;
-            headerLanguage();
-            updateTotalPrice();
-            changeAllergyLanguage(itemAllergiesNO);
-        }
+        homepage = homepage_no;
+        about = about_no;
+        contact = contact_no;
+        receipt = receipt_no;
+        allergies = itemAllergiesNO;
     } else {
         return;
+    }
+    if (currentUrl === "homepage.html") {
+        languageList = homepage;
+        updateFoodSuggestionDescription();
+    } else if (currentUrl === "about_us.html") {
+        languageList = about;
+    } else if (currentUrl === "contact_us.html") {
+        languageList = contact;
+    } else if (currentUrl === "receipt.html") {
+        languageList = receipt;
+        headerLanguage();
+        updateTotalPrice();
+        changeAllergyLanguage(allergies);
     }
     for (let key_value of languageList) {
         let documentElement = document.getElementById(key_value[0]);
