@@ -468,13 +468,13 @@ function genericChangeLanguage() {
         return;
     }
     for (let key_value of languageList) {
-        element = document.getElementById(key_value[0]);
-        if (element.tagName === "INPUT" || element.tagName === "TEXTAREA") {
-            element.placeholder = key_value[1];
-        } else if (element.tagName === "IMG") {
-            element.alt = key_value[1];
+        let documentElement = document.getElementById(key_value[0]);
+        if (documentElement.tagName === "INPUT" || documentElement.tagName === "TEXTAREA") {
+            documentElement.placeholder = key_value[1];
+        } else if (documentElement.tagName === "IMG") {
+            documentElement.alt = key_value[1];
         } else {
-            element.innerHTML = key_value[1];
+            documentElement.innerHTML = key_value[1];
         }
     }
 }
