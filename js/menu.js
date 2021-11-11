@@ -9,6 +9,8 @@ const itemNames = [
     "Veggie Taco",
     "Chicken Taco",
     "Beef Taco",
+    "Burger",
+    "Cheeseburger",
 ];
 
 const itemPrices = [
@@ -18,9 +20,13 @@ const itemPrices = [
     49,
     49,
     49,
+    59,
+    64,
 ];
 
 const itemImages = [
+    "placeholder.png",
+    "placeholder.png",
     "placeholder.png",
     "placeholder.png",
     "placeholder.png",

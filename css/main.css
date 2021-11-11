@@ -198,7 +198,6 @@ hr {
     max-width: 100%;
     margin: 0 10px;
     border-radius: 15px;
-    border: 2px solid #C91532;
 }
 
 #foodName {
@@ -607,7 +606,6 @@ form {
 .itemImageFull {
     height: 20%;
     width: 20%;
-    border: 3px solid #C91532;
     border-radius: 15px;
 }
 
@@ -615,7 +613,6 @@ form {
 .itemImageOrder, .itemImageReceipt {
     width: 15%;
     height: 15%;
-    border: 3px solid #C91532;
     border-radius: 15px;
 }
 
@@ -922,16 +919,6 @@ form {
     .menuItem {
         flex-wrap: wrap;
         border: 2px solid #C91532;
-        border-radius: 15px;
-    }
-
-    .itemImageFull {
-        border: none !important;
-        border-radius: 15px;
-    }
-
-    .itemImageOrder, .itemImageReceipt {
-        border: none !important;
         border-radius: 15px;
     }
 

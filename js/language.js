@@ -75,6 +75,8 @@ const itemAllergiesEN = [
     ["E", "M", "W", "S"],
     ["E", "M", "W"],
     ["E", "M", "W"],
+    ["E", "W", "S"],
+    ["E", "M", "W", "S"],
 ];
 
 const itemAllergiesNO = [
@@ -84,6 +86,8 @@ const itemAllergiesNO = [
     ["E", "M", "H", "S"],
     ["E", "M", "H"],
     ["E", "M", "H"],
+    ["E", "H", "S"],
+    ["E", "M", "H", "S"],
 ];
 
 const allergyMeaningEN = [
@@ -107,6 +111,8 @@ const itemDescriptionsEN = [
     "Taco with beans and other good stuff",
     "Taco with chicken and other good stuff",
     "Taco with beef and other good stuff",
+    "Juicy burger with beef and other good stuff",
+    "Juicy burger with beef, cheese and other good stuff",
 ];
 
 const itemDescriptionsNO = [
@@ -116,6 +122,8 @@ const itemDescriptionsNO = [
     "Taco med bønner og andre godsaker",
     "Taco med kylling og andre godsaker",
     "Taco med kjøtt og andre godsaker",
+    "Saftig burger av kjøtt med andre godsaker",
+    "Saftig burger av kjøtt med ost og andre godsaker",
 ];
 
 const receipt_en = {
