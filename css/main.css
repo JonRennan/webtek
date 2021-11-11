@@ -1,6 +1,7 @@
 body {
     background-color: #f2f2f2;
     font-family: 'Lato', sans-serif;
+    margin: 0;
 }
 
 /* navbar */
@@ -12,6 +13,7 @@ body {
     padding-top: 10px;
     margin-bottom: 20px;
     z-index: 10;
+    width: 100%;
 }
 
 .navbar {
@@ -801,6 +803,7 @@ form {
 
     #homepageText {
         margin-top: 40px;
+        margin-left: 3%;
     }
 
     #map {
