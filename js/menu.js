@@ -251,11 +251,11 @@ function decreaseOrder(id) {
     if (parseInt(itemCountText.innerText) > 0) {
         itemCountText.innerText = parseInt(itemCountText.innerText) - 1;
     }
+    updateOrder();
     // if the amount is now 0, remove the item on order page, show 'add to order' and hides '+', '-' and amount on menu page
     if (parseInt(itemCountText.innerText) === 0) {
         if (currentUrl === "order.html") {
             document.getElementById(`menuItem${id}`).remove();
-            console.log(orderIsEmpty());
             if (orderIsEmpty()) {
                 window.location.href = "menu.html";
             }
@@ -270,7 +270,6 @@ function decreaseOrder(id) {
             downButton.style.display = "none";
         }
     }
-    updateOrder();
     updateTotalPrice();
 }
 
