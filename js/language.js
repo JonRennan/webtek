@@ -261,9 +261,9 @@ function getAllergyMeaning() {
     }
 }
 
-function changeAllergyLanguage(allergies) {
-    allergies.map(function (allergies, index) {
-        allergies.map(function (allergy) {
+function changeAllergyLanguage(allItemsAllergies) {
+    allItemsAllergies.map(function (itemAllergies, index) {
+        itemAllergies.map(function (allergy) {
             if (allergy === "H" || allergy === "W") {
                 let itemAllergyH = document.getElementById(`itemAllergies${index}-H`);
                 let itemAllergyW = document.getElementById(`itemAllergies${index}-W`);
